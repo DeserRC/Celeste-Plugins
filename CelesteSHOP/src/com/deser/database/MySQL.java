@@ -15,7 +15,7 @@ public class MySQL implements Listener {
     private Connection connection;
 
     private String host, database, user, password;
-    
+
     public void openConnection() {
         host = pl.getConfig().getString("MySQL.Host");
         database = pl.getConfig().getString("MySQL.DataBase");
