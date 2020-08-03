@@ -29,7 +29,6 @@ public class InventoryClick implements Listener {
         Query query = new Query();
         Shop shop = new Shop();
 
-        //SET SLOTS ITENS
         for (InventoryArguments si : shopItens) {
             if (e.getInventory().getTitle().equals(shop.getTitle())) {
                 if (si.getSlot() == e.getSlot()) {
