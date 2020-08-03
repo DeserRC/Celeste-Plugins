@@ -19,7 +19,7 @@ public class Cashs implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("cashs")) {
             switch (args.length) {
                 case 3:
-                    //Add points (Admin command)
+                    //Add and give points (Admin command)
                     if (args[0].equals("add") || args[0].equals("adicionar")) {
                         if (p.hasPermission("DeserCash.admin")) {
                             try {
@@ -76,7 +76,7 @@ public class Cashs implements CommandExecutor {
                         return false;
                     }
                     return false;
-                //Check own points (Player command)
+                //Check other player points (Player command)
                 case 1:
                     Player t = pl.getServer().getPlayer(args[0]);
                     try {
@@ -88,7 +88,7 @@ public class Cashs implements CommandExecutor {
                         p.sendMessage(ChatColor.YELLOW + "O jogador " + args[0] + " possui 0 pontos.");
                         return false;
                     }
-
+                //Check own points (Player command)
                 case 0:
                     try {
                         if (query.playerExists(p)) {
