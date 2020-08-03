@@ -13,8 +13,8 @@ Shop:
   L8:
     Material: "DIAMOND_SWORD"
     Data: 0
-    Amount: 1
-    Name: "&7Compre essa espada looting 8"
+    Amount:
+    Name: "&cCompre essa espada looting 8"
     Lore:
     - "&7ABLUBLÉ"
     - "&7BLUBLUBLÉ"

@@ -3,5 +3,5 @@ version: 1.0
 main: com.deser.Main
 commands:
   cashs:
-    aliases: [pontos, points, cash]
+    aliases: [pontos, points, point, cash]
   shop:
