@@ -38,6 +38,7 @@ public class Shop implements CommandExecutor {
         Inventory inventory = Bukkit.createInventory(null, getRows(), getTitle());
         InventoryClick inventoryClick = new InventoryClick();
 
+        //Get Config Itens
         for (String menu : pl.getConfig().getConfigurationSection("Shop.").getKeys(false)) {
             String name = pl.getConfig().getString("Shop." + menu + ".Name");
             Material material = Material.getMaterial(pl.getConfig().getString("Shop." + menu + ".Material"));
@@ -65,6 +66,7 @@ public class Shop implements CommandExecutor {
         p.openInventory(inventory);
     }
 
+    //Get Config Menu
     public final Integer getRows() {
         return 9*pl.getConfig().getInt("Menu.Rows");
     }
