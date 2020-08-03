@@ -9,7 +9,6 @@ public class InventoryArguments {
     private String actionbarmessage;
 
     public InventoryArguments() {
-
     }
 
     public InventoryArguments(String cmd, Integer price, Integer slot, String titlebuy, String subtitlebuy, String actionbarmessage) {
