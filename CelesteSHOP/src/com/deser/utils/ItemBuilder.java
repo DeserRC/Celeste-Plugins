@@ -112,7 +112,7 @@ public class ItemBuilder {
             SkullMeta im = (SkullMeta)is.getItemMeta();
             im.setOwner(dono);
             is.setItemMeta(im);
-        }catch(ClassCastException expected){}
+        } catch(ClassCastException expected){}
         return this;
     }
 

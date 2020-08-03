@@ -4,8 +4,7 @@ import org.bukkit.entity.*;
 import org.bukkit.*;
 import java.lang.reflect.*;
 
-public class SendTitle
-{
+public class SendTitle {
     public static void setTible(final Player player, final Integer fadeIn, final Integer stay, final Integer fadeOut, final String title, final String subtitle) {
         sendTitle(player, fadeIn, stay, fadeOut, title, subtitle);
     }

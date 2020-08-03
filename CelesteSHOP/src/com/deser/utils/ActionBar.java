@@ -4,8 +4,7 @@ import org.bukkit.*;
 import org.bukkit.entity.*;
 import java.lang.reflect.*;
 
-public class ActionBar
-{
+public class ActionBar {
     private static Class<?> CRAFTPLAYERCLASS;
     private static Class<?> PACKET_PLAYER_CHAT_CLASS;
     private static Class<?> ICHATCOMP;
