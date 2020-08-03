@@ -35,7 +35,7 @@ public class InventoryClick implements Listener {
                     menuConfirm(p);
                 }
             }
-            if (e.getInventory().getTitle().equals(ChatColor.DARK_GRAY + "Confirmação")) {
+            if (e.getInventory().getTitle().equals(ChatColor.DARK_GRAY + "CONFIRMAÇÃO")) {
                 if (e.getSlot() == 15) {
                     if (query.getCashs(p) >= (si.getPrice())) {
                         query.updateCashs(p, query.getCashs(p) - si.getPrice());
