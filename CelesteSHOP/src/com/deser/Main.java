@@ -11,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 
-public class Main extends JavaPlugin{
+public class Main extends JavaPlugin {
     public static ArrayList<InventoryArguments> shopItens = new ArrayList<>();
 
     @Override
