@@ -1,5 +1,5 @@
 MySQL:
-  Host: localhost
+  Host: localhost:3306
   DataBase: "minecraft"
   User: "root"
   Password: "OBXq94zQCX4SgEmM"
@@ -17,8 +17,8 @@ Message:
   #SetHome
   SetHomeArgumentsInvalid: "&cArgumentos invalidos."
   BlackListWorldMessage: "&cNão é possivel setar uma home nesse mundo."
-  HomeLimitReached: "&Você já possui o numero máximo de Homes."
-  FewCharacters: "&cSua Home precisa ter no minimo 3 caracteres."
+  HomeLimitReached: "&cVocê já possui o numero máximo de Homes."
+  FewCharacters: "&cSua Home precisa ter mais do que 3 caracteres."
   ContainsHome: "&cVocê já contem uma home com esse nome."
   HomeSucessCreate: "&cHome setada com sucesso."
   #DelHome
@@ -34,7 +34,7 @@ Message:
     SubTitle: "&f%delay% segundos."
   MessageSucessTeleport:
     Title: "&cVocê foi teleportado para"
-    SubTitle: "&fHome %home%"
+    SubTitle: "&fHome %home% - #%number%"
   MessageCancelTeleport:
     Title: "&cVocê se moveu"
     SubTitle: "&fenquanto estava em teleporte"
@@ -42,12 +42,14 @@ Sounds: #All MineCraft Sounds - https://helpch.at/docs/1.8.8/index.html?org/bukk
   SoundWaitingTeleport: "ORB_PICKUP"
   SoundSucessTeleport: "ENDERMAN_TELEPORT"
   SoundCancelTeleport: "VILLAGER_NO"
+
 Inventory: #Home - GUI
   Title: "&7All Homes - %player%"
   HomeTemplate:
+    Name: "Homes #%number% - %home%"
     Material: "DARK_OAK_DOOR_ITEM"
     Data: "0"
-    Name: "Homes #%number% - %home%"
+    Glow: "True"
     Lore:
       - ""
     Enchantment:
@@ -59,5 +61,8 @@ Inventory: #Home - GUI
       Material: "EMERALD"
       Data: "0"
       Name: "Homes Of %player% - %amounthomes%/%maxhomes%"
+      Glow: "True"
       Lore:
-        - ""
+        - "%player%"
+      Enchantment:
+        - "UNBREAKING:10"
