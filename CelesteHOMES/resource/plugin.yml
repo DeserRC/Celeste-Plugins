@@ -1,0 +1,10 @@
+name: CelesteHOMES
+version: 1.0
+main: com.redeceleste.celestehomes.Main
+commands:
+  home:
+  homes:
+  sethome:
+    aliases: [setarhome]
+  delhome:
+    aliases: [deletarhome]
