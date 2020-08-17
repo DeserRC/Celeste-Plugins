@@ -2,6 +2,7 @@ package com.redeceleste.celestehomes.commands;
 
 import com.redeceleste.celestehomes.managers.ConfigManager;
 import com.redeceleste.celestehomes.managers.InventoryManager;
+import com.redeceleste.celestehomes.managers.PermissionManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,12 +16,16 @@ public class AHome implements CommandExecutor {
         Player p = (Player) sender;
 
         if (cmd.getName().equalsIgnoreCase("ahome")) {
-            switch (args.length) {
-                case 1:
-                    InventoryManager.homeinventory(Bukkit.getPlayer(args[0]), p);
-                    return false;
-                default:
-                    p.sendMessage(ConfigManager.HomeInvalidArgument);
+            if (PermissionManager.hasAdmin(p)) {
+                switch (args.length) {
+                    case 1:
+                        InventoryManager.homeinventory(Bukkit.getPlayer(args[0]), p);
+                        return false;
+                    default:
+                        p.sendMessage(ConfigManager.HomeInvalidArgument);
+                }
+            } else {
+                p.sendMessage(ConfigManager.NoPermission);
             }
         }
         return false;
