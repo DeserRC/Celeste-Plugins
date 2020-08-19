@@ -7,10 +7,12 @@ import com.redeceleste.celestehomes.database.dao.DAO;
 import com.redeceleste.celestehomes.events.InventoryEvent;
 import com.redeceleste.celestehomes.managers.ConfigManager;
 import com.redeceleste.celestehomes.models.UserArgument;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Main extends JavaPlugin{
 
@@ -30,9 +32,9 @@ public class Main extends JavaPlugin{
         getCommand("homes").setExecutor(new Homes());
         getCommand("ahome").setExecutor(new AHome());
         openSQL();
-        loadAll();
         ConfigManager.loadMessage();
         AutoSave.saveLooping();
+        loadAll();
     }
 
     @Override
@@ -61,8 +63,16 @@ public class Main extends JavaPlugin{
     //Load all Database in HashMAP
     public void loadAll(){
         for (UserArgument userArgument : DAO.getAll()){
-            DAO.cache.put(userArgument.getName(), userArgument);
+            if (!Purge(getServer().getOfflinePlayer(userArgument.getName()))) {
+                DAO.cache.put(userArgument.getName(), userArgument);
+            } else {
+                getDAO().delete(userArgument.getName());
+            }
         }
+    }
+
+    public Boolean Purge(OfflinePlayer p) {
+        return p.getLastPlayed() >= System.currentTimeMillis() + TimeUnit.DAYS.toMillis(Long.parseLong(ConfigManager.Purge));
     }
 }
 

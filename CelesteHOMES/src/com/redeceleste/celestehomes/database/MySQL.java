@@ -43,8 +43,7 @@ public class MySQL {
 
     private void createTables() {
         try {
-            PreparedStatement stm = connection.prepareStatement(
-                    "CREATE TABLE IF NOT EXISTS `homes`(`key` VARCHAR(16) NOT NULL, `json` TEXT NOT NULL, PRIMARY KEY (`key`))");
+            PreparedStatement stm = connection.prepareStatement("CREATE TABLE IF NOT EXISTS `homes`(`key` VARCHAR(16) NOT NULL, `json` TEXT NOT NULL, PRIMARY KEY (`key`))");
             stm.executeUpdate();
         } catch (Exception ignored) {
             System.out.print("Can't create table in MySQL.");

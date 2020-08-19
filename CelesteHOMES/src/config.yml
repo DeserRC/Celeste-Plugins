@@ -19,6 +19,7 @@ Reload: "&3CelesteHome &7Config reloaded."
 MinimumCharactersHome: "3"
 Delay: "3" #in seconds
 DelayFromOtherTeleport: "3" #in seconds
+Purge: "30" #in days
 
 Message:
   #SetHome
