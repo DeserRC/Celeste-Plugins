@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ConfigManager {
-    public static String Permission, NoPermission, MinimumCharactersHome, Delay, DelayFromOtherTeleport;
+    public static String Permission, NoPermission, Reload, MinimumCharactersHome, Delay, DelayFromOtherTeleport;
     public static String SetHomeArgumentsInvalid, BlackListWorldMessage, HomeLimitReached, FewCharacters, ContainsHome, HomeSucessCreate;
     public static String DelHomeArgumentsInvalid, DelHomeNotFound, HomeSucessDeleted;
-    public static String HomeNotFound, HomeInvalidArgument, DelayFromOtherTeleportMessage, MessageWaitingTeleportTitle, MessageWaitingTeleportSubTitle, MessageSucessTeleportTitle, MessageSucessTeleportSubTitle, MessageCancelTeleportTitle, MessageCancelTeleportSubTitle;
+    public static String HomeNotFound, HomeInvalidArgument, DelayFromOtherTeleportMessage, PlayerNotFound, MessageWaitingTeleportTitle, MessageWaitingTeleportSubTitle, MessageSucessTeleportTitle, MessageSucessTeleportSubTitle, MessageCancelTeleportTitle, MessageCancelTeleportSubTitle;
     public static String SoundWaitingTeleport, SoundSucessTeleport, SoundCancelTeleport;
     public static String TitleGUI;
     public static List<InventoryArgument> Itens = new ArrayList<>();
@@ -30,6 +30,7 @@ public class ConfigManager {
 
         Permission = get("Permission");
         NoPermission = get("NoPermission");
+        Reload = get("Reload");
         MinimumCharactersHome = get("MinimumCharactersHome");
         Delay = get("Delay");
         DelayFromOtherTeleport = get("DelayFromOtherTeleport");
@@ -48,6 +49,8 @@ public class ConfigManager {
         HomeInvalidArgument = get("Message.HomeInvalidArgument");
         HomeNotFound = get("Message.HomeNotFound");
         DelayFromOtherTeleportMessage = get("Message.DelayMessage");
+        PlayerNotFound = get("Message.PlayerNotFound");
+
         MessageWaitingTeleportTitle = get("Message.MessageSucessTeleport.Title");
         MessageWaitingTeleportSubTitle = get("Message.MessageSucessTeleport.SubTitle");
         MessageSucessTeleportTitle = get("Message.MessageSucessTeleport.Title");
@@ -66,7 +69,7 @@ public class ConfigManager {
     }
 
     private static String get(String path) {
-        return pl.getConfig().getString(path, ChatColor.DARK_RED + "There was an error loading the message: " + ChatColor.YELLOW + path).replace('&', '§');
+        return pl.getConfig().getString(path, ChatColor.DARK_RED + "There was an error loading the message: " + ChatColor.YELLOW + path).replace('&', '\u00A7');
     }
 
     private static List<String> getList(String path) {

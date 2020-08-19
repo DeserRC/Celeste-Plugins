@@ -19,7 +19,16 @@ public class AHome implements CommandExecutor {
             if (PermissionManager.hasAdmin(p)) {
                 switch (args.length) {
                     case 1:
-                        InventoryManager.homeinventory(Bukkit.getPlayer(args[0]), p);
+                        if (!args[0].equalsIgnoreCase("rl")) {
+                            try {
+                                InventoryManager.homeinventory(Bukkit.getPlayer(args[0]), p);
+                            } catch (Exception e) {
+                                p.sendMessage(ConfigManager.PlayerNotFound);
+                            }
+                        } else {
+                            ConfigManager.loadMessage();
+                            p.sendMessage(ConfigManager.Reload);
+                        }
                         return false;
                     default:
                         p.sendMessage(ConfigManager.HomeInvalidArgument);

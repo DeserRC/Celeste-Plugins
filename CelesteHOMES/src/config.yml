@@ -15,6 +15,7 @@ BlackListWorld:
 
 Permission: "Clhome."
 NoPermission: "&3CelesteHomes &7You not a have Permission"
+Reload: "&3CelesteHome &7Config reloaded."
 MinimumCharactersHome: "3"
 Delay: "3" #in seconds
 DelayFromOtherTeleport: "3" #in seconds
@@ -35,6 +36,9 @@ Message:
   HomeInvalidArgument: "&3CelesteHomes &7Invalid arguments."
   HomeNotFound: "&3CelesteHomes &7You don't have a Home with that name."
   DelayMessage: "&3CelesteHomes &7Wait &f%delay% seconds &7to run this command again."
+  #AHome
+  PlayerNotFound: "&3CelesteHomes &7Player Not Found."
+  #Teleport
   MessageWaitingTeleport:
     Title: "&fYou will be teleported in"
     SubTitle: "&c%delay% seconds"
