@@ -6,7 +6,7 @@
 	<li>CelesteHOMES</li>
 </ul>
 
-<h3>📝Description:</h3>
+<h3>📝Descriptions:</h3>
 <ul>
 	<li><b>CelesteSHOP:</b></li>
 	<b>Commands:</b> /cashs and /shop</br>
