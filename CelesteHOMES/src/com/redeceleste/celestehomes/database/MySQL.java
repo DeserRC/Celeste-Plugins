@@ -45,6 +45,7 @@ public class MySQL {
         try {
             PreparedStatement stm = connection.prepareStatement("CREATE TABLE IF NOT EXISTS `homes`(`key` VARCHAR(16) NOT NULL, `json` TEXT NOT NULL, PRIMARY KEY (`key`))");
             stm.executeUpdate();
+            stm.close();
         } catch (Exception ignored) {
             System.out.print("Can't create table in MySQL.");
             Bukkit.getPluginManager().disablePlugin(Main.getInstance());
