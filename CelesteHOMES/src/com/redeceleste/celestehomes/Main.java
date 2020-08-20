@@ -69,7 +69,6 @@ public class Main extends JavaPlugin{
                 getDAO().delete(userArgument.getName());
             }
         }
-        getMySql().closeConnection();
     }
 
     public Boolean Purge(OfflinePlayer p) {
