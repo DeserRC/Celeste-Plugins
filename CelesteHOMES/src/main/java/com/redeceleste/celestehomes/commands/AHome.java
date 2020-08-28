@@ -22,7 +22,7 @@ public class AHome implements CommandExecutor {
                         if (!args[0].equalsIgnoreCase("rl")) {
                             try {
                                 InventoryManager.homeinventory(Bukkit.getPlayer(args[0]), p);
-                            } catch (Exception e) {
+                            } catch (Exception ignored) {
                                 p.sendMessage(ConfigManager.PlayerNotFound);
                             }
                         } else {
