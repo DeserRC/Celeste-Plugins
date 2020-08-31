@@ -15,20 +15,22 @@ public class Home implements CommandExecutor {
         Player p = (Player) sender;
 
         if (cmd.getName().equalsIgnoreCase("home")) {
-            switch (args.length) {
-                case 0:
-                    InventoryManager.homeinventory(p, p);
-                    return false;
-                case 1:
-                    if (HomeManager.isHome(p, args[0])) {
-                        HomeManager.homeTeleport(p, args[0]);
-                    } else {
-                        p.sendMessage(ConfigManager.HomeNotFound);
-                    }
-                    return false;
-                default:
-                    p.sendMessage(ConfigManager.HomeInvalidArgument);
+            if (args.length == 0) {
+                InventoryManager.homeinventory(p, p);
+                return false;
             }
+
+            if (args.length != 1) {
+                p.sendMessage(ConfigManager.HomeInvalidArgument);
+                return false;
+            }
+
+            if (!HomeManager.isHome(p, args[0])) {
+                p.sendMessage(ConfigManager.HomeNotFound);
+                return false;
+            }
+
+            HomeManager.homeTeleport(p, args[0]);
         }
         return false;
     }

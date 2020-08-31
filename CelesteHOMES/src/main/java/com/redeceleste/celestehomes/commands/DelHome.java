@@ -14,18 +14,18 @@ public class DelHome implements CommandExecutor {
         Player p = (Player) sender;
 
         if (cmd.getName().equalsIgnoreCase("delhome")) {
-            switch (args.length) {
-                case 1:
-                    if (HomeManager.isHome(p, args[0])) {
-                        HomeManager.delHome(p, args[0]);
-                        p.sendMessage(ConfigManager.HomeSucessDeleted);
-                    } else {
-                        p.sendMessage(ConfigManager.DelHomeNotFound);
-                    }
-                    return false;
-                default:
-                    p.sendMessage(ConfigManager.DelHomeArgumentsInvalid);
+            if (args.length != 1) {
+                p.sendMessage(ConfigManager.DelHomeArgumentsInvalid);
+                return false;
             }
+
+            if (!HomeManager.isHome(p, args[0])) {
+                p.sendMessage(ConfigManager.DelHomeNotFound);
+                return false;
+            }
+
+            HomeManager.delHome(p, args[0]);
+            p.sendMessage(ConfigManager.HomeSucessDeleted);
         }
         return false;
     }

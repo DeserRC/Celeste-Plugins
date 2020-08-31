@@ -3,6 +3,7 @@ package com.redeceleste.celestehomes.managers;
 import com.redeceleste.celestehomes.Main;
 import com.redeceleste.celestehomes.events.InventoryEvent;
 import com.redeceleste.celestehomes.models.InventoryArgument;
+import com.redeceleste.celestehomes.models.UserArgument;
 import com.redeceleste.celestehomes.models.impls.User;
 import com.redeceleste.celestehomes.models.impls.UserBuilder;
 import com.redeceleste.celestehomes.utils.ItemBuilder;
@@ -39,7 +40,7 @@ public class InventoryManager {
         }
 
         try {
-            User user = (User) Main.getInstance().getDAO().cache.get(p.getName());
+            UserArgument user = Main.getInstance().getDAO().cache.get(p.getName());
             for (InventoryArgument ai : ConfigManager.Template) {
                 for (UserBuilder userBuilder : user.getHomes().values()) {
                     Collections.replaceAll(ai.getLore(), "%number%", String.valueOf(userBuilder.getNumber()));

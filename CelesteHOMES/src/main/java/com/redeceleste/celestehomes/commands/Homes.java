@@ -15,13 +15,12 @@ public class Homes implements CommandExecutor {
         Player p = (Player) sender;
         
         if (cmd.getName().equalsIgnoreCase("homes")) {
-            switch (args.length) {
-                case 0:
-                    InventoryManager.homeinventory(p, Bukkit.getPlayer(args[0]));
-                    return false;
-                default:
-                    p.sendMessage(ConfigManager.HomeInvalidArgument);
+            if (args.length != 0) {
+                p.sendMessage(ConfigManager.HomeInvalidArgument);
+                return false;
             }
+
+            InventoryManager.homeinventory(p, Bukkit.getPlayer(args[0]));
         }
         return false;
     }

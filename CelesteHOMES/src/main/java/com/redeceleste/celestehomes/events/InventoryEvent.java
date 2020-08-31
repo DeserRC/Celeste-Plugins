@@ -4,7 +4,7 @@ import com.redeceleste.celestehomes.Main;
 import com.redeceleste.celestehomes.managers.ConfigManager;
 import com.redeceleste.celestehomes.managers.HomeManager;
 import com.redeceleste.celestehomes.models.InventoryArgument;
-import com.redeceleste.celestehomes.models.impls.User;
+import com.redeceleste.celestehomes.models.UserArgument;
 import com.redeceleste.celestehomes.models.impls.UserBuilder;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -18,7 +18,7 @@ public class InventoryEvent implements Listener {
     public void onInventoryClick(InventoryClickEvent e) {
         if (e.getInventory().getTitle().contains(ConfigManager.TitleGUI.replace("%player%", p.getName()))) {
             try {
-                User user = (User) Main.getInstance().getDAO().cache.get(p.getName());
+                UserArgument user = Main.getInstance().getDAO().cache.get(p.getName());
                 for (InventoryArgument ai : ConfigManager.Template) {
                     for (UserBuilder userBuilder : user.getHomes().values()) {
                         if (e.getCurrentItem().getItemMeta().getDisplayName().equals(ai.getName().replace("%number%", String.valueOf(userBuilder.getNumber())).replace("%home%", userBuilder.getHome()))) {
@@ -29,7 +29,7 @@ public class InventoryEvent implements Listener {
                         }
                     }
                 }
-            }catch (Exception ignored) {
+            } catch (Exception ignored) {
             }
             e.setCancelled(true);
         }

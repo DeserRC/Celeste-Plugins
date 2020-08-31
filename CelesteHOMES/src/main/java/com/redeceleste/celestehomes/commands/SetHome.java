@@ -15,35 +15,39 @@ public class SetHome implements CommandExecutor {
         Player p = (Player) sender;
 
         if (cmd.getName().equalsIgnoreCase("sethome")) {
-            switch (args.length) {
-                case 1:
-                    if (ConfigManager.BlackList.contains(p.getWorld().getName())) {
-                        if (args[0].length() > Integer.parseInt(ConfigManager.MinimumCharactersHome)) {
-                            String pn = PermissionManager.getPermission(p);
-                            if (p.hasPermission(ConfigManager.Permission + pn)) {
-                                if (PermissionManager.remainingHomes(p, Integer.parseInt(pn)) > 0) {
-                                    if (!HomeManager.isHome(p, args[0])) {
-                                        HomeManager.setHome(p, args[0]);
-                                        p.sendMessage(ConfigManager.HomeSucessCreate);
-                                    } else {
-                                        p.sendMessage(ConfigManager.ContainsHome);
-                                    }
-                                } else {
-                                    p.sendMessage(ConfigManager.HomeLimitReached);
-                                }
-                            } else {
-                                p.sendMessage(ConfigManager.NoPermission);
-                            }
-                        } else {
-                            p.sendMessage(ConfigManager.FewCharacters);
-                        }
-                    } else {
-                        p.sendMessage(ConfigManager.BlackListWorldMessage);
-                    }
-                    return false;
-                default:
-                    p.sendMessage(ConfigManager.SetHomeArgumentsInvalid);
+            if (args.length != 1) {
+                p.sendMessage(ConfigManager.SetHomeArgumentsInvalid);
+                return false;
             }
+
+            if (!ConfigManager.BlackList.contains(p.getWorld().getName())) {
+                p.sendMessage(ConfigManager.BlackListWorldMessage);
+                return false;
+            }
+
+            if (args[0].length() < Integer.parseInt(ConfigManager.MinimumCharactersHome)) {
+                p.sendMessage(ConfigManager.FewCharacters);
+                return false;
+            }
+
+            String pn = PermissionManager.getPermission(p);
+            if (!p.hasPermission(ConfigManager.Permission + pn)) {
+                p.sendMessage(ConfigManager.NoPermission);
+                return false;
+            }
+
+            if (PermissionManager.remainingHomes(p, Integer.parseInt(pn)) <= 0) {
+                p.sendMessage(ConfigManager.HomeLimitReached);
+                return false;
+            }
+
+            if (HomeManager.isHome(p, args[0])) {
+                p.sendMessage(ConfigManager.ContainsHome);
+                return false;
+            }
+            
+            HomeManager.setHome(p, args[0]);
+            p.sendMessage(ConfigManager.HomeSucessCreate);
         }
         return false;
     }

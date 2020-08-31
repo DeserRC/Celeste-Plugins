@@ -61,7 +61,7 @@ public class Main extends JavaPlugin{
     }
 
     //Load all Database in HashMAP
-    public void loadAll(){
+    public void loadAll() {
         for (UserArgument userArgument : DAO.getAll()){
             if (!Purge(getServer().getOfflinePlayer(userArgument.getName()))) {
                 DAO.cache.put(userArgument.getName(), userArgument);
@@ -71,7 +71,7 @@ public class Main extends JavaPlugin{
         }
     }
 
-    public Boolean Purge(OfflinePlayer p) {
+    private Boolean Purge(OfflinePlayer p) {
         return p.getLastPlayed() >= System.currentTimeMillis() + TimeUnit.DAYS.toMillis(Long.parseLong(ConfigManager.Purge));
     }
 }
