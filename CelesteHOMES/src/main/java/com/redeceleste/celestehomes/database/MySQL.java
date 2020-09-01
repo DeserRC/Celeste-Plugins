@@ -53,7 +53,11 @@ public class MySQL {
     }
 
     public Boolean isConnect() {
-        return connection == null;
+        try {
+            return !connection.isClosed();
+        } catch (Exception ignored) {
+            return false;
+        }
     }
 
     public Connection getConnection() {

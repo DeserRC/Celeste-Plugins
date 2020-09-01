@@ -19,8 +19,8 @@ public class DAO {
 
     public Boolean isExists(String key) {
         boolean result = false;
-        try (Connection connection = Main.getInstance().getMySql().getConnection()) {
-            PreparedStatement stm = connection.prepareStatement("SELECT * FROM `homes` WHERE `key` = ?");
+        try {
+            PreparedStatement stm = Main.getInstance().getMySql().getConnection().prepareStatement("SELECT * FROM `homes` WHERE `key` = ?");
             stm.setString(1, key);
             result = stm.executeQuery().next();
             stm.close();
@@ -31,13 +31,14 @@ public class DAO {
 
     public HashSet<UserArgument> getAll() {
         HashSet<UserArgument> userArguments = new HashSet<>();
-        try (Connection connection = Main.getInstance().getMySql().getConnection()) {
-            PreparedStatement stm = connection.prepareStatement("SELECT * FROM `homes`");
+        try {
+            PreparedStatement stm = Main.getInstance().getMySql().getConnection().prepareStatement("SELECT * FROM `homes`");
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 String json = rs.getString("json");
                 userArguments.add(gson.fromJson(json, User.class));
             }
+            rs.close();
             stm.close();
         } catch (SQLException ignored) {
         }
@@ -46,14 +47,15 @@ public class DAO {
 
     public UserArgument getArgument(String key, Class<? extends UserArgument> clazz) {
         UserArgument userArgument = null;
-        try (Connection connection = Main.getInstance().getMySql().getConnection()) {
-            PreparedStatement stm = connection.prepareStatement("SELECT * FROM `homes` WHERE `key` = ?");
+        try {
+            PreparedStatement stm = Main.getInstance().getMySql().getConnection().prepareStatement("SELECT * FROM `homes` WHERE `key` = ?");
             ResultSet rs = stm.executeQuery();
             stm.setString(1, key);
             if (rs.next()) {
                 String json = rs.getString("json");
                 userArgument = gson.fromJson(json, clazz);
             }
+            rs.close();
             stm.close();
         } catch (Exception ignored) {
         }
@@ -61,13 +63,13 @@ public class DAO {
     }
 
     public void insert(final UserArgument p) {
-        if (Main.getInstance().getMySql().isConnect()) {
+        if (!Main.getInstance().getMySql().isConnect()) {
             Main.getInstance().openSQL();
         }
 
-        try (Connection connection = Main.getInstance().getMySql().getConnection()) {
+        try {
             String json = gson.toJson(p);
-            PreparedStatement stm = connection.prepareStatement("INSERT INTO `homes`(`key`, `json`) VALUES (?,?) ON DUPLICATE KEY UPDATE `json` = '<json>'".replace("<json>", json));
+            PreparedStatement stm = Main.getInstance().getMySql().getConnection().prepareStatement("INSERT INTO `homes`(`key`, `json`) VALUES (?,?) ON DUPLICATE KEY UPDATE `json` = '<json>'".replace("<json>", json));
             stm.setString(1, p.getName());
             stm.setString(2, json);
             stm.executeUpdate();
@@ -78,8 +80,8 @@ public class DAO {
     }
 
     public void delete(String key) {
-        try (Connection connection = Main.getInstance().getMySql().getConnection()) {
-            PreparedStatement stm = connection.prepareStatement("DELETE FROM `homes` WHERE `key` = ?");
+        try {
+            PreparedStatement stm = Main.getInstance().getMySql().getConnection().prepareStatement("DELETE FROM `homes` WHERE `key` = ?");
             stm.setString(1, key);
             stm.executeUpdate();
             stm.close();
