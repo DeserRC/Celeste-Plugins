@@ -6,10 +6,6 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class AutoSave {
     public static void save() {
-        if (Main.getInstance().getMySql().isConnect()) {
-            Main.getInstance().openSQL();
-        }
-
         for (UserArgument userArgument : Main.getInstance().getDAO().cache.values()) {
             if (Main.getInstance().update.contains(userArgument.getName())) {
                 Main.getInstance().getDAO().insert(userArgument);

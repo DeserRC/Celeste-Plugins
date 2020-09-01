@@ -1,14 +1,13 @@
 package com.redeceleste.celestehomes.models.impls;
 
 public class UserBuilder {
-
     private Integer number;
-    private String loc, name;
+    private String location, home;
 
     public UserBuilder(Integer number, String loc, String home) {
         this.number = number;
-        this.loc = loc;
-        this.name = home;
+        this.location = loc;
+        this.home = home;
     }
 
     public Integer getNumber() {
@@ -16,15 +15,15 @@ public class UserBuilder {
     }
 
     public String getLocation() {
-        return loc;
+        return location;
     }
 
     public String getHome() {
-        return name;
+        return home;
     }
 
     @Override
     public String toString() {
-        return "{" + "number=" + number + ",homes{" + ",Home=" + name + ",Location=" + loc + "}}";
+        return "{" + "number=" + number + ",homes{" + ",Home=" + home + ",Location=" + location + "}}";
     }
 }

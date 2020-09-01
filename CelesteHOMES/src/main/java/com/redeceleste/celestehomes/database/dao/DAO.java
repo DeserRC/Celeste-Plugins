@@ -61,6 +61,10 @@ public class DAO {
     }
 
     public void insert(final UserArgument p) {
+        if (Main.getInstance().getMySql().isConnect()) {
+            Main.getInstance().openSQL();
+        }
+
         try (Connection connection = Main.getInstance().getMySql().getConnection()) {
             String json = gson.toJson(p);
             PreparedStatement stm = connection.prepareStatement("INSERT INTO `homes`(`key`, `json`) VALUES (?,?) ON DUPLICATE KEY UPDATE `json` = '<json>'".replace("<json>", json));

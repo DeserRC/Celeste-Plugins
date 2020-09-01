@@ -102,6 +102,6 @@ public class ConfigManager {
         lore = getList("Inventory.HomeTemplate.Lore").stream().map(lore -> ChatColor.translateAlternateColorCodes('&', lore)).collect(Collectors.toList());
         en = getList("Inventory.HomeTemplate.Enchantment");
 
-        Template.add(new Inventory(name, material, data, glow, lore, en));
+        Template.add(new Inventory(name, material, data, null, null, glow, lore, en));
     }
 }
