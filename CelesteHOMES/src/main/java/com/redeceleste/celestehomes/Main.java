@@ -3,7 +3,7 @@ package com.redeceleste.celestehomes;
 import com.redeceleste.celestehomes.commands.*;
 import com.redeceleste.celestehomes.database.AutoSave;
 import com.redeceleste.celestehomes.database.MySQL;
-import com.redeceleste.celestehomes.database.dao.DAO;
+import com.redeceleste.celestehomes.dao.UserDAO;
 import com.redeceleste.celestehomes.events.InventoryEvent;
 import com.redeceleste.celestehomes.managers.ConfigManager;
 import com.redeceleste.celestehomes.models.UserArgument;
@@ -21,7 +21,7 @@ public class Main extends JavaPlugin{
     @Getter
     private static Main instance;
     private MySQL mySQL;
-    private DAO DAO = new DAO();
+    private UserDAO UserDAO = new UserDAO();
     public ArrayList<String> update = new ArrayList<>();
 
     @Override
@@ -52,11 +52,11 @@ public class Main extends JavaPlugin{
 
     //Load all Database in HashMAP
     public void loadAll() {
-        for (UserArgument userArgument : DAO.getAll()){
+        for (UserArgument userArgument : UserDAO.getAll()){
             if (!Purge(getServer().getOfflinePlayer(userArgument.getName()))) {
-                DAO.cache.put(userArgument.getName(), userArgument);
+                UserDAO.cache.put(userArgument.getName(), userArgument);
             } else {
-                getDAO().delete(userArgument.getName());
+                this.getUserDAO().delete(userArgument.getName());
             }
         }
     }

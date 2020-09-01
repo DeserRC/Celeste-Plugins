@@ -18,7 +18,7 @@ public class InventoryEvent implements Listener {
     public void onInventoryClick(InventoryClickEvent e) {
         if (e.getInventory().getTitle().contains(ConfigManager.TitleGUI.replace("%player%", p.getName()))) {
             try {
-                UserArgument user = Main.getInstance().getDAO().cache.get(p.getName());
+                UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
                 for (InventoryArgument ai : ConfigManager.Template) {
                     for (UserBuilder userBuilder : user.getHomes().values()) {
                         if (e.getCurrentItem().getItemMeta().getDisplayName().equals(ai.getName().replace("%number%", String.valueOf(userBuilder.getNumber())).replace("%home%", userBuilder.getHome()))) {

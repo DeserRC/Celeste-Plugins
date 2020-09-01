@@ -14,7 +14,7 @@ import java.util.List;
 public class HomeManager {
     public static Boolean isHome(Player p, String name) {
         try {
-            UserArgument user = Main.getInstance().getDAO().cache.get(p.getName());
+            UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
             return user.getHomes().containsKey(name);
         } catch (Exception e) {
             return false;
@@ -24,7 +24,7 @@ public class HomeManager {
     public static Integer isNumber(Player p) {
         List<Integer> list = new ArrayList<>();
         try {
-            UserArgument user = Main.getInstance().getDAO().cache.get(p.getName());
+            UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
             for (UserBuilder userBuilder : user.getHomes().values()) {
                 list.add(userBuilder.getNumber());
             }
@@ -42,7 +42,7 @@ public class HomeManager {
 
     public static String numberHome(Player p, String name) {
         try {
-            UserArgument user = Main.getInstance().getDAO().cache.get(p.getName());
+            UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
             return user.getHomes().get(name).getNumber().toString();
         } catch (Exception e) {
             return null;
@@ -50,7 +50,7 @@ public class HomeManager {
     }
 
     public static void homeTeleport(Player p, String name) {
-        UserArgument user = Main.getInstance().getDAO().cache.get(p.getName());
+        UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
         TeleportManager.teleportPlayer(p, user.getHomes().get(name).getLocation(), name);
     }
 
@@ -59,17 +59,17 @@ public class HomeManager {
             Main.getInstance().update.add(p.getName());
         }
 
-        if (!Main.getInstance().getDAO().cache.containsKey(p.getName())) {
-            Main.getInstance().getDAO().cache.put(p.getName(), new User(p.getName(), new HashMap<>()));
+        if (!Main.getInstance().getUserDAO().cache.containsKey(p.getName())) {
+            Main.getInstance().getUserDAO().cache.put(p.getName(), new User(p.getName(), new HashMap<>()));
         }
 
-        UserArgument user = Main.getInstance().getDAO().cache.get(p.getName());
+        UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
         UserBuilder userBuilder = new UserBuilder(isNumber(p), LocationSerialize.serialize(p.getLocation()), name);
         user.getHomes().put(name, userBuilder);
     }
 
     public static void delHome(Player p, String name) {
-        UserArgument user = Main.getInstance().getDAO().cache.get(p.getName());
+        UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
         user.getHomes().remove(name);
     }
 }

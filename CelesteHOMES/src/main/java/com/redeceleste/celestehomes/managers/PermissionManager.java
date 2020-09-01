@@ -29,7 +29,7 @@ public class PermissionManager {
 
     public static Integer getAmountHomes(Player p) {
         try {
-            return Main.getInstance().getDAO().cache.get(p.getName()).getHomes().size();
+            return Main.getInstance().getUserDAO().cache.get(p.getName()).getHomes().size();
         } catch (Exception e) {
             return 0;
         }
@@ -37,7 +37,7 @@ public class PermissionManager {
 
     public static Integer remainingHomes(Player p, Integer i) {
         try {
-            return i-Main.getInstance().getDAO().cache.get(p.getName()).getHomes().size();
+            return i-Main.getInstance().getUserDAO().cache.get(p.getName()).getHomes().size();
         } catch (Exception e) {
             return i;
         }

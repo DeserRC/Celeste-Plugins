@@ -1,4 +1,4 @@
-package com.redeceleste.celestehomes.database.dao;
+package com.redeceleste.celestehomes.dao;
 
 import com.google.gson.Gson;
 import com.redeceleste.celestehomes.Main;
@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class DAO {
+public class UserDAO {
 
     private final Gson gson = new Gson();
     public final HashMap<String, UserArgument> cache = new HashMap<>();

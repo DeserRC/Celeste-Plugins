@@ -39,7 +39,7 @@ public class InventoryManager {
         }
 
         try {
-            UserArgument user = Main.getInstance().getDAO().cache.get(p.getName());
+            UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
             for (InventoryArgument ai : ConfigManager.Template) {
                 for (UserBuilder userBuilder : user.getHomes().values()) {
                     Collections.replaceAll(ai.getLore(), "%number%", String.valueOf(userBuilder.getNumber()));
