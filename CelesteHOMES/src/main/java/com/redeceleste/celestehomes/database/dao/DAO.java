@@ -3,9 +3,7 @@ package com.redeceleste.celestehomes.database.dao;
 import com.google.gson.Gson;
 import com.redeceleste.celestehomes.Main;
 import com.redeceleste.celestehomes.models.UserArgument;
-import com.redeceleste.celestehomes.models.impls.User;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,7 +18,7 @@ public class DAO {
     public Boolean isExists(String key) {
         boolean result = false;
         try {
-            PreparedStatement stm = Main.getInstance().getMySql().getConnection().prepareStatement("SELECT * FROM `homes` WHERE `key` = ?");
+            PreparedStatement stm = Main.getInstance().getMySQL().getConnection().prepareStatement("SELECT * FROM `homes` WHERE `key` = ?");
             stm.setString(1, key);
             result = stm.executeQuery().next();
             stm.close();
@@ -32,11 +30,11 @@ public class DAO {
     public HashSet<UserArgument> getAll() {
         HashSet<UserArgument> userArguments = new HashSet<>();
         try {
-            PreparedStatement stm = Main.getInstance().getMySql().getConnection().prepareStatement("SELECT * FROM `homes`");
+            PreparedStatement stm = Main.getInstance().getMySQL().getConnection().prepareStatement("SELECT * FROM `homes`");
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 String json = rs.getString("json");
-                userArguments.add(gson.fromJson(json, User.class));
+                userArguments.add(gson.fromJson(json, UserArgument.class));
             }
             rs.close();
             stm.close();
@@ -48,7 +46,7 @@ public class DAO {
     public UserArgument getArgument(String key, Class<? extends UserArgument> clazz) {
         UserArgument userArgument = null;
         try {
-            PreparedStatement stm = Main.getInstance().getMySql().getConnection().prepareStatement("SELECT * FROM `homes` WHERE `key` = ?");
+            PreparedStatement stm = Main.getInstance().getMySQL().getConnection().prepareStatement("SELECT * FROM `homes` WHERE `key` = ?");
             ResultSet rs = stm.executeQuery();
             stm.setString(1, key);
             if (rs.next()) {
@@ -63,13 +61,13 @@ public class DAO {
     }
 
     public void insert(final UserArgument p) {
-        if (!Main.getInstance().getMySql().isConnect()) {
+        if (!Main.getInstance().getMySQL().isConnect()) {
             Main.getInstance().openSQL();
         }
 
         try {
             String json = gson.toJson(p);
-            PreparedStatement stm = Main.getInstance().getMySql().getConnection().prepareStatement("INSERT INTO `homes`(`key`, `json`) VALUES (?,?) ON DUPLICATE KEY UPDATE `json` = '<json>'".replace("<json>", json));
+            PreparedStatement stm = Main.getInstance().getMySQL().getConnection().prepareStatement("INSERT INTO `homes`(`key`, `json`) VALUES (?,?) ON DUPLICATE KEY UPDATE `json` = '<json>'".replace("<json>", json));
             stm.setString(1, p.getName());
             stm.setString(2, json);
             stm.executeUpdate();
@@ -81,7 +79,7 @@ public class DAO {
 
     public void delete(String key) {
         try {
-            PreparedStatement stm = Main.getInstance().getMySql().getConnection().prepareStatement("DELETE FROM `homes` WHERE `key` = ?");
+            PreparedStatement stm = Main.getInstance().getMySQL().getConnection().prepareStatement("DELETE FROM `homes` WHERE `key` = ?");
             stm.setString(1, key);
             stm.executeUpdate();
             stm.close();

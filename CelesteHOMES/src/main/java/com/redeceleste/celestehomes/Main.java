@@ -7,6 +7,7 @@ import com.redeceleste.celestehomes.database.dao.DAO;
 import com.redeceleste.celestehomes.events.InventoryEvent;
 import com.redeceleste.celestehomes.managers.ConfigManager;
 import com.redeceleste.celestehomes.models.UserArgument;
+import lombok.Getter;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -14,8 +15,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
+@Getter
 public class Main extends JavaPlugin{
 
+    @Getter
     private static Main instance;
     private MySQL mySQL;
     private DAO DAO = new DAO();
@@ -43,21 +46,8 @@ public class Main extends JavaPlugin{
         HandlerList.unregisterAll(this);
     }
 
-    //Get Main Methods
-    public static Main getInstance() {
-        return instance;
-    }
-
     public void openSQL() {
         mySQL = new MySQL(getConfig().getString("MySQL.Host"), getConfig().getString("MySQL.User"),getConfig().getString("MySQL.DataBase"), getConfig().getString("MySQL.Password"));
-    }
-
-    public MySQL getMySql() {
-        return mySQL;
-    }
-
-    public DAO getDAO() {
-        return DAO;
     }
 
     //Load all Database in HashMAP

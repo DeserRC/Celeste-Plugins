@@ -1,14 +1,15 @@
 package com.redeceleste.celestehomes.managers;
 
 import com.redeceleste.celestehomes.Main;
-import com.redeceleste.celestehomes.events.TeleportEvent;
 import com.redeceleste.celestehomes.utils.ActionBar;
+import com.redeceleste.celestehomes.utils.LocationSerialize;
 import com.redeceleste.celestehomes.utils.SendTitle;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 public class TeleportManager {
     public static HashMap<Player, Long> cd = new HashMap<>();
@@ -17,7 +18,7 @@ public class TeleportManager {
 
     public static void teleportPlayer(Player p, String loc, String name) {
         if (PermissionManager.hasDelayOtherTeleportBypass(p)) {
-            TeleportEvent.teleport(p, name, loc);
+            teleport(p, name, loc);
             return;
         }
 
@@ -31,7 +32,7 @@ public class TeleportManager {
         }
 
         if (PermissionManager.hasDelayBypass(p)) {
-            TeleportEvent.teleport(p, name, loc);
+            teleport(p, name, loc);
             return;
         } else {
             delay = Integer.parseInt(ConfigManager.Delay);
@@ -42,7 +43,7 @@ public class TeleportManager {
             @Override
             public void run() {
                 if (delay == 0) {
-                    TeleportEvent.teleport(p, name, loc);
+                    teleport(p, name, loc);
                     this.cancel();
                 } else {
                     SendTitle.sendFullTitle(p, 2,2,2, ConfigManager.MessageWaitingTeleportTitle.replace("%delay%", String.valueOf(delay)), ConfigManager.MessageWaitingTeleportSubTitle.replace("%delay%", String.valueOf(delay)));
@@ -57,5 +58,12 @@ public class TeleportManager {
                 }
             }
         }.runTaskTimerAsynchronously(Main.getInstance(), 0L, 20L);
+    }
+
+    private static void teleport(Player p, String name, String loc) {
+        TeleportManager.cd.put(p, System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(10));
+        p.teleport(LocationSerialize.deserialize(loc));
+        p.playSound(p.getLocation(), ConfigManager.SoundSucessTeleport, 1, 1);
+        SendTitle.sendFullTitle(p, 2,2,2, ConfigManager.MessageSucessTeleportTitle.replace("%home%", name).replace("%number%", HomeManager.numberHome(p, name)), ConfigManager.MessageSucessTeleportSubTitle.replace("%home%", name).replace("%number%", HomeManager.numberHome(p, name)));
     }
 }

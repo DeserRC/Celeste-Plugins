@@ -4,7 +4,6 @@ import com.redeceleste.celestehomes.Main;
 import com.redeceleste.celestehomes.events.InventoryEvent;
 import com.redeceleste.celestehomes.models.InventoryArgument;
 import com.redeceleste.celestehomes.models.UserArgument;
-import com.redeceleste.celestehomes.models.impls.User;
 import com.redeceleste.celestehomes.models.impls.UserBuilder;
 import com.redeceleste.celestehomes.utils.ItemBuilder;
 import org.bukkit.Bukkit;

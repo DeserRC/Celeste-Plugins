@@ -6,10 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import com.redeceleste.celestehomes.Main;
+import lombok.Getter;
 import org.bukkit.Bukkit;
 
 public class MySQL {
 
+    @Getter
     private Connection connection;
     private final String host, database, user, password;
 
@@ -58,9 +60,5 @@ public class MySQL {
         } catch (Exception ignored) {
             return false;
         }
-    }
-
-    public Connection getConnection() {
-        return connection;
     }
 }
