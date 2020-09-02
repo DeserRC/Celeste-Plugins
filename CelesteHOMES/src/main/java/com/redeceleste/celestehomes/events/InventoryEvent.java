@@ -5,18 +5,25 @@ import com.redeceleste.celestehomes.managers.ConfigManager;
 import com.redeceleste.celestehomes.managers.HomeManager;
 import com.redeceleste.celestehomes.models.InventoryArgument;
 import com.redeceleste.celestehomes.models.UserArgument;
-import com.redeceleste.celestehomes.models.impls.UserBuilder;
+import com.redeceleste.celestehomes.builder.UserBuilder;
+import lombok.NonNull;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.Inventory;
 
 public class InventoryEvent implements Listener {
-    public static Player p;
+    public static Player p = null;
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
-        if (e.getInventory().getTitle().contains(ConfigManager.TitleGUI.replace("%player%", p.getName()))) {
+        Inventory inventory = e.getClickedInventory();
+        if (inventory == null) return;
+        if (p == null) return;
+
+        if (inventory.getTitle().contains(ConfigManager.TitleGUI.replace("%player%", p.getName()))) {
             try {
                 UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
                 for (InventoryArgument ai : ConfigManager.Template) {
