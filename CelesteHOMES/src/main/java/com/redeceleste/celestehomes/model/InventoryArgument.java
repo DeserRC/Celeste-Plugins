@@ -1,4 +1,4 @@
-package com.redeceleste.celestehomes.models;
+package com.redeceleste.celestehomes.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

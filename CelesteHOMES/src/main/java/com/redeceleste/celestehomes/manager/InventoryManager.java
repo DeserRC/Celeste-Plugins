@@ -1,13 +1,12 @@
-package com.redeceleste.celestehomes.managers;
+package com.redeceleste.celestehomes.manager;
 
 import com.redeceleste.celestehomes.Main;
-import com.redeceleste.celestehomes.events.InventoryEvent;
-import com.redeceleste.celestehomes.models.InventoryArgument;
-import com.redeceleste.celestehomes.models.UserArgument;
-import com.redeceleste.celestehomes.models.impls.UserBuilder;
-import com.redeceleste.celestehomes.utils.ItemBuilder;
+import com.redeceleste.celestehomes.event.InventoryEvent;
+import com.redeceleste.celestehomes.model.InventoryArgument;
+import com.redeceleste.celestehomes.model.UserArgument;
+import com.redeceleste.celestehomes.builder.UserBuilder;
+import com.redeceleste.celestehomes.builder.ItemBuilder;
 import org.bukkit.Bukkit;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -32,7 +31,7 @@ public class InventoryManager {
 
             for (String enchant : ai.getEnchantament()) {
                 String[] split = enchant.split(":");
-                item.addUnsafeEnchantment(Enchantment.getByName(ItemBuilder.serializeEnchant(split[0])), Integer.parseInt(split[1]));
+                item.addUnsafeEnchantment(ItemBuilder.serializeEnchant(split[0]), Integer.parseInt(split[1]));
             }
             slot.add(ai.getSlot());
             inv.setItem(ai.getSlot(), item);
@@ -49,7 +48,7 @@ public class InventoryManager {
 
                     for (String enchant : ai.getEnchantament()) {
                         String[] split = enchant.split(":");
-                        item.addUnsafeEnchantment(Enchantment.getByName(ItemBuilder.serializeEnchant(split[0])), Integer.parseInt(split[1]));
+                        item.addUnsafeEnchantment(ItemBuilder.serializeEnchant(split[0]), Integer.parseInt(split[1]));
                     }
                     inv.setItem(slotEmpty(inv, userBuilder.getNumber()), item);
                 }

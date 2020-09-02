@@ -2,7 +2,8 @@ package com.redeceleste.celestehomes.dao;
 
 import com.google.gson.Gson;
 import com.redeceleste.celestehomes.Main;
-import com.redeceleste.celestehomes.models.UserArgument;
+import com.redeceleste.celestehomes.model.UserArgument;
+import com.redeceleste.celestehomes.model.impls.User;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +12,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class UserDAO {
-
     private final Gson gson = new Gson();
     public final HashMap<String, UserArgument> cache = new HashMap<>();
 
@@ -34,7 +34,7 @@ public class UserDAO {
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 String json = rs.getString("json");
-                userArguments.add(gson.fromJson(json, UserArgument.class));
+                userArguments.add(gson.fromJson(json, User.class));
             }
             rs.close();
             stm.close();
@@ -60,7 +60,7 @@ public class UserDAO {
         return userArgument;
     }
 
-    public void insert(final UserArgument p) {
+    public void insert(UserArgument p) {
         if (!Main.getInstance().getMySQL().isConnect()) {
             Main.getInstance().openSQL();
         }

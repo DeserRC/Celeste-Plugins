@@ -10,7 +10,6 @@ import lombok.Getter;
 import org.bukkit.Bukkit;
 
 public class MySQL {
-
     @Getter
     private Connection connection;
     private final String host, database, user, password;

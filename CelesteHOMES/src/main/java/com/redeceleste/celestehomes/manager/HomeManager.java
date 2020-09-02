@@ -1,10 +1,10 @@
-package com.redeceleste.celestehomes.managers;
+package com.redeceleste.celestehomes.manager;
 
 import com.redeceleste.celestehomes.Main;
-import com.redeceleste.celestehomes.models.UserArgument;
-import com.redeceleste.celestehomes.models.impls.User;
-import com.redeceleste.celestehomes.models.impls.UserBuilder;
-import com.redeceleste.celestehomes.utils.LocationSerialize;
+import com.redeceleste.celestehomes.model.UserArgument;
+import com.redeceleste.celestehomes.model.impls.User;
+import com.redeceleste.celestehomes.builder.UserBuilder;
+import com.redeceleste.celestehomes.builder.LocationBuilder;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -64,7 +64,7 @@ public class HomeManager {
         }
 
         UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
-        UserBuilder userBuilder = new UserBuilder(isNumber(p), LocationSerialize.serialize(p.getLocation()), name);
+        UserBuilder userBuilder = new UserBuilder(isNumber(p), LocationBuilder.serialize(p.getLocation()), name);
         user.getHomes().put(name, userBuilder);
     }
 

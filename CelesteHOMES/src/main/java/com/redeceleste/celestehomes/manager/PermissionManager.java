@@ -1,4 +1,4 @@
-package com.redeceleste.celestehomes.managers;
+package com.redeceleste.celestehomes.manager;
 
 import com.redeceleste.celestehomes.Main;
 import org.bukkit.entity.Player;

@@ -1,6 +1,6 @@
-package com.redeceleste.celestehomes.models;
+package com.redeceleste.celestehomes.model;
 
-import com.redeceleste.celestehomes.models.impls.UserBuilder;
+import com.redeceleste.celestehomes.builder.UserBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

@@ -1,12 +1,11 @@
-package com.redeceleste.celestehomes.utils;
+package com.redeceleste.celestehomes.builder;
 
 import java.util.StringJoiner;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
-public class LocationSerialize {
-
+public class LocationBuilder {
     public static String serialize(Location location) {
         StringJoiner sj = new StringJoiner(";");
         sj.add(location.getWorld().getName());

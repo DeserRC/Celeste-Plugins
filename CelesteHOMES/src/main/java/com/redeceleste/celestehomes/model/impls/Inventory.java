@@ -1,6 +1,6 @@
-package com.redeceleste.celestehomes.models.impls;
+package com.redeceleste.celestehomes.model.impls;
 
-import com.redeceleste.celestehomes.models.InventoryArgument;
+import com.redeceleste.celestehomes.model.InventoryArgument;
 import org.bukkit.Material;
 
 import java.util.List;

@@ -1,12 +1,12 @@
 package com.redeceleste.celestehomes;
 
-import com.redeceleste.celestehomes.commands.*;
+import com.redeceleste.celestehomes.command.impls.*;
 import com.redeceleste.celestehomes.database.AutoSave;
 import com.redeceleste.celestehomes.database.MySQL;
 import com.redeceleste.celestehomes.dao.UserDAO;
-import com.redeceleste.celestehomes.events.InventoryEvent;
-import com.redeceleste.celestehomes.managers.ConfigManager;
-import com.redeceleste.celestehomes.models.UserArgument;
+import com.redeceleste.celestehomes.event.InventoryEvent;
+import com.redeceleste.celestehomes.manager.ConfigManager;
+import com.redeceleste.celestehomes.model.UserArgument;
 import lombok.Getter;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.HandlerList;
@@ -28,12 +28,12 @@ public class Main extends JavaPlugin{
     public void onEnable() {
         saveDefaultConfig();
         instance = this;
-        getServer().getPluginManager().registerEvents(new InventoryEvent(), this);
-        getCommand("sethome").setExecutor(new SetHome());
-        getCommand("delhome").setExecutor(new DelHome());
-        getCommand("home").setExecutor(new Home());
-        getCommand("homes").setExecutor(new Homes());
-        getCommand("ahome").setExecutor(new AHome());
+        new InventoryEvent();
+        new SetHomeCommand();
+        new DelHomeCommand();
+        new HomeCommand();
+        new HomesCommand();
+        new AHomeCommand();
         openSQL();
         ConfigManager.loadMessage();
         AutoSave.saveLooping();

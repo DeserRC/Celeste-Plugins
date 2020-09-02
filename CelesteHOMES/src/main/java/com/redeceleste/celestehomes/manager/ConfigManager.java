@@ -1,9 +1,8 @@
-package com.redeceleste.celestehomes.managers;
+package com.redeceleste.celestehomes.manager;
 
 import com.redeceleste.celestehomes.Main;
-import com.redeceleste.celestehomes.models.InventoryArgument;
-import com.redeceleste.celestehomes.models.impls.Inventory;
-import jdk.nashorn.internal.objects.annotations.Getter;
+import com.redeceleste.celestehomes.model.InventoryArgument;
+import com.redeceleste.celestehomes.model.impls.Inventory;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
@@ -93,7 +92,7 @@ public class ConfigManager {
         }
     }
 
-    //Get Home Templates
+    //Get HomeCommand Templates
     private static void getTemplate() {
         Material material = Material.valueOf(get("Inventory.HomeTemplate.Material"));
         Integer data = Integer.valueOf(get("Inventory.HomeTemplate.Data"));

@@ -1,6 +1,7 @@
-package com.redeceleste.celestehomes.models.impls;
+package com.redeceleste.celestehomes.model.impls;
 
-import com.redeceleste.celestehomes.models.UserArgument;
+import com.redeceleste.celestehomes.builder.UserBuilder;
+import com.redeceleste.celestehomes.model.UserArgument;
 
 import java.util.HashMap;
 

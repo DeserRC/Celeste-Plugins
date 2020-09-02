@@ -1,13 +1,11 @@
-package com.redeceleste.celestehomes.events;
+package com.redeceleste.celestehomes.event;
 
 import com.redeceleste.celestehomes.Main;
-import com.redeceleste.celestehomes.managers.ConfigManager;
-import com.redeceleste.celestehomes.managers.HomeManager;
-import com.redeceleste.celestehomes.models.InventoryArgument;
-import com.redeceleste.celestehomes.models.UserArgument;
+import com.redeceleste.celestehomes.manager.ConfigManager;
+import com.redeceleste.celestehomes.manager.HomeManager;
+import com.redeceleste.celestehomes.model.InventoryArgument;
+import com.redeceleste.celestehomes.model.UserArgument;
 import com.redeceleste.celestehomes.builder.UserBuilder;
-import lombok.NonNull;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,6 +14,10 @@ import org.bukkit.inventory.Inventory;
 
 public class InventoryEvent implements Listener {
     public static Player p = null;
+
+    public InventoryEvent() {
+        Main.getInstance().getServer().getPluginManager().registerEvents(this, Main.getInstance());
+    }
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
