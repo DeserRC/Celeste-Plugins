@@ -15,6 +15,12 @@ public class AHomeCommand extends CreateCommand {
 
     @Override
     public boolean execute(CommandSender sender, String s, String[] args) {
+        if (!(sender instanceof Player)) {
+            ConfigManager.loadMessage();
+            System.out.print("Config reloaded");
+            return false;
+        }
+
         Player p = (Player) sender;
 
         if (!PermissionManager.hasAdmin(p)) {
