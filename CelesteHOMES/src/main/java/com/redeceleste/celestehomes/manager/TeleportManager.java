@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 public class TeleportManager {
     public static HashMap<String, Long> cd = new HashMap<>();
@@ -24,12 +25,10 @@ public class TeleportManager {
 
         if (cd.containsKey(p.getName())) {
             if (cd.get(p.getName()) >= System.currentTimeMillis()) {
-                System.out.print("A" + cd.get(p.getName()));
                 ActionBarUtil.sendMessage(p, ConfigManager.DelayFromOtherTeleportMessage
-                        .replace("%%delay%", String.valueOf(cd.get(p.getName()) - System.currentTimeMillis())));
+                        .replace("%delay%", String.valueOf(TimeUnit.MILLISECONDS.toSeconds(cd.get(p.getName())) - TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()))));
                 return;
             } else {
-                System.out.print("B");
                 cd.remove(p.getName());
             }
         }
@@ -45,11 +44,9 @@ public class TeleportManager {
         new BukkitRunnable() {
             @Override
             public void run() {
-                System.out.print(delay);
                 if (delay == 0) {
                     TeleportEvent.teleport(p, name, loc);
                     cancel();
-                    return;
                 } else {
                     TitleUtil.sendTitle(p, ConfigManager.MessageWaitingTeleportTitle
                             .replace("%delay%", String.valueOf(delay)), ConfigManager.MessageWaitingTeleportSubTitle

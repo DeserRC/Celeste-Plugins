@@ -38,7 +38,7 @@ Message:
   #Home
   HomeInvalidArgument: "&3CelesteHomes &7Invalid arguments."
   HomeNotFound: "&3CelesteHomes &7You don't have a Home with that name."
-  DelayMessage: "&3CelesteHomes &7Wait &f%delay% seconds &7to run this command again."
+  DelayMessage: "&7Wait &f%delay% seconds &7to run this command again."
   #AHome
   PlayerNotFound: "&3CelesteHomes &7Player Not Found."
   #Teleport

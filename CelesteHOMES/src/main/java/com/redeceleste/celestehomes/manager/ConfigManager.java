@@ -53,8 +53,8 @@ public class ConfigManager {
         DelayFromOtherTeleportMessage = get("Message.DelayMessage");
         PlayerNotFound = get("Message.PlayerNotFound");
 
-        MessageWaitingTeleportTitle = get("Message.MessageSucessTeleport.Title");
-        MessageWaitingTeleportSubTitle = get("Message.MessageSucessTeleport.SubTitle");
+        MessageWaitingTeleportTitle = get("Message.MessageWaitingTeleport.Title");
+        MessageWaitingTeleportSubTitle = get("Message.MessageWaitingTeleport.SubTitle");
         MessageSucessTeleportTitle = get("Message.MessageSucessTeleport.Title");
         MessageSucessTeleportSubTitle = get("Message.MessageSucessTeleport.SubTitle");
         MessageCancelTeleportTitle = get("Message.MessageCancelTeleport.Title");
