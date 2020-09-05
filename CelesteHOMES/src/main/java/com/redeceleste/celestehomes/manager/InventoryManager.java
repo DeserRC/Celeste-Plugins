@@ -1,7 +1,7 @@
 package com.redeceleste.celestehomes.manager;
 
 import com.redeceleste.celestehomes.Main;
-import com.redeceleste.celestehomes.listener.InventoryListener;
+import com.redeceleste.celestehomes.builder.InventoryBuilder;
 import com.redeceleste.celestehomes.model.InventoryArgument;
 import com.redeceleste.celestehomes.model.UserArgument;
 import com.redeceleste.celestehomes.builder.UserBuilder;
@@ -19,8 +19,7 @@ public class InventoryManager {
     private static List<Integer> slot = new ArrayList<>();
 
     public static void homeinventory(Player p, Player t) {
-        Inventory inv = Bukkit.createInventory(null, 54, ConfigManager.TitleGUI.replace("%player%", p.getName()));
-        InventoryListener.p = p;
+        Inventory inv = Bukkit.createInventory(new InventoryBuilder(p), 54, ConfigManager.TitleGUI.replace("%player%", p.getName()));
 
         for (InventoryArgument ai : ConfigManager.Itens) {
             Collections.replaceAll(ai.getLore(), "%player%", p.getName());
