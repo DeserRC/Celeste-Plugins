@@ -22,7 +22,7 @@ public class HomesCommand extends CreateCommand {
             return false;
         }
 
-        InventoryManager.homeinventory(p, Bukkit.getPlayer(args[0]));
+        InventoryManager.homeinventory(p, p);
         return false;
     }
 }
