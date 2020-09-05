@@ -1,13 +1,13 @@
 package com.redeceleste.celestehomes.command.impls;
 
-import com.redeceleste.celestehomes.command.Command;
+import com.redeceleste.celestehomes.command.CreateCommand;
 import com.redeceleste.celestehomes.manager.ConfigManager;
 import com.redeceleste.celestehomes.manager.InventoryManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class HomesCommand extends Command {
+public class HomesCommand extends CreateCommand {
 
     public HomesCommand() {
         super("homes");

@@ -1,13 +1,13 @@
 package com.redeceleste.celestehomes.command.impls;
 
-import com.redeceleste.celestehomes.command.Command;
+import com.redeceleste.celestehomes.command.CreateCommand;
 import com.redeceleste.celestehomes.manager.HomeManager;
 import com.redeceleste.celestehomes.manager.ConfigManager;
 import com.redeceleste.celestehomes.manager.PermissionManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class SetHomeCommand extends Command {
+public class SetHomeCommand extends CreateCommand {
 
     public SetHomeCommand() {
         super("sethome","setarhome");
@@ -33,7 +33,7 @@ public class SetHomeCommand extends Command {
         }
 
         String pn = PermissionManager.getPermission(p);
-        if (!p.hasPermission(ConfigManager.Permission + pn)) {
+        if (pn.equals("0") || !p.hasPermission(ConfigManager.Permission + pn)) {
             p.sendMessage(ConfigManager.NoPermission);
             return false;
         }

@@ -43,7 +43,7 @@ public class UserDAO {
         return userArguments;
     }
 
-    public UserArgument getArgument(String key, Class<? extends UserArgument> clazz) {
+    public UserArgument getArgument(String key) {
         UserArgument userArgument = null;
         try {
             PreparedStatement stm = Main.getInstance().getMySQL().getConnection().prepareStatement("SELECT * FROM `homes` WHERE `key` = ?");
@@ -51,7 +51,7 @@ public class UserDAO {
             stm.setString(1, key);
             if (rs.next()) {
                 String json = rs.getString("json");
-                userArgument = gson.fromJson(json, clazz);
+                userArgument = gson.fromJson(json, User.class);
             }
             rs.close();
             stm.close();
@@ -60,15 +60,15 @@ public class UserDAO {
         return userArgument;
     }
 
-    public void insert(UserArgument p) {
+    public void insert(UserArgument userArgument) {
         if (!Main.getInstance().getMySQL().isConnect()) {
             Main.getInstance().openSQL();
         }
 
         try {
-            String json = gson.toJson(p);
+            String json = gson.toJson(userArgument);
             PreparedStatement stm = Main.getInstance().getMySQL().getConnection().prepareStatement("INSERT INTO `homes`(`key`, `json`) VALUES (?,?) ON DUPLICATE KEY UPDATE `json` = '<json>'".replace("<json>", json));
-            stm.setString(1, p.getName());
+            stm.setString(1, userArgument.getPlayer());
             stm.setString(2, json);
             stm.executeUpdate();
             stm.close();

@@ -7,8 +7,8 @@ import org.bukkit.command.defaults.BukkitCommand;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 
-public abstract class Command extends BukkitCommand {
-    public Command(String cmd, String... alias) {
+public abstract class CreateCommand extends BukkitCommand {
+    public CreateCommand(String cmd, String... alias) {
         super(cmd);
         setAliases(Arrays.asList(alias));
 

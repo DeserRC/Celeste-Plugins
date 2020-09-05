@@ -1,12 +1,12 @@
 package com.redeceleste.celestehomes.command.impls;
 
-import com.redeceleste.celestehomes.command.Command;
+import com.redeceleste.celestehomes.command.CreateCommand;
 import com.redeceleste.celestehomes.manager.HomeManager;
 import com.redeceleste.celestehomes.manager.ConfigManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class DelHomeCommand extends Command {
+public class DelHomeCommand extends CreateCommand {
     public DelHomeCommand() {
         super("delhome", "deletehome", "deletarhome");
     }

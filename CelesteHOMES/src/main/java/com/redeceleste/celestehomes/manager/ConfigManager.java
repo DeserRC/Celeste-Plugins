@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ConfigManager {
-    public static String Permission, NoPermission, Reload, MinimumCharactersHome, Delay, DelayFromOtherTeleport, Purge;
+    public static String Permission, NoPermission, Reload, MinimumCharactersHome, Delay, DelayFromOtherTeleport, PurgeTime, PurgeUse;
     public static String SetHomeArgumentsInvalid, BlackListWorldMessage, HomeLimitReached, FewCharacters, ContainsHome, HomeSucessCreate;
     public static String DelHomeArgumentsInvalid, DelHomeNotFound, HomeSucessDeleted;
     public static String HomeNotFound, HomeInvalidArgument, DelayFromOtherTeleportMessage, PlayerNotFound, MessageWaitingTeleportTitle, MessageWaitingTeleportSubTitle, MessageSucessTeleportTitle, MessageSucessTeleportSubTitle, MessageCancelTeleportTitle, MessageCancelTeleportSubTitle;
@@ -34,7 +34,8 @@ public class ConfigManager {
         MinimumCharactersHome = get("MinimumCharactersHome");
         Delay = get("Delay");
         DelayFromOtherTeleport = get("DelayFromOtherTeleport");
-        Purge = get("Purge");
+        PurgeTime = get("Purge.Time");
+        PurgeUse = get("Purge.Use");
 
         SetHomeArgumentsInvalid = get("Message.SetHomeArgumentsInvalid");
         BlackListWorldMessage = get("Message.BlackListWorldMessage");
@@ -92,7 +93,7 @@ public class ConfigManager {
         }
     }
 
-    //Get HomeCommand Templates
+    //Get Home Templates
     private static void getTemplate() {
         Material material = Material.valueOf(get("Inventory.HomeTemplate.Material"));
         Integer data = Integer.valueOf(get("Inventory.HomeTemplate.Data"));

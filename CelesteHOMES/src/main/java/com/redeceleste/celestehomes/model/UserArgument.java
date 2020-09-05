@@ -9,6 +9,6 @@ import java.util.HashMap;
 @AllArgsConstructor
 @Getter
 public abstract class UserArgument {
-    private String name;
+    private String player;
     private HashMap<String, UserBuilder> homes;
 }

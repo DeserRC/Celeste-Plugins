@@ -1,12 +1,13 @@
 package com.redeceleste.celestehomes;
 
 import com.redeceleste.celestehomes.command.impls.*;
-import com.redeceleste.celestehomes.database.AutoSave;
+import com.redeceleste.celestehomes.command.impls.admin.AHomeCommand;
 import com.redeceleste.celestehomes.database.MySQL;
 import com.redeceleste.celestehomes.dao.UserDAO;
-import com.redeceleste.celestehomes.event.InventoryEvent;
+import com.redeceleste.celestehomes.listener.InventoryListener;
 import com.redeceleste.celestehomes.manager.ConfigManager;
 import com.redeceleste.celestehomes.model.UserArgument;
+import com.redeceleste.celestehomes.runnable.SaveTask;
 import lombok.Getter;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.HandlerList;
@@ -28,21 +29,21 @@ public class Main extends JavaPlugin{
     public void onEnable() {
         saveDefaultConfig();
         instance = this;
-        new InventoryEvent();
+        new InventoryListener();
         new SetHomeCommand();
         new DelHomeCommand();
         new HomeCommand();
         new HomesCommand();
         new AHomeCommand();
+        new SaveTask();
         openSQL();
         ConfigManager.loadMessage();
-        AutoSave.saveLooping();
         loadAll();
     }
 
     @Override
     public void onDisable() {
-        AutoSave.save();
+        SaveTask.save();
         HandlerList.unregisterAll(this);
     }
 
@@ -52,17 +53,17 @@ public class Main extends JavaPlugin{
 
     //Load all Database in HashMAP
     public void loadAll() {
-        for (UserArgument userArgument : UserDAO.getAll()){
-            if (!Purge(getServer().getOfflinePlayer(userArgument.getName()))) {
-                UserDAO.cache.put(userArgument.getName(), userArgument);
+        for (UserArgument userArgument : UserDAO.getAll()) {
+            if (!Purge(getServer().getOfflinePlayer(userArgument.getPlayer()))) {
+                UserDAO.cache.put(userArgument.getPlayer(), userArgument);
             } else {
-                this.getUserDAO().delete(userArgument.getName());
+                getUserDAO().delete(userArgument.getPlayer());
             }
         }
     }
 
     private Boolean Purge(OfflinePlayer p) {
-        return p.getLastPlayed() >= System.currentTimeMillis() + TimeUnit.DAYS.toMillis(Long.parseLong(ConfigManager.Purge));
+        return p.getLastPlayed() >= System.currentTimeMillis() + TimeUnit.DAYS.toMillis(Long.parseLong(ConfigManager.PurgeTime));
     }
 }
 

@@ -1,7 +1,7 @@
 package com.redeceleste.celestehomes.manager;
 
 import com.redeceleste.celestehomes.Main;
-import com.redeceleste.celestehomes.event.InventoryEvent;
+import com.redeceleste.celestehomes.listener.InventoryListener;
 import com.redeceleste.celestehomes.model.InventoryArgument;
 import com.redeceleste.celestehomes.model.UserArgument;
 import com.redeceleste.celestehomes.builder.UserBuilder;
@@ -20,14 +20,19 @@ public class InventoryManager {
 
     public static void homeinventory(Player p, Player t) {
         Inventory inv = Bukkit.createInventory(null, 54, ConfigManager.TitleGUI.replace("%player%", p.getName()));
-        InventoryEvent.p = p;
+        InventoryListener.p = p;
 
         for (InventoryArgument ai : ConfigManager.Itens) {
             Collections.replaceAll(ai.getLore(), "%player%", p.getName());
             Collections.replaceAll(ai.getLore(), "%amounthomes%", String.valueOf(PermissionManager.getAmountHomes(p)));
             Collections.replaceAll(ai.getLore(), "%maxhomes%", PermissionManager.getPermission(p));
 
-            ItemStack item = new ItemBuilder(ai.getMaterial(), ai.getAmount()).setData(ai.getData()).setName(ai.getName().replace("%player%", p.getName()).replace("%amounthomes%", String.valueOf(PermissionManager.getAmountHomes(p))).replace("%maxhomes%", PermissionManager.getPermission(p))).setLore(ai.getLore()).setGlow(ai.getGlow()).toItemStack();
+            ItemStack item = new ItemBuilder(ai.getMaterial(), ai.getAmount()).setData(ai.getData())
+                    .setName(ai.getName()
+                            .replace("%player%", p.getName())
+                            .replace("%amounthomes%", String.valueOf(PermissionManager.getAmountHomes(p)))
+                            .replace("%maxhomes%", PermissionManager.getPermission(p)))
+                    .setLore(ai.getLore()).setGlow(ai.getGlow()).toItemStack();
 
             for (String enchant : ai.getEnchantament()) {
                 String[] split = enchant.split(":");
@@ -44,7 +49,7 @@ public class InventoryManager {
                     Collections.replaceAll(ai.getLore(), "%number%", String.valueOf(userBuilder.getNumber()));
                     Collections.replaceAll(ai.getLore(), "%home%", ai.getName());
 
-                    ItemStack item = new ItemBuilder(ai.getMaterial()).setData(ai.getData()).setName(ai.getName().replace("%number%", String.valueOf(userBuilder.getNumber())).replace("%home%", userBuilder.getHome())).setLore(ai.getLore()).setGlow(ai.getGlow()).toItemStack();
+                    ItemStack item = new ItemBuilder(ai.getMaterial()).setData(ai.getData()).setName(ai.getName().replace("%number%", String.valueOf(userBuilder.getNumber())).replace("%home%", userBuilder.getName())).setLore(ai.getLore()).setGlow(ai.getGlow()).toItemStack();
 
                     for (String enchant : ai.getEnchantament()) {
                         String[] split = enchant.split(":");

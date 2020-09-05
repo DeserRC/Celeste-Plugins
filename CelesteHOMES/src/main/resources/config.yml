@@ -1,5 +1,5 @@
 #Permissions:
-# Clhome.(Number) = HomesCommand Limit
+# Clhome.(Number) = Homes Limit
 # Clhome.admin = All Permissions
 # Clhome.bypass = Bypass Delay Teleport
 # Clhome.otherteleportbypass = Bypass Cooldown Teleport
@@ -19,25 +19,27 @@ Reload: "&3CelesteHome &7Config reloaded."
 MinimumCharactersHome: "3"
 Delay: "3" #in seconds
 DelayFromOtherTeleport: "3" #in seconds
-Purge: "30" #in days
+Purge:
+  Use: "True"
+  Time: "30" #in days
 
 Message:
-  #SetHomeCommand
+  #SetHome
   SetHomeArgumentsInvalid: "&3CelesteHomes &7Invalid arguments."
   BlackListWorldMessage: "&3CelesteHomes &7Isn't possible to set a home in this world."
-  HomeLimitReached: "&3CelesteHomes &7You already have the maximum number of HomesCommand."
-  FewCharacters: "&3CelesteHomes &7Your HomeCommand must be longer than 3 characters."
+  HomeLimitReached: "&3CelesteHomes &7You already have the maximum number of Homes."
+  FewCharacters: "&3CelesteHomes &7Your Home must be longer than 3 characters."
   ContainsHome: "&3CelesteHomes &7You already have a home with that name."
   HomeSucessCreate: "&3CelesteHomes &7Home set successfully."
-  #DelHomeCommand
+  #DelHome
   DelHomeArgumentsInvalid: "&3CelesteHomes &7Invalid arguments."
-  DelHomeNotFound: "&3CelesteHomes &7You don't have a HomeCommand with that name."
+  DelHomeNotFound: "&3CelesteHomes &7You don't have a Home with that name."
   HomeSucessDeleted: "&3CelesteHomes &7Home successfully deleted."
-  #HomeCommand
+  #Home
   HomeInvalidArgument: "&3CelesteHomes &7Invalid arguments."
-  HomeNotFound: "&3CelesteHomes &7You don't have a HomeCommand with that name."
+  HomeNotFound: "&3CelesteHomes &7You don't have a Home with that name."
   DelayMessage: "&3CelesteHomes &7Wait &f%delay% seconds &7to run this command again."
-  #AHomeCommand
+  #AHome
   PlayerNotFound: "&3CelesteHomes &7Player Not Found."
   #Teleport
   MessageWaitingTeleport:
@@ -54,10 +56,10 @@ Sounds: #All MineCraft Sounds - https://helpch.at/docs/1.8.8/index.html?org/bukk
   SoundSucessTeleport: "ENDERMAN_TELEPORT"
   SoundCancelTeleport: "VILLAGER_NO"
 
-Inventory: #HomeCommand - GUI
-  Title: "&7All HomesCommand - %player%"
+Inventory: #Home  - GUI
+  Title: "&7All Homes - %player%"
   HomeTemplate:
-    Name: "HomesCommand #%number% - %home%"
+    Name: "Homes #%number% - %home%"
     Material: "DARK_OAK_DOOR_ITEM"
     Data: "0"
     Glow: "True"
@@ -71,7 +73,7 @@ Inventory: #HomeCommand - GUI
       Amount: "1"
       Material: "EMERALD"
       Data: "0"
-      Name: "HomesCommand Of %player% - %amounthomes%/%maxhomes%"
+      Name: "Homes Of %player% - %amounthomes%/%maxhomes%"
       Glow: "True"
       Lore:
         - "%player%"

@@ -1,4 +1,4 @@
-package com.redeceleste.celestehomes.event;
+package com.redeceleste.celestehomes.listener;
 
 import com.redeceleste.celestehomes.Main;
 import com.redeceleste.celestehomes.manager.ConfigManager;
@@ -12,10 +12,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 
-public class InventoryEvent implements Listener {
+public class InventoryListener implements Listener {
     public static Player p = null;
 
-    public InventoryEvent() {
+    public InventoryListener() {
         Main.getInstance().getServer().getPluginManager().registerEvents(this, Main.getInstance());
     }
 
@@ -30,10 +30,10 @@ public class InventoryEvent implements Listener {
                 UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
                 for (InventoryArgument ai : ConfigManager.Template) {
                     for (UserBuilder userBuilder : user.getHomes().values()) {
-                        if (e.getCurrentItem().getItemMeta().getDisplayName().equals(ai.getName().replace("%number%", String.valueOf(userBuilder.getNumber())).replace("%home%", userBuilder.getHome()))) {
+                        if (e.getCurrentItem().getItemMeta().getDisplayName().equals(ai.getName().replace("%number%", String.valueOf(userBuilder.getNumber())).replace("%home%", userBuilder.getName()))) {
                             e.setCancelled(true);
                             p.closeInventory();
-                            HomeManager.homeTeleport(p, userBuilder.getHome());
+                            HomeManager.homeTeleport(p, userBuilder.getName());
                             return;
                         }
                     }

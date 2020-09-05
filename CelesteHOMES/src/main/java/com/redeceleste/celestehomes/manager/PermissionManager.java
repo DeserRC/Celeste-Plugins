@@ -12,7 +12,7 @@ public class PermissionManager {
                 return String.valueOf(n);
             }
         }
-        return null;
+        return "0";
     }
 
     public static Boolean hasAdmin(Player p) {

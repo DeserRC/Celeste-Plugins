@@ -15,7 +15,7 @@ public class HomeManager {
     public static Boolean isHome(Player p, String name) {
         try {
             UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
-            return user.getHomes().containsKey(name);
+            return user.getHomes().containsKey(name.toLowerCase());
         } catch (Exception e) {
             return false;
         }
@@ -43,7 +43,7 @@ public class HomeManager {
     public static String numberHome(Player p, String name) {
         try {
             UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
-            return user.getHomes().get(name).getNumber().toString();
+            return user.getHomes().get(name.toLowerCase()).getNumber().toString();
         } catch (Exception e) {
             return null;
         }
@@ -51,7 +51,7 @@ public class HomeManager {
 
     public static void homeTeleport(Player p, String name) {
         UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
-        TeleportManager.teleportPlayer(p, user.getHomes().get(name).getLocation(), name);
+        TeleportManager.teleportPlayer(p, user.getHomes().get(name.toLowerCase()).getLocation(), user.getHomes().get(name.toLowerCase()).getName());
     }
 
     public static void setHome(Player p, String name) {
@@ -65,11 +65,11 @@ public class HomeManager {
 
         UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
         UserBuilder userBuilder = new UserBuilder(isNumber(p), LocationBuilder.serialize(p.getLocation()), name);
-        user.getHomes().put(name, userBuilder);
+        user.getHomes().put(name.toLowerCase(), userBuilder);
     }
 
     public static void delHome(Player p, String name) {
         UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
-        user.getHomes().remove(name);
+        user.getHomes().remove(name.toLowerCase());
     }
 }
