@@ -3,27 +3,27 @@ package com.redeceleste.celestehomes.manager;
 import com.redeceleste.celestehomes.Main;
 import com.redeceleste.celestehomes.model.InventoryArgument;
 import com.redeceleste.celestehomes.model.impls.Inventory;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ConfigManager {
-    public static String Permission, NoPermission, Reload, MinimumCharactersHome, Delay, DelayFromOtherTeleport, PurgeTime, PurgeUse;
+    public static String Permission, NoPermission, Reload, MinimumCharactersHome, Delay, DelayFromOtherTeleport;
     public static String SetHomeArgumentsInvalid, BlackListWorldMessage, HomeLimitReached, FewCharacters, ContainsHome, HomeSucessCreate;
     public static String DelHomeArgumentsInvalid, DelHomeNotFound, HomeSucessDeleted;
     public static String HomeNotFound, HomeInvalidArgument, DelayFromOtherTeleportMessage, PlayerNotFound, MessageWaitingTeleportTitle, MessageWaitingTeleportSubTitle, MessageSucessTeleportTitle, MessageSucessTeleportSubTitle, MessageCancelTeleportTitle, MessageCancelTeleportSubTitle;
     public static String SoundWaitingTeleport, SoundSucessTeleport, SoundCancelTeleport;
     public static String TitleGUI;
-    public static List<InventoryArgument> Itens = new ArrayList<>();
-    public static List<InventoryArgument> Template = new ArrayList<>();
+    public static HashSet<InventoryArgument> Itens = new HashSet<>();
+    public static HashSet<InventoryArgument> Template = new HashSet<>();
     public static List<String> BlackList = new ArrayList<>();
 
     private static List<String> lore, en = new ArrayList<>();
-    private static final Plugin pl = Main.getPlugin(Main.class);
 
     public static void loadMessage() {
         BlackList = getList("BlackListWorld");
@@ -34,9 +34,7 @@ public class ConfigManager {
         MinimumCharactersHome = get("MinimumCharactersHome");
         Delay = get("Delay");
         DelayFromOtherTeleport = get("DelayFromOtherTeleport");
-        PurgeTime = get("Purge.Time");
-        PurgeUse = get("Purge.Use");
-
+        
         SetHomeArgumentsInvalid = get("Message.SetHomeArgumentsInvalid");
         BlackListWorldMessage = get("Message.BlackListWorldMessage");
         HomeLimitReached = get("Message.HomeLimitReached");
@@ -71,11 +69,11 @@ public class ConfigManager {
     }
 
     private static String get(String path) {
-        return pl.getConfig().getString(path, ChatColor.DARK_RED + "There was an error loading the message: " + ChatColor.YELLOW + path).replace('&', '\u00A7');
+        return Main.getInstance().getConfig().getString(path, ChatColor.DARK_RED + "There was an error loading the message: " + ChatColor.YELLOW + path).replace('&', '\u00A7');
     }
 
     private static List<String> getList(String path) {
-        return pl.getConfig().getStringList(path);
+        return Main.getInstance().getConfig().getStringList(path).stream().map(lore -> ChatColor.translateAlternateColorCodes('&', lore)).collect(Collectors.toList());
     }
 
     //Get Custom Itens
@@ -87,8 +85,10 @@ public class ConfigManager {
             Integer data = Integer.valueOf(get("Inventory.CustomInventory." + menu + ".Data"));
             String name = get("Inventory.CustomInventory." + menu + ".Name").replace("&", "§");
             Boolean glow = Boolean.parseBoolean(get("Inventory.CustomInventory." + menu + ".Glow"));
-            lore = Main.getInstance().getConfig().getConfigurationSection("Inventory.CustomInventory.").getStringList(menu + ".Lore").stream().map(lore -> ChatColor.translateAlternateColorCodes('&', lore)).collect(Collectors.toList());
-            en = Main.getInstance().getConfig().getConfigurationSection("Inventory.CustomInventory.").getStringList(menu + ".Enchantment");
+
+            lore = getList("Inventory.CustomInventory." + menu + ".Lore");
+            en = getList("Inventory.CustomInventory." + menu + ".Enchantment");
+
             Itens.add(new Inventory(name, material, data, slot, amount, glow, lore, en));
         }
     }
@@ -99,7 +99,7 @@ public class ConfigManager {
         Integer data = Integer.valueOf(get("Inventory.HomeTemplate.Data"));
         String name = get("Inventory.HomeTemplate.Name");
         Boolean glow = Boolean.parseBoolean(get("Inventory.HomeTemplate.Glow"));
-        lore = getList("Inventory.HomeTemplate.Lore").stream().map(lore -> ChatColor.translateAlternateColorCodes('&', lore)).collect(Collectors.toList());
+        lore = getList("Inventory.HomeTemplate.Lore");
         en = getList("Inventory.HomeTemplate.Enchantment");
 
         Template.add(new Inventory(name, material, data, null, null, glow, lore, en));

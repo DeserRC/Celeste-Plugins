@@ -7,7 +7,6 @@ import com.redeceleste.celestehomes.model.impls.User;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -22,8 +21,7 @@ public class UserDAO {
             stm.setString(1, key);
             result = stm.executeQuery().next();
             stm.close();
-        } catch (Exception ignored) {
-        }
+        } catch (Exception ignored) { }
         return result;
     }
 
@@ -38,8 +36,7 @@ public class UserDAO {
             }
             rs.close();
             stm.close();
-        } catch (SQLException ignored) {
-        }
+        } catch (Exception ignored) { }
         return userArguments;
     }
 
@@ -47,22 +44,21 @@ public class UserDAO {
         UserArgument userArgument = null;
         try {
             PreparedStatement stm = Main.getInstance().getMySQL().getConnection().prepareStatement("SELECT * FROM `homes` WHERE `key` = ?");
-            ResultSet rs = stm.executeQuery();
             stm.setString(1, key);
+            ResultSet rs = stm.executeQuery();
             if (rs.next()) {
                 String json = rs.getString("json");
                 userArgument = gson.fromJson(json, User.class);
             }
             rs.close();
             stm.close();
-        } catch (Exception ignored) {
-        }
+        } catch (Exception ignored) { }
         return userArgument;
     }
 
     public void insert(UserArgument userArgument) {
         if (!Main.getInstance().getMySQL().isConnect()) {
-            Main.getInstance().openSQL();
+            Main.getInstance().getMySQL().openConnection();
         }
 
         try {

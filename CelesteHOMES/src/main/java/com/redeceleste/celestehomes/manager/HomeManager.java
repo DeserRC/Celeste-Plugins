@@ -35,8 +35,7 @@ public class HomeManager {
                 }
             }
 
-        } catch (Exception ignored) {
-        }
+        } catch (Exception ignored) { }
         return 1;
     }
 
@@ -51,7 +50,7 @@ public class HomeManager {
 
     public static void homeTeleport(Player p, String name) {
         UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
-        TeleportManager.teleportPlayer(p, user.getHomes().get(name.toLowerCase()).getLocation(), user.getHomes().get(name.toLowerCase()).getName());
+        TeleportManager.teleportPlayer(p, user.getHomes().get(name.toLowerCase()).getName(), user.getHomes().get(name.toLowerCase()).getLocation());
     }
 
     public static void setHome(Player p, String name) {

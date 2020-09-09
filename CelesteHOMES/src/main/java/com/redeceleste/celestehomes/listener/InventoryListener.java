@@ -40,8 +40,7 @@ public class InventoryListener implements Listener {
                         }
                     }
                 }
-            } catch (Exception ignored) {
-            }
+            } catch (Exception ignored) { }
             e.setCancelled(true);
         }
     }

@@ -17,7 +17,6 @@ public abstract class CreateCommand extends BukkitCommand {
             commandMap.setAccessible(true);
             CommandMap cm = (CommandMap) commandMap.get(Bukkit.getServer());
             cm.register(cmd, this);
-        } catch (Exception ignored) {
-        }
+        } catch (Exception ignored) { }
     }
 }

@@ -33,7 +33,7 @@ public class SetHomeCommand extends CreateCommand {
         }
 
         String pn = PermissionManager.getPermission(p);
-        if (pn.equals("0") || !p.hasPermission(ConfigManager.Permission + pn)) {
+        if (pn.equals("0")) {
             p.sendMessage(ConfigManager.NoPermission);
             return false;
         }

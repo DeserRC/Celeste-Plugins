@@ -5,15 +5,18 @@ import com.redeceleste.celestehomes.command.impls.admin.AHomeCommand;
 import com.redeceleste.celestehomes.database.MySQL;
 import com.redeceleste.celestehomes.dao.UserDAO;
 import com.redeceleste.celestehomes.listener.InventoryListener;
+import com.redeceleste.celestehomes.listener.UserListener;
 import com.redeceleste.celestehomes.manager.ConfigManager;
 import com.redeceleste.celestehomes.model.UserArgument;
-import com.redeceleste.celestehomes.runnable.SaveTask;
+import com.redeceleste.celestehomes.task.UserUpdateTask;
 import lombok.Getter;
+import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 
 @Getter
@@ -23,47 +26,55 @@ public class Main extends JavaPlugin{
     private static Main instance;
     private MySQL mySQL;
     private UserDAO UserDAO = new UserDAO();
-    public ArrayList<String> update = new ArrayList<>();
+    public HashSet<String> update = new HashSet<>();
 
     @Override
     public void onEnable() {
-        saveDefaultConfig();
         instance = this;
+        saveDefaultConfig();
+        openSQL();
+        load();
+        purge();
+        new UserListener();
         new InventoryListener();
         new SetHomeCommand();
         new DelHomeCommand();
         new HomeCommand();
         new HomesCommand();
         new AHomeCommand();
-        new SaveTask();
-        openSQL();
+        new UserUpdateTask();
         ConfigManager.loadMessage();
-        loadAll();
     }
 
     @Override
     public void onDisable() {
-        SaveTask.save();
+        UserUpdateTask.update();
         HandlerList.unregisterAll(this);
     }
 
-    public void openSQL() {
-        mySQL = new MySQL(getConfig().getString("MySQL.Host"), getConfig().getString("MySQL.User"),getConfig().getString("MySQL.DataBase"), getConfig().getString("MySQL.Password"));
+    private void openSQL() {
+        mySQL = new MySQL(getConfig().getString("MySQL.Host"), getConfig().getString("MySQL.User"), getConfig().getString("MySQL.DataBase"), getConfig().getString("MySQL.Password"));
     }
 
-    //Load all Database in HashMAP
-    public void loadAll() {
-        for (UserArgument userArgument : UserDAO.getAll()) {
-            if (!Purge(getServer().getOfflinePlayer(userArgument.getPlayer()))) {
-                UserDAO.cache.put(userArgument.getPlayer(), userArgument);
-            } else {
-                getUserDAO().delete(userArgument.getPlayer());
+    private void load() {
+        for (Player p : Bukkit.getOnlinePlayers()) {
+            if (UserDAO.isExists(p.getName())) {
+                UserDAO.cache.put(p.getName(), UserDAO.getArgument(p.getName()));
             }
         }
     }
 
-    private Boolean Purge(OfflinePlayer p) {
-        return p.getLastPlayed() >= System.currentTimeMillis() + TimeUnit.DAYS.toMillis(Long.parseLong(ConfigManager.PurgeTime));
+    private void purge() {
+        if (!Boolean.parseBoolean(getConfig().getString("Purge.Use"))) return;
+
+        long time = Long.parseLong(getConfig().getString("Purge.Time"));
+
+        for (UserArgument userArgument : UserDAO.getAll()) {
+            OfflinePlayer p = getServer().getOfflinePlayer(userArgument.getPlayer());
+            if (p.getLastPlayed() >= System.currentTimeMillis() + TimeUnit.DAYS.toMillis(time)) {
+                UserDAO.delete(userArgument.getPlayer());
+            }
+        }
     }
 }
 

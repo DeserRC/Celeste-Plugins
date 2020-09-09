@@ -14,10 +14,8 @@ import java.util.concurrent.TimeUnit;
 
 public class TeleportManager {
     public static HashMap<String, Long> cd = new HashMap<>();
-    private static Location pos1, pos2;
-    private static Integer delay;
 
-    public static void teleportPlayer(Player p, String loc, String name) {
+    public static void teleportPlayer(Player p, String name, String loc) {
         if (PermissionManager.hasDelayOtherTeleportBypass(p)) {
             TeleportEvent.teleport(p, name, loc);
             return;
@@ -25,42 +23,38 @@ public class TeleportManager {
 
         if (cd.containsKey(p.getName())) {
             if (cd.get(p.getName()) >= System.currentTimeMillis()) {
-                ActionBarUtil.sendMessage(p, ConfigManager.DelayFromOtherTeleportMessage
-                        .replace("%delay%", String.valueOf(TimeUnit.MILLISECONDS.toSeconds(cd.get(p.getName())) - TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()))));
+                ActionBarUtil.sendMessage(p, ConfigManager.DelayFromOtherTeleportMessage.replace("%delay%", String.valueOf(TimeUnit.MILLISECONDS.toSeconds(cd.get(p.getName())) - TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()))));
                 return;
-            } else {
-                cd.remove(p.getName());
             }
+            cd.remove(p.getName());
         }
 
         if (PermissionManager.hasDelayBypass(p)) {
             TeleportEvent.teleport(p, name, loc);
             return;
-        } else {
-            delay = Integer.parseInt(ConfigManager.Delay);
-            pos1 = p.getLocation();
         }
 
         new BukkitRunnable() {
+            Integer delay = Integer.parseInt(ConfigManager.Delay);
+            Location pos1 = p.getLocation();
             @Override
             public void run() {
                 if (delay == 0) {
                     TeleportEvent.teleport(p, name, loc);
                     cancel();
-                } else {
-                    TitleUtil.sendTitle(p, ConfigManager.MessageWaitingTeleportTitle
-                            .replace("%delay%", String.valueOf(delay)), ConfigManager.MessageWaitingTeleportSubTitle
-                            .replace("%delay%", String.valueOf(delay)), 1,1,1);
-                    p.playSound(p.getLocation(), Sound.valueOf(ConfigManager.SoundWaitingTeleport), 1, 1);
-                    delay--;
                 }
-                pos2 = p.getLocation();
+
+                TitleUtil.sendTitle(p, ConfigManager.MessageWaitingTeleportTitle.replace("%delay%", String.valueOf(delay)), ConfigManager.MessageWaitingTeleportSubTitle.replace("%delay%", String.valueOf(delay)), 1,1,1);
+                p.playSound(p.getLocation(), Sound.valueOf(ConfigManager.SoundWaitingTeleport), 1, 1);
+                delay--;
+
+                Location pos2 = p.getLocation();
                 if (pos1.getX() != pos2.getX() || pos1.getY() != pos2.getY() || pos1.getZ() != pos2.getZ() || pos1.getWorld() != pos2.getWorld()) {
                     TitleUtil.sendTitle(p, ConfigManager.MessageCancelTeleportTitle, ConfigManager.MessageCancelTeleportSubTitle,1,1,1);
                     p.playSound(p.getLocation(), Sound.valueOf(ConfigManager.SoundCancelTeleport), 1, 1);
                     cancel();
                 }
             }
-        }.runTaskTimerAsynchronously(Main.getInstance(), 0L, 20L);
+        }.runTaskTimer(Main.getInstance(), 0L, 20L);
     }
 }

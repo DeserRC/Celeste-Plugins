@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 
 public class PermissionManager {
     public static String getPermission(Player p) {
-        if (p.isOp() || p.hasPermission(ConfigManager.Permission + "admin"))
+        if (hasAdmin(p))
             return "54";
         for (int n=54;n>0;n--) {
             if (p.hasPermission(ConfigManager.Permission + n)) {
@@ -16,15 +16,15 @@ public class PermissionManager {
     }
 
     public static Boolean hasAdmin(Player p) {
-        return p.hasPermission(ConfigManager.Permission + "admin");
+        return p.hasPermission(ConfigManager.Permission + "admin") || p.isOp();
     }
 
     public static Boolean hasDelayBypass(Player p) {
-        return p.hasPermission(ConfigManager.Permission + "bypass") || p.hasPermission(ConfigManager.Permission + "admin");
+        return p.hasPermission(ConfigManager.Permission + "bypass") || hasAdmin(p);
     }
 
     public static Boolean hasDelayOtherTeleportBypass(Player p) {
-        return p.hasPermission(ConfigManager.Permission + "otherteleportbypass") || p.hasPermission(ConfigManager.Permission + "admin");
+        return p.hasPermission(ConfigManager.Permission + "otherteleportbypass") || hasAdmin(p);
     }
 
     public static Integer getAmountHomes(Player p) {

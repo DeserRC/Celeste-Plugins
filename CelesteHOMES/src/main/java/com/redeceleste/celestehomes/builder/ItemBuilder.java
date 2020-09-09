@@ -112,7 +112,7 @@ public class ItemBuilder {
             SkullMeta itemMeta = (SkullMeta)itemStack.getItemMeta();
             itemMeta.setOwner(owner);
             itemStack.setItemMeta(itemMeta);
-        } catch(ClassCastException expected){}
+        } catch(Exception expected) { }
         return this;
     }
 
@@ -213,8 +213,7 @@ public class ItemBuilder {
         try {
             LeatherArmorMeta itemMeta = (LeatherArmorMeta) itemStack.getItemMeta();
             itemMeta.setColor(color);
-        } catch(Exception ignored) {
-        }
+        } catch(Exception ignored) { }
         return this;
     }
 

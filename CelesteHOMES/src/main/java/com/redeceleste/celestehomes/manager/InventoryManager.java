@@ -46,7 +46,7 @@ public class InventoryManager {
             for (InventoryArgument ai : ConfigManager.Template) {
                 for (UserBuilder userBuilder : user.getHomes().values()) {
                     Collections.replaceAll(ai.getLore(), "%number%", String.valueOf(userBuilder.getNumber()));
-                    Collections.replaceAll(ai.getLore(), "%home%", ai.getName());
+                    Collections.replaceAll(ai.getLore(), "%home%", userBuilder.getName());
 
                     ItemStack item = new ItemBuilder(ai.getMaterial()).setData(ai.getData()).setName(ai.getName().replace("%number%", String.valueOf(userBuilder.getNumber())).replace("%home%", userBuilder.getName())).setLore(ai.getLore()).setGlow(ai.getGlow()).toItemStack();
 
@@ -57,8 +57,7 @@ public class InventoryManager {
                     inv.setItem(slotEmpty(inv, userBuilder.getNumber()), item);
                 }
             }
-        } catch (Exception ignore) {
-        }
+        } catch (Exception ignore) { }
         t.openInventory(inv);
     }
 
