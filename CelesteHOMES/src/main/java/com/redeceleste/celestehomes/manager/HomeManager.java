@@ -68,6 +68,10 @@ public class HomeManager {
     }
 
     public static void delHome(Player p, String name) {
+        if (!Main.getInstance().update.contains(p.getName())) {
+            Main.getInstance().update.add(p.getName());
+        }
+        
         UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
         user.getHomes().remove(name.toLowerCase());
     }
