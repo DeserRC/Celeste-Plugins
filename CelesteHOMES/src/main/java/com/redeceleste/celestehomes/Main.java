@@ -68,6 +68,7 @@ public class Main extends JavaPlugin {
         });
     }
 
+    @Deprecated
     private void purge() {
         if (!Boolean.parseBoolean(getConfig().getString("Purge.Use"))) return;
 

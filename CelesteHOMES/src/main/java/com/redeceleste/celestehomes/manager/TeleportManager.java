@@ -23,7 +23,8 @@ public class TeleportManager {
 
         if (cd.containsKey(p.getName())) {
             if (cd.get(p.getName()) >= System.currentTimeMillis()) {
-                ActionBarUtil.sendMessage(p, ConfigManager.DelayFromOtherTeleportMessage.replace("%delay%", String.valueOf(TimeUnit.MILLISECONDS.toSeconds(cd.get(p.getName())) - TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()))));
+                ActionBarUtil.sendMessage(p, ConfigManager.DelayFromOtherTeleportMessage
+                        .replace("%delay%", String.valueOf(TimeUnit.MILLISECONDS.toSeconds(cd.get(p.getName())) - TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()))));
                 return;
             }
             cd.remove(p.getName());
@@ -44,7 +45,9 @@ public class TeleportManager {
                     cancel();
                 }
 
-                TitleUtil.sendTitle(p, ConfigManager.MessageWaitingTeleportTitle.replace("%delay%", String.valueOf(delay)), ConfigManager.MessageWaitingTeleportSubTitle.replace("%delay%", String.valueOf(delay)), 1,1,1);
+                TitleUtil.sendTitle(p, ConfigManager.MessageWaitingTeleportTitle
+                        .replace("%delay%", delay.toString()), ConfigManager.MessageWaitingTeleportSubTitle
+                        .replace("%delay%", delay.toString()), 1,1,1);
                 p.playSound(p.getLocation(), Sound.valueOf(ConfigManager.SoundWaitingTeleport), 1, 1);
                 delay--;
 

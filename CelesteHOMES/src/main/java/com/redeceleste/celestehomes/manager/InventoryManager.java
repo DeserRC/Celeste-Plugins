@@ -12,26 +12,27 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class InventoryManager {
     private static List<Integer> slot = new ArrayList<>();
 
     public static void homeinventory(Player p, Player t) {
         Inventory inv = Bukkit.createInventory(new InventoryBuilder(p), 54, ConfigManager.TitleGUI.replace("%player%", p.getName()));
+        String amountHomes = PermissionManager.getAmountHomes(p).toString();
+        String maxhomes = PermissionManager.getPermission(p);
 
         for (InventoryArgument ai : ConfigManager.Itens) {
-            Collections.replaceAll(ai.getLore(), "%player%", p.getName());
-            Collections.replaceAll(ai.getLore(), "%amounthomes%", String.valueOf(PermissionManager.getAmountHomes(p)));
-            Collections.replaceAll(ai.getLore(), "%maxhomes%", PermissionManager.getPermission(p));
+            List<String> replacedLore = ai.getLore().stream().map(s -> s
+                    .replace("%player%", p.getName())
+                    .replace("%amounthomes%", amountHomes)
+                    .replace("maxhomes", maxhomes)).collect(Collectors.toList());
 
-            ItemStack item = new ItemBuilder(ai.getMaterial(), ai.getAmount()).setData(ai.getData())
-                    .setName(ai.getName()
-                            .replace("%player%", p.getName())
-                            .replace("%amounthomes%", String.valueOf(PermissionManager.getAmountHomes(p)))
-                            .replace("%maxhomes%", PermissionManager.getPermission(p)))
-                    .setLore(ai.getLore()).setGlow(ai.getGlow()).toItemStack();
+            ItemStack item = new ItemBuilder(ai.getMaterial(), ai.getAmount()).setData(ai.getData()).setName(ai.getName()
+                    .replace("%player%", p.getName())
+                    .replace("%amounthomes%", PermissionManager.getAmountHomes(p).toString())
+                    .replace("%maxhomes%", PermissionManager.getPermission(p))).setLore(replacedLore).setGlow(ai.getGlow()).toItemStack();
 
             for (String enchant : ai.getEnchantament()) {
                 String[] split = enchant.split(":");
@@ -45,10 +46,13 @@ public class InventoryManager {
             UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
             for (InventoryArgument ai : ConfigManager.Template) {
                 for (UserBuilder userBuilder : user.getHomes().values()) {
-                    Collections.replaceAll(ai.getLore(), "%number%", String.valueOf(userBuilder.getNumber()));
-                    Collections.replaceAll(ai.getLore(), "%home%", userBuilder.getName());
+                    List<String> replacedLore = ai.getLore().stream().map(s -> s
+                            .replace("%number%", userBuilder.getNumber().toString())
+                            .replace("%home%", userBuilder.getName())).collect(Collectors.toList());
 
-                    ItemStack item = new ItemBuilder(ai.getMaterial()).setData(ai.getData()).setName(ai.getName().replace("%number%", String.valueOf(userBuilder.getNumber())).replace("%home%", userBuilder.getName())).setLore(ai.getLore()).setGlow(ai.getGlow()).toItemStack();
+                    ItemStack item = new ItemBuilder(ai.getMaterial()).setData(ai.getData()).setName(ai.getName()
+                            .replace("%number%", userBuilder.getNumber().toString())
+                            .replace("%home%", userBuilder.getName())).setLore(replacedLore).setGlow(ai.getGlow()).toItemStack();
 
                     for (String enchant : ai.getEnchantament()) {
                         String[] split = enchant.split(":");
@@ -67,6 +71,6 @@ public class InventoryManager {
                 return slot+i-1;
             }
         }
-    return null;
+        return null;
     }
 }

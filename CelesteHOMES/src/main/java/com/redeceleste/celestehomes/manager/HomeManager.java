@@ -40,12 +40,8 @@ public class HomeManager {
     }
 
     public static String numberHome(Player p, String name) {
-        try {
-            UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
-            return user.getHomes().get(name.toLowerCase()).getNumber().toString();
-        } catch (Exception e) {
-            return null;
-        }
+        UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
+        return user.getHomes().get(name.toLowerCase()).getNumber().toString();
     }
 
     public static void homeTeleport(Player p, String name) {

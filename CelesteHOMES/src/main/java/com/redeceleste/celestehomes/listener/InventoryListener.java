@@ -32,7 +32,9 @@ public class InventoryListener implements Listener {
                 UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
                 for (InventoryArgument ai : ConfigManager.Template) {
                     for (UserBuilder userBuilder : user.getHomes().values()) {
-                        if (e.getCurrentItem().getItemMeta().getDisplayName().equals(ai.getName().replace("%number%", String.valueOf(userBuilder.getNumber())).replace("%home%", userBuilder.getName()))) {
+                        if (e.getCurrentItem().getItemMeta().getDisplayName().equals(ai.getName()
+                                .replace("%number%", userBuilder.getNumber().toString())
+                                .replace("%home%", userBuilder.getName()))) {
                             e.setCancelled(true);
                             p.closeInventory();
                             HomeManager.homeTeleport(p, userBuilder.getName());
