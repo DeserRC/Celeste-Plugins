@@ -34,7 +34,7 @@ public class TeleportManager {
             return;
         }
 
-        new BukkitRunnable() {
+        Main.getInstance().getExecutorService().scheduleAtFixedRate(new BukkitRunnable() {
             Integer delay = Integer.parseInt(ConfigManager.Delay);
             Location pos1 = p.getLocation();
             @Override
@@ -55,6 +55,6 @@ public class TeleportManager {
                     cancel();
                 }
             }
-        }.runTaskTimer(Main.getInstance(), 0L, 20L);
+        }, 0, 1, TimeUnit.SECONDS);
     }
 }

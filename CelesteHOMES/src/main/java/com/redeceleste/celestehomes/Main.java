@@ -8,7 +8,6 @@ import com.redeceleste.celestehomes.listener.InventoryListener;
 import com.redeceleste.celestehomes.listener.UserListener;
 import com.redeceleste.celestehomes.manager.ConfigManager;
 import com.redeceleste.celestehomes.model.UserArgument;
-import com.redeceleste.celestehomes.task.UserUpdateTask;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -17,15 +16,18 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.HashSet;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 @Getter
-public class Main extends JavaPlugin{
+public class Main extends JavaPlugin {
 
     @Getter
     private static Main instance;
     private MySQL mySQL;
     private UserDAO UserDAO = new UserDAO();
+    private ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
     public HashSet<String> update = new HashSet<>();
 
     @Override
@@ -42,14 +44,13 @@ public class Main extends JavaPlugin{
         new HomeCommand();
         new HomesCommand();
         new AHomeCommand();
-        new UserUpdateTask();
         ConfigManager.loadMessage();
     }
 
     @Override
     public void onDisable() {
-        UserUpdateTask.update();
         HandlerList.unregisterAll(this);
+        executorService.shutdown();
     }
 
     private void openSQL() {
@@ -57,11 +58,14 @@ public class Main extends JavaPlugin{
     }
 
     private void load() {
-        for (Player p : Bukkit.getOnlinePlayers()) {
-            if (UserDAO.isExists(p.getName())) {
-                UserDAO.cache.put(p.getName(), UserDAO.getArgument(p.getName()));
+        executorService.execute(() -> {
+            for (Player p : Bukkit.getOnlinePlayers()) {
+                if (UserDAO.isExists(p.getName())) {
+                    UserArgument userArgument = UserDAO.getArgument(p.getName());
+                    UserDAO.cache.put(userArgument.getPlayer(), userArgument);
+                }
             }
-        }
+        });
     }
 
     private void purge() {
@@ -69,12 +73,14 @@ public class Main extends JavaPlugin{
 
         long time = Long.parseLong(getConfig().getString("Purge.Time"));
 
-        for (UserArgument userArgument : UserDAO.getAll()) {
-            OfflinePlayer p = getServer().getOfflinePlayer(userArgument.getPlayer());
-            if (p.getLastPlayed() >= System.currentTimeMillis() + TimeUnit.DAYS.toMillis(time)) {
-                UserDAO.delete(userArgument.getPlayer());
+        executorService.execute(() -> {
+            for (UserArgument userArgument : UserDAO.getAll()) {
+                OfflinePlayer p = getServer().getOfflinePlayer(userArgument.getPlayer());
+                if (p.getLastPlayed() >= System.currentTimeMillis() + TimeUnit.DAYS.toMillis(time)) {
+                    UserDAO.delete(userArgument.getPlayer());
+                }
             }
-        }
+        });
     }
 }
 

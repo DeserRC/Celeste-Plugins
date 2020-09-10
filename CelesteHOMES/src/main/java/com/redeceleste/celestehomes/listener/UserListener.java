@@ -16,21 +16,24 @@ public class UserListener implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
-
-        if (Main.getInstance().getUserDAO().isExists(p.getName())) {
-            UserArgument userArgument = Main.getInstance().getUserDAO().getArgument(p.getName());
-            Main.getInstance().getUserDAO().cache.put(userArgument.getPlayer(), userArgument);
-        }
+        Main.getInstance().getExecutorService().execute(() -> {
+            if (Main.getInstance().getUserDAO().isExists(p.getName())) {
+                UserArgument userArgument = Main.getInstance().getUserDAO().getArgument(p.getName());
+                Main.getInstance().getUserDAO().cache.put(userArgument.getPlayer(), userArgument);
+            }
+        });
     }
 
     @EventHandler
     public void onQuit(PlayerQuitEvent e) {
         Player p = e.getPlayer();
-
-        try {
-            UserArgument userArgument = Main.getInstance().getUserDAO().cache.get(p.getName());
-            Main.getInstance().getUserDAO().insert(userArgument);
-            Main.getInstance().getUserDAO().cache.remove(userArgument.getPlayer());
-        } catch (Exception ignored) { }
+        Main.getInstance().getExecutorService().execute(() -> {
+            if (Main.getInstance().update.contains(p.getName())) {
+                UserArgument userArgument = Main.getInstance().getUserDAO().cache.get(p.getName());
+                Main.getInstance().getUserDAO().insert(userArgument);
+                Main.getInstance().update.remove(p.getName());
+            }
+            Main.getInstance().getUserDAO().cache.remove(p.getName());
+        });
     }
 }
