@@ -1,9 +1,6 @@
 package com.redeceleste.celestehomes.database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 import com.redeceleste.celestehomes.Main;
 import lombok.Getter;
@@ -43,10 +40,8 @@ public class MySQL {
     }
 
     private void createTables() {
-        try {
-            PreparedStatement stm = connection.prepareStatement("CREATE TABLE IF NOT EXISTS `homes`(`key` VARCHAR(16) NOT NULL, `json` TEXT NOT NULL, PRIMARY KEY (`key`))");
+        try (PreparedStatement stm = connection.prepareStatement("CREATE TABLE IF NOT EXISTS `homes`(`key` VARCHAR(16) NOT NULL, `json` TEXT NOT NULL, PRIMARY KEY (`key`))")) {
             stm.executeUpdate();
-            stm.close();
         } catch (Exception ignored) {
             System.out.print("Can't create table in MySQL.");
             Bukkit.getPluginManager().disablePlugin(Main.getInstance());
