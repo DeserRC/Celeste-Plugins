@@ -38,7 +38,7 @@ Message:
   #Home
   HomeInvalidArgument: "&3CelesteHomes &7Invalid arguments."
   HomeNotFound: "&3CelesteHomes &7You don't have a Home with that name."
-  DelayMessage: "&7Wait &f%delay% seconds &7to run this command again."
+  DelayMessage: "&7Wait &f%delay% seconds &7to run this command again." #ActionBar
   #AHome
   AHomeInvalidArgument: "&3CelesteHomes &7Invalid arguments."
   PlayerNotFound: "&3CelesteHomes &7Player Not Found."
@@ -58,25 +58,25 @@ Sounds: #All MineCraft Sounds - https://helpch.at/docs/1.8.8/index.html?org/bukk
   SoundCancelTeleport: "VILLAGER_NO"
 
 Inventory: #Home  - GUI
-  Title: "&7All Homes - %player%"
+  Title: "&8All Homes - %player%"
   HomeTemplate:
-    Name: "Homes #%number% - %home%"
+    Name: "&3Homes #%number% - %home%"
     Material: "DARK_OAK_DOOR_ITEM"
     Data: "0"
-    Glow: "True"
+    Glow: "false"
     Lore:
-      - ""
-    Enchantment:
-      - "UNBREAKING:10"
+      - "&7Click to be teleported"
+    Enchantment: []
   CustomInventory:
     InfoHomes:
       Slot: "4"
       Amount: "1"
       Material: "EMERALD"
       Data: "0"
-      Name: "Homes Of %player% - %amounthomes%/%maxhomes%"
-      Glow: "True"
+      Name: "&3Homes Of %player%"
+      Glow: "true"
       Lore:
-        - "%player%"
-      Enchantment:
-        - "UNBREAKING:10"
+        - "&7Amount Homes: &a%amounthomes%"
+        - "&7Maximum Homes: &c%maxhomes%"
+        - "&7Remaining Homes: &e%remaininghomes%"
+      Enchantment: []
