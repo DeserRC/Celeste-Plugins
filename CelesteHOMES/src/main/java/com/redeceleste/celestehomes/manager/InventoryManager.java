@@ -37,8 +37,8 @@ public class InventoryManager {
                     .replace("%maxhomes%", PermissionManager.getPermission(p))
                     .replace("%remaininghomes%", remainingHomes)).setLore(replacedLore).setGlow(ai.getGlow()).toItemStack();
 
-            for (String enchant : ai.getEnchantament()) {
-                String[] split = enchant.split(":");
+            for (String en : ai.getEnchantament()) {
+                String[] split = en.split(":");
                 item.addUnsafeEnchantment(ItemBuilder.serializeEnchant(split[0]), Integer.parseInt(split[1]));
             }
             slot.add(ai.getSlot());

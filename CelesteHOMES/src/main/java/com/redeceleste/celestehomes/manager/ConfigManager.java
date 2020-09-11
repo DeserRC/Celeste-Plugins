@@ -84,9 +84,8 @@ public class ConfigManager {
 
     //Get Custom Itens
     private static void getItens() {
-        if (!Itens.isEmpty()) {
+        if (!Itens.isEmpty())
             Itens.clear();
-        }
 
         for (String menu : Main.getInstance().getConfig().getConfigurationSection("Inventory.CustomInventory").getKeys(false)) {
             Integer slot = Integer.parseInt(get("Inventory.CustomInventory." + menu + ".Slot"));
@@ -107,9 +106,8 @@ public class ConfigManager {
 
     //Get Home Templates
     private static void getTemplate() {
-        if (!Template.isEmpty()) {
+        if (!Template.isEmpty())
             Template.clear();
-        }
 
         Material material = Material.valueOf(get("Inventory.HomeTemplate.Material"));
         Integer data = Integer.valueOf(get("Inventory.HomeTemplate.Data"));
