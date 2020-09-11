@@ -30,8 +30,8 @@ public class MySQL {
     }
 
     public void closeConnection() {
-        if (connection == null)
-            return;
+        if (connection == null) return;
+
         try {
             connection.close();
         } catch (SQLException ignored) {

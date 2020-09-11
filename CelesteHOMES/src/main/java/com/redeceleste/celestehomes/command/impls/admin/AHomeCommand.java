@@ -1,5 +1,6 @@
 package com.redeceleste.celestehomes.command.impls.admin;
 
+import com.redeceleste.celestehomes.Main;
 import com.redeceleste.celestehomes.command.CreateCommand;
 import com.redeceleste.celestehomes.manager.ConfigManager;
 import com.redeceleste.celestehomes.manager.InventoryManager;
@@ -16,7 +17,7 @@ public class AHomeCommand extends CreateCommand {
     @Override
     public boolean execute(CommandSender sender, String s, String[] args) {
         if (!(sender instanceof Player)) {
-            ConfigManager.loadMessage();
+            ConfigManager.reloadMessage();
             System.out.print("Config reloaded");
             return false;
         }
@@ -34,7 +35,7 @@ public class AHomeCommand extends CreateCommand {
         }
 
         if (args[0].equalsIgnoreCase("rl")) {
-            ConfigManager.loadMessage();
+            ConfigManager.reloadMessage();
             p.sendMessage(ConfigManager.Reload);
             return false;
         }

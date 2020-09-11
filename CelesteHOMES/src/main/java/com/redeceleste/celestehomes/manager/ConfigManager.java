@@ -16,7 +16,7 @@ public class ConfigManager {
     public static String Permission, NoPermission, Reload, MinimumCharactersHome, Delay, DelayFromOtherTeleport;
     public static String SetHomeArgumentsInvalid, BlackListWorldMessage, HomeLimitReached, FewCharacters, ContainsHome, HomeSucessCreate;
     public static String DelHomeArgumentsInvalid, DelHomeNotFound, HomeSucessDeleted;
-    public static String HomeNotFound, HomeInvalidArgument, DelayFromOtherTeleportMessage, PlayerNotFound, MessageWaitingTeleportTitle, MessageWaitingTeleportSubTitle, MessageSucessTeleportTitle, MessageSucessTeleportSubTitle, MessageCancelTeleportTitle, MessageCancelTeleportSubTitle;
+    public static String HomeNotFound, HomeInvalidArgument, DelayFromOtherTeleportMessage, AHomeInvalidArgument, PlayerNotFound, MessageWaitingTeleportTitle, MessageWaitingTeleportSubTitle, MessageSucessTeleportTitle, MessageSucessTeleportSubTitle, MessageCancelTeleportTitle, MessageCancelTeleportSubTitle;
     public static String SoundWaitingTeleport, SoundSucessTeleport, SoundCancelTeleport;
     public static String TitleGUI;
     public static HashSet<InventoryArgument> Itens = new HashSet<>();
@@ -49,6 +49,7 @@ public class ConfigManager {
         HomeInvalidArgument = get("Message.HomeInvalidArgument");
         HomeNotFound = get("Message.HomeNotFound");
         DelayFromOtherTeleportMessage = get("Message.DelayMessage");
+        AHomeInvalidArgument = get("Message.AHomeInvalidArgument");
         PlayerNotFound = get("Message.PlayerNotFound");
 
         MessageWaitingTeleportTitle = get("Message.MessageWaitingTeleport.Title");
@@ -68,6 +69,11 @@ public class ConfigManager {
         getTemplate();
     }
 
+    public static void reloadMessage() {
+        Main.getInstance().reloadConfig();
+        loadMessage();
+    }
+
     private static String get(String path) {
         return Main.getInstance().getConfig().getString(path, ChatColor.DARK_RED + "There was an error loading the message: " + ChatColor.YELLOW + path).replace('&', '\u00A7');
     }
@@ -78,6 +84,10 @@ public class ConfigManager {
 
     //Get Custom Itens
     private static void getItens() {
+        if (!Itens.isEmpty()) {
+            Itens.clear();
+        }
+
         for (String menu : Main.getInstance().getConfig().getConfigurationSection("Inventory.CustomInventory").getKeys(false)) {
             Integer slot = Integer.parseInt(get("Inventory.CustomInventory." + menu + ".Slot"));
             Integer amount = Integer.parseInt(get("Inventory.CustomInventory." + menu + ".Amount"));
@@ -95,6 +105,10 @@ public class ConfigManager {
 
     //Get Home Templates
     private static void getTemplate() {
+        if (!Template.isEmpty()) {
+            Template.clear();
+        }
+
         Material material = Material.valueOf(get("Inventory.HomeTemplate.Material"));
         Integer data = Integer.valueOf(get("Inventory.HomeTemplate.Data"));
         String name = get("Inventory.HomeTemplate.Name");
