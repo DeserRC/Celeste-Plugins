@@ -99,6 +99,8 @@ public class ConfigManager {
             lore = getList("Inventory.CustomInventory." + menu + ".Lore");
             en = getList("Inventory.CustomInventory." + menu + ".Enchantment");
 
+            if (lore.isEmpty()) lore.add("null");
+
             Itens.add(new Inventory(name, material, data, slot, amount, glow, lore, en));
         }
     }
@@ -115,6 +117,8 @@ public class ConfigManager {
         Boolean glow = Boolean.parseBoolean(get("Inventory.HomeTemplate.Glow"));
         lore = getList("Inventory.HomeTemplate.Lore");
         en = getList("Inventory.HomeTemplate.Enchantment");
+
+        if (lore.isEmpty()) lore.add("null");
 
         Template.add(new Inventory(name, material, data, null, null, glow, lore, en));
     }

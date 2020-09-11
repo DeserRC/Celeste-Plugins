@@ -22,17 +22,20 @@ public class InventoryManager {
         Inventory inv = Bukkit.createInventory(new InventoryBuilder(p), 54, ConfigManager.TitleGUI.replace("%player%", p.getName()));
         String amountHomes = PermissionManager.getAmountHomes(p).toString();
         String maxhomes = PermissionManager.getPermission(p);
+        String remainingHomes = PermissionManager.remainingHomes(p, Integer.valueOf(maxhomes)).toString();
 
         for (InventoryArgument ai : ConfigManager.Itens) {
             List<String> replacedLore = ai.getLore().stream().map(s -> s
                     .replace("%player%", p.getName())
                     .replace("%amounthomes%", amountHomes)
-                    .replace("maxhomes", maxhomes)).collect(Collectors.toList());
+                    .replace("%maxhomes%", maxhomes)
+                    .replace("%remaininghomes%", remainingHomes)).collect(Collectors.toList());
 
             ItemStack item = new ItemBuilder(ai.getMaterial(), ai.getAmount()).setData(ai.getData()).setName(ai.getName()
                     .replace("%player%", p.getName())
                     .replace("%amounthomes%", PermissionManager.getAmountHomes(p).toString())
-                    .replace("%maxhomes%", PermissionManager.getPermission(p))).setLore(replacedLore).setGlow(ai.getGlow()).toItemStack();
+                    .replace("%maxhomes%", PermissionManager.getPermission(p))
+                    .replace("%remaininghomes%", remainingHomes)).setLore(replacedLore).setGlow(ai.getGlow()).toItemStack();
 
             for (String enchant : ai.getEnchantament()) {
                 String[] split = enchant.split(":");
