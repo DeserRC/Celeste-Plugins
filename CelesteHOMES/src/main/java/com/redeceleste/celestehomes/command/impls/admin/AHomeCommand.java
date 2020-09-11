@@ -6,6 +6,7 @@ import com.redeceleste.celestehomes.manager.ConfigManager;
 import com.redeceleste.celestehomes.manager.InventoryManager;
 import com.redeceleste.celestehomes.manager.PermissionManager;
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 

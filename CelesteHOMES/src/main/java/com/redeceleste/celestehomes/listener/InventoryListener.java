@@ -25,19 +25,20 @@ public class InventoryListener implements Listener {
         if (inventory == null) return;
         if (!(e.getInventory().getHolder() instanceof InventoryBuilder)) return;
 
+        Player t = (Player) e.getWhoClicked();
         Player p = ((InventoryBuilder) e.getInventory().getHolder()).getPlayer();
 
         if (inventory.getTitle().contains(ConfigManager.TitleGUI.replace("%player%", p.getName()))) {
             try {
-                UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
+                UserArgument user = Main.getInstance().getUserDAO().cache.get(p);
                 for (InventoryArgument ai : ConfigManager.Template) {
                     for (UserBuilder userBuilder : user.getHomes().values()) {
                         if (e.getCurrentItem().getItemMeta().getDisplayName().equals(ai.getName()
                                 .replace("%number%", userBuilder.getNumber().toString())
                                 .replace("%home%", userBuilder.getName()))) {
                             e.setCancelled(true);
-                            p.closeInventory();
-                            HomeManager.homeTeleport(p, userBuilder.getName());
+                            t.closeInventory();
+                            HomeManager.homeTeleport(t, userBuilder.getName());
                             return;
                         }
                     }
