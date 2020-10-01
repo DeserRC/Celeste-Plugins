@@ -1,0 +1,70 @@
+MySQL:
+  Use: false
+  Host: "localhost:3306"
+  DataBase: "minecraft"
+  User: "root"
+  Password: "OBXq94zQCX4SgEmM"
+
+Admin_Permission: "celesteshop.admin"
+NoPermission: "You not a have permission"
+
+Inventory:
+  Title: "SHOP - CATEGORIES"
+  Size: 54
+  ItensDecoration:
+    Information:
+      Slot: 4
+      Amount: 1
+      Material: "PAPER"
+      Data: 0
+      Name: "You a have %points% points"
+      Glow: false
+      Lore:
+        - "%player%"
+        - "You a have %points% points"
+        - "You a have %points% points"
+      Enchantment: []
+
+InventoryConfirm:
+  Title: "SHOP - CATEGORIES"
+  Size: 54
+  Confirm:
+    Slot: 24
+    Amount: 1
+    Material: "WOOL"
+    Data: 5
+    Name: "&aAccept"
+    Glow: false
+    Lore:
+      - "%player%"
+      - "You a have %points% points"
+      - "You a have %points% points"
+    Enchantment: []
+  Reject:
+    Slot: 20
+    Amount: 1
+    Material: "WOOL"
+    Data: 14
+    Name: "&aDeny"
+    Glow: false
+    Lore:
+      - "%player%"
+      - "You a have %points% points"
+      - "You a have %points% points"
+    Enchantment: []
+  ItemTemplate:
+    Use: true
+    Slot: 4
+  ItensDecoration:
+    Information:
+      Slot: 4
+      Amount: 1
+      Material: "PAPER"
+      Data: 0
+      Name: "You a have %points% points"
+      Glow: false
+      Lore:
+        - "%player%"
+        - "You a have %points% points"
+        - "You a have %points% points"
+      Enchantment: []

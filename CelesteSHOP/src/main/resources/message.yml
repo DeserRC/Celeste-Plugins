@@ -1,0 +1,72 @@
+Message:
+  #Look Points - Command "/points <Player> or /points"
+  LookPlayerNotFound: "&cPlayer Not Found"
+  LookPoints: "&cYou have %points% points."
+  LookPointsOtherPlayers: "&c%player% has %points% points."
+  #Pay Points - Command "/points pay <Player> <Amount>"
+  PayPointsInvalidArgument: "&cUse: /points pay <Player> <Amount>"
+  PayPointsSentHimself: "&cYou cannot send points to yourself."
+  PayInsufficientPoints: "&cInsufficient points you a have %points% points"
+  PayPlayerNotFound: "&cPlayer Not Found"
+  PaySucessSent: "&cYou sent %points% points to %player%"
+  PayPointsReceived: "&cYou received %points% points from %player%"
+  PayPointsReceivedTitle:
+    Use: true
+    Title: "&cYou received"
+    SubTitle: "%points% points from %player%"
+  #Add Points - Command "/points add <Player> <Amount>"
+  AddPointsInvalidArgument: "&cUse: /points add <Player> <Amount>"
+  AddPlayerNotFound: "&cPlayer Not Found"
+  AddSucessSent: "&cYou added %points% points to %player%"
+  AddPointsReceived: "&cWere added %points% points to your account"
+  AddPointsReceivedTitle:
+    Use: true
+    Title: "&cWere added"
+    SubTitle: "%points% points to your account"
+  #Remove Points - Command "/points remove <Player> <Amount>"
+  RemovePointsInvalidArgument: "&cUse: /points remove <Player> <Amount>"
+  RemovePlayerNotFound: "&cPlayer Not Found"
+  RemoveSucessSent: "&cYou removed %points% points to %player%"
+  RemovePointsReceived: "&cWere removed %points% points to your account"
+  RemovePointsReceivedTitle:
+    Use: true
+    Title: "&cWere removed"
+    SubTitle: "%points% points to your account"
+  #Set Points - Command "/points set <Player> <Amount>"
+  SetPointsInvalidArgument: "&cUse: /points set <Player> <Amount>"
+  SetPlayerNotFound: "&cPlayer Not Found"
+  SetSucessSent: "&cYou set %points% points to %player%"
+  SetPointsReceived: "&cWere set %points% points to your account"
+  SetPointsReceivedTitle:
+    Use: true
+    Title: "&cWere set"
+    SubTitle: "%points% points to your account"
+  #Reset Points - Command "/points set <Player> <Amount>"
+  ResetPointsInvalidArgument: "&cUse: /points reset <Player>"
+  ResetPlayerNotFound: "&cPlayer Not Found"
+  ResetSucessSent: "&cYou reset the points of %player%"
+  ResetPointsReceived: "&cYour points have been reset"
+  ResetPointsReceivedTitle:
+    Use: true
+    Title: "&cYour points"
+    SubTitle: "have been reset"
+  #Reload Plugin - Command "/points reload"
+  ReloadMessage: "&cReloaded configuration"
+  #Help Points - Command "/points help"
+  Help: |
+    &7CelesteShop
+    &7Use /pontos
+  HelpAdmin: |
+    &7CelesteShop
+    &7Use /pontos
+  #SHOP - Command "/shop"
+  PointsInsufficientPoints:
+    Use: true
+    Message: "You don't have enough points"
+  PointsInsufficientPointsActionBar:
+    Use: true
+    Message: "You don't have enough points"
+  PointsInsufficientPointsTitle:
+    Use: true
+    Title: "You don't"
+    SubTitle: "have enough points"

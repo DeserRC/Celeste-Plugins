@@ -1,0 +1,70 @@
+Categories:
+  Title: "Swords"
+  Size: 54
+  Category-Template:
+    Slot: 4
+    Amount: 1
+    Material: "PAPER"
+    Data: 0
+    Name: "You a have %points% points"
+    Glow: false
+    Lore:
+      - "%player%"
+      - "You a have %points% points"
+      - "You a have %points% points"
+    Enchantment: []
+
+  ItensBuy:
+    Looting8:
+      Slot: 23
+      Amount: 1
+      Material: "DIAMOND_SWORD"
+      Data: 0
+      Name: "Diamond Sword L8"
+      Glow: false
+      Lore:
+        - ""
+        - "Buy this sword"
+        - ""
+      Enchantment:
+        - "Sharpness:5"
+        - "Unbreaking:5"
+        - "Looting:8"
+      Price: 100
+      Command:
+        Use: false
+        Command: "give %player% diamond_sword 1"
+      MessageBuy:
+        Use: true
+        Message: "You bought a Looting 8 sword"
+      TitleBuy:
+        Use: true
+        Title: "You bought a"
+        SubTitle: "Looting 8 sword"
+      ActionBarBuy:
+        Use: true
+        Message: "You bought a Looting 8 sword"
+
+  ItensDecoration:
+    Information:
+      Slot: 4
+      Amount: 1
+      Material: "PAPER"
+      Data: 0
+      Name: "You a have %points% points"
+      Glow: false
+      Lore:
+        - "%player%"
+        - "You a have %points% points"
+        - "You a have %points% points"
+      Enchantment: []
+
+  Back:
+    Slot: 50
+    Amount: 1
+    Material: "ARROW"
+    Data: 0
+    Name: "Back"
+    Glow: false
+    Lore: []
+    Enchantment: []
