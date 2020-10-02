@@ -1,10 +1,10 @@
-#**👑 | Celeste Plugins**
+# **👑 | Celeste Plugins**
 
-###🔥 | Plugins:
+### 🔥 | Plugins:
 - CelesteSHOP
 - CelesteHOMES
 
-###📝 | Descriptions:
+### 📝 | Descriptions:
 - **CelesteSHOP:**
 **Commands:</b>** /cashs and /shop   
 **Description:** This plugin contains a points system, shop of items and commands by points, admin commands, title and actionbar and all messages and menus can be configured.  
