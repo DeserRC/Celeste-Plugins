@@ -5,7 +5,6 @@ import com.redeceleste.celesteshop.command.Command;
 import com.redeceleste.celesteshop.command.CommandArgument;
 import com.redeceleste.celesteshop.manager.ConfigManager;
 import com.redeceleste.celesteshop.manager.PointsManager;
-import com.redeceleste.celesteshop.model.ConfigType;
 import com.redeceleste.celesteshop.util.impl.ChatUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -31,7 +30,7 @@ public class PointsCommand extends Command {
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {
         if (args.length == 0) {
             if (!(sender instanceof Player)) {
-                chat.send(sender, "This command cannot be executed from the console", false);
+                chat.send(sender, "This command cannot be executed from the console");
             }
 
             Integer points = this.points.getPoints(sender.getName(), true);
@@ -54,7 +53,7 @@ public class PointsCommand extends Command {
 
         if (argument != null) {
             if (argument.getIsPlayerExclusive() && !(sender instanceof Player)) {
-                chat.send(sender, "This command cannot be executed from the console", false);
+                chat.send(sender, "This command cannot be executed from the console");
                 return;
             }
 
@@ -84,7 +83,7 @@ public class PointsCommand extends Command {
             return;
         }
 
-        if (sender.hasPermission(config.get("admin_permission", ConfigType.config).toString())) {
+        if (sender.hasPermission(config.getConfig("admin_permission").toString())) {
             chat.send(sender, "Message.HelpAdmin");
             return;
         }

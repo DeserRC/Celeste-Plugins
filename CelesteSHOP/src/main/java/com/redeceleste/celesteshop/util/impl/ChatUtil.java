@@ -18,11 +18,15 @@ public class ChatUtil extends MessagesUtil {
     }
 
     @Override @SafeVarargs
-    public final <T, U> void send(CommandSender sender, String path, ConfigType type, Boolean isConfig, Map.Entry<T, U>... map) {
+    public final <T, U> void send(CommandSender sender, String path, ConfigType type, Map.Entry<T, U>... map) {
         String message = path;
 
-        if (isConfig) {
-            message = manager.get(path, type);
+        if (manager.contains(path, type)) {
+            if (!manager.contains(path + ".Use", type)) {
+                message = manager.get(path, type);
+            } else if (manager.get(path + ".Use", type)) {
+                message = manager.get(path + ".Message", type);
+            } else return;
         }
 
         for (Map.Entry<T, U> entry : map) {

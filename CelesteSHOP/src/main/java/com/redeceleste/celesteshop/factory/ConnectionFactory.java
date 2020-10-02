@@ -6,7 +6,6 @@ import com.redeceleste.celesteshop.database.DataBase;
 import com.redeceleste.celesteshop.database.impl.MySQL;
 import com.redeceleste.celesteshop.database.impl.SQLite;
 import com.redeceleste.celesteshop.manager.ConfigManager;
-import com.redeceleste.celesteshop.model.ConfigType;
 import lombok.Getter;
 
 @Getter
@@ -20,8 +19,8 @@ public class ConnectionFactory {
         this.main = main;
         this.config = main.getConfigManager();
 
-        if (main.getConfigManager().get("MySQL.Use", ConfigType.config)) {
-            dataBase = new MySQL(main, config.get("MySQL.Host", ConfigType.config), config.get("MySQL.User", ConfigType.config), config.get("MySQL.DataBase", ConfigType.config), config.get("MySQL.Password", ConfigType.config));
+        if (config.getConfig("MySQL.Use")) {
+            dataBase = new MySQL(main, config.getConfig("MySQL.Host"), config.getConfig("MySQL.User"), config.getConfig("MySQL.DataBase"), config.getConfig("MySQL.Password"));
         } else {
             dataBase = new SQLite(main);
         }

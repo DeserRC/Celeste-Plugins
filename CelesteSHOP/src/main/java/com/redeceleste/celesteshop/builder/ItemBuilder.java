@@ -68,7 +68,7 @@ public class ItemBuilder {
     }
 
     public ItemBuilder setName(String name) {
-        if (name.equalsIgnoreCase("null")) return this;
+        if (name.equalsIgnoreCase(null)) return this;
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setDisplayName(name);
         itemStack.setItemMeta(itemMeta);
@@ -81,7 +81,7 @@ public class ItemBuilder {
     }
 
     public ItemBuilder addEnchants(List<String> enchants) {
-        if (enchants.get(0).equalsIgnoreCase("null")) return this;
+        if (enchants == null) return this;
         for (String s : enchants) {
             serializeEnchant(s.split(":")[0]);
             Enchantment enchant = serializeEnchant(s.split(":")[0]);
@@ -151,7 +151,7 @@ public class ItemBuilder {
     }
 
     public ItemBuilder setLore(List<String> lore) {
-        if (lore.get(0).equalsIgnoreCase("null")) return this;
+        if (lore == null) return this;
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setLore(lore);
         itemStack.setItemMeta(itemMeta);

@@ -27,7 +27,7 @@ public class SetCommandArgument extends CommandArgument {
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-        if (!sender.hasPermission(config.get("Admin_Permission", ConfigType.config).toString())) {
+        if (!sender.hasPermission(config.getConfig("Admin_Permission").toString())) {
             chat.send(sender, "NoPermission", ConfigType.config);
             return;
         }

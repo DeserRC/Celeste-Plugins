@@ -13,18 +13,8 @@ public abstract class MessagesUtil {
 
     @SafeVarargs
     public final <T, U> void send(CommandSender sender, String path, Map.Entry<T, U>... map) {
-        send(sender, path, ConfigType.message, true, map);
+        send(sender, path, ConfigType.message, map);
     }
 
-    @SafeVarargs
-    public final <T, U> void send(CommandSender sender, String path, Boolean isConfig, Map.Entry<T, U>... map) {
-        send(sender, path, ConfigType.message, isConfig, map);
-    }
-
-    @SafeVarargs
-    public final <T, U> void send(CommandSender sender, String path, ConfigType type, Map.Entry<T, U>... map) {
-        send(sender, path, type,true, map);
-    }
-
-    public abstract <T, U> void send(CommandSender sender, String path, ConfigType type, Boolean isConfig, Map.Entry<T, U>... map);
+    public abstract <T, U> void send(CommandSender sender, String path, ConfigType type, Map.Entry<T, U>... map);
 }

@@ -19,15 +19,13 @@ public class BarUtil extends ReflectionUtil {
     }
 
     @Override @SafeVarargs @SneakyThrows
-    public final <T, U> void send(CommandSender sender, String path, ConfigType type, Boolean isConfig, Map.Entry<T, U>... map) {
+    public final <T, U> void send(CommandSender sender, String path, ConfigType type, Map.Entry<T, U>... map) {
         String message = path;
 
-        if (isConfig) {
-            if (!Boolean.parseBoolean(manager.get(path + ".Use", type))) {
-                return;
-            }
-
-            message = manager.get(path + ".Message", type);
+        if (manager.contains(path, type)) {
+            if (manager.get(path + ".Use", type)) {
+                message = manager.get(path + ".Message", type);
+            } else return;
         }
 
         for (Map.Entry<T, U> entry : map) {

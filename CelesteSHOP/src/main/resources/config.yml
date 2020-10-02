@@ -11,7 +11,7 @@ NoPermission: "You not a have permission"
 Inventory:
   Title: "SHOP - CATEGORIES"
   Size: 54
-  ItensDecoration:
+  ItemsDecoration:
     Information:
       Slot: 4
       Amount: 1
@@ -55,7 +55,7 @@ InventoryConfirm:
   ItemTemplate:
     Use: true
     Slot: 4
-  ItensDecoration:
+  ItemsDecoration:
     Information:
       Slot: 4
       Amount: 1

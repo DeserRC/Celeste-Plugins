@@ -3,7 +3,6 @@ package com.redeceleste.celesteshop.command.impl.args;
 import com.redeceleste.celesteshop.Main;
 import com.redeceleste.celesteshop.command.CommandArgument;
 import com.redeceleste.celesteshop.manager.ConfigManager;
-import com.redeceleste.celesteshop.model.ConfigType;
 import com.redeceleste.celesteshop.util.impl.ChatUtil;
 import org.bukkit.command.CommandSender;
 
@@ -21,7 +20,7 @@ public class HelpCommandArgument extends CommandArgument {
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-        if (sender.hasPermission(config.get("Admin_Permission", ConfigType.config).toString())) {
+        if (sender.hasPermission(config.getConfig("Admin_Permission").toString())) {
             chat.send(sender, "Message.HelpAdmin");
             return;
         }

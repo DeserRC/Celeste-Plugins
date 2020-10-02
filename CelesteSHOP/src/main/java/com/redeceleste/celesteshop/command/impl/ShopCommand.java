@@ -22,7 +22,7 @@ public class ShopCommand extends Command {
     @Override
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {
         if (!(sender instanceof Player)) {
-            chat.send(sender, "This command cannot be executed from the console", false);
+            chat.send(sender, "This command cannot be executed from the console");
             return false;
         }
 

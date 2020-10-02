@@ -19,17 +19,15 @@ public class TitleUtil extends ReflectionUtil {
     }
 
     @Override @SafeVarargs @SneakyThrows
-    public final <T, U> void send(CommandSender sender, String path, ConfigType type, Boolean isConfig, Map.Entry<T, U>... map) {
+    public final <T, U> void send(CommandSender sender, String path, ConfigType type, Map.Entry<T, U>... map) {
         String title = path;
         String subtitle = path;
 
-        if (isConfig) {
-            if (!Boolean.parseBoolean(manager.get(path + ".Use", type))) {
-                return;
-            }
-
-            title = manager.get(path + ".Title", type);
-            subtitle = manager.get(path + ".SubTitle", type);
+        if (manager.contains(path, type)) {
+            if (manager.get(path + ".Use", type)) {
+                title = manager.get(path + ".Title", type);
+                subtitle = manager.get(path + ".SubTitle", type);
+            } else return;
         }
 
         for (Map.Entry<T, U> entry : map) {

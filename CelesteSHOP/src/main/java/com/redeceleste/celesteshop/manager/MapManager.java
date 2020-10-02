@@ -2,6 +2,7 @@ package com.redeceleste.celesteshop.manager;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Set;
 
 public class MapManager<T, U> {
     private final HashMap<T, U> map = new HashMap<>();
@@ -24,6 +25,10 @@ public class MapManager<T, U> {
 
     public Collection<U> getAll() {
         return map.values();
+    }
+
+    public Set<T> getKeys() {
+        return map.keySet();
     }
 
     public void clear() {
