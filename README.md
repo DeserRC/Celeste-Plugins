@@ -1,3 +1,4 @@
+![](Celeste.png)
 # **👑 | Celeste Plugins**
 
 ### 🔥 | Plugins:
