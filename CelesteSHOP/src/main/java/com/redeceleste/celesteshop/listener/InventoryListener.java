@@ -10,15 +10,12 @@ import com.redeceleste.celesteshop.util.impl.BarUtil;
 import com.redeceleste.celesteshop.util.impl.ChatUtil;
 import com.redeceleste.celesteshop.util.impl.TitleUtil;
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-
-import java.util.HashMap;
 
 public class InventoryListener implements Listener {
     private final Main main;
@@ -40,8 +37,8 @@ public class InventoryListener implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
-        Inventory inv = e.getClickedInventory();
         Player p = (Player) e.getWhoClicked();
+        Inventory inv = e.getClickedInventory();
 
         if (inv == null) return;
         if (!(e.getInventory().getHolder() instanceof InventoryHolder)) return;
@@ -49,30 +46,25 @@ public class InventoryListener implements Listener {
         InventoryType type = ((InventoryHolder) e.getInventory().getHolder()).getType();
 
         if (type.equals(InventoryType.menu)) {
-            HashMap<Integer, FileConfiguration> slot = new HashMap<>();
-
-            for (FileConfiguration file : config.getCategory().getAll()) {
-                Integer categorySlot = config.get(file.getName() + ":Categories.Category-Template.Slot", ConfigType.category);
-                slot.put(categorySlot, file);
-            }
-
-            if (slot.containsKey(e.getSlot())) {
-                FileConfiguration file = slot.get(e.getSlot());
-                inventory.openInventoryCategory(p, file.getName());
+            for (String file : config.getCategories().getKeys()) {
+                if (config.getCategory(file + ":Categories.Category-Template.Slot").equals(e.getSlot())) {
+                    inventory.openInventoryCategory(p, file);
+                    break;
+                }
             }
         }
 
         if (type.equals(InventoryType.category)) {
             String file = ((InventoryHolder) e.getInventory().getHolder()).getFile();
 
-            if (config.get(file + ":Back.Slot", ConfigType.category).equals(e.getSlot())) {
+            if (config.getCategory(file + ":Categories.Back.Slot").equals(e.getSlot())) {
                 inventory.openInventory(p);
             }
 
-            for (String menu : config.getKeys(file + ":Categories.ItensBuy", ConfigType.category)) {
-                Integer slot = config.get(file + ":Categories.ItensBuy." + menu + ".Slot", ConfigType.category);
-                if (slot.equals(e.getSlot())) {
-                    inventory.openInventoryConfirm(p, file, menu);
+            for (String item : config.getKeys(file + ":Categories.ItemsBuy", ConfigType.category)) {
+                if (config.getCategory(file + ":Categories.ItemsBuy." + item + ".Slot").equals(e.getSlot())) {
+                    inventory.openInventoryConfirm(p, file + ":Categories.ItemsBuy." + item);
+                    break;
                 }
             }
         }
@@ -80,25 +72,22 @@ public class InventoryListener implements Listener {
         if (type.equals(InventoryType.confirm)) {
             String path = ((InventoryHolder) e.getInventory().getHolder()).getFile();
             ItemStack is = ((InventoryHolder) e.getInventory().getHolder()).getIs();
-            Integer slotConfirm = config.get("InventoryConfirm.Confirm.Slot", ConfigType.config);
-            Integer slotReject = config.get("InventoryConfirm.Reject.Slot", ConfigType.config);
 
-            if (slotConfirm.equals(e.getSlot())) {
-                if (config.get(path + "Command.Use", ConfigType.category)) {
-                    main.getServer().dispatchCommand(Bukkit.getConsoleSender(), config.get(path + "Command.Command", ConfigType.category));
+            if (config.getConfig("InventoryConfirm.Confirm.Slot").equals(e.getSlot())) {
+                if (config.getCategory(path + ".Command.Use")) {
+                    main.getServer().dispatchCommand(Bukkit.getConsoleSender(), config.getCategory(path + ".Command.Command"));
                 } else {
                     p.getInventory().addItem(is);
                 }
 
-                if (config.get(path + "MessageBuy.MessageBuy.Use", ConfigType.category)) {
-                    chat.send(p, path + "MessageBuy.MessageBuy.Message", ConfigType.category);
-                }
+                chat.send(p, path + ".MessageBuy", ConfigType.category);
+                title.send(p, path + ".TitleBuy", ConfigType.category);
+                bar.send(p, path + ".ActionBarBuy", ConfigType.category);
 
-                title.send(p, path + "MessageBuy.TitleBuy", ConfigType.category);
-                bar.send(p, path + "MessageBuy.ActionBarBuy", ConfigType.category);
+                p.closeInventory();
             }
 
-            if (slotReject.equals(e.getSlot())) {
+            if (config.getConfig("InventoryConfirm.Reject.Slot").equals(e.getSlot())) {
                 String[] file = path.split(":");
                 inventory.openInventoryCategory(p, file[0]);
             }
