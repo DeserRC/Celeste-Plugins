@@ -16,3 +16,7 @@
 **Commands:** /sethome, /delhome, /home, /homes and /ahome  
 **Description:** This plugin contains a home system, menu, admin commands, delay to teleport, delay to next teleport, title messages, purge and all messages and menus can be configured.   
 **Support:** MySQL.
+
+---
+![GitHub Repo stars](https://img.shields.io/github/stars/DeserRC/Celeste-Plugins?style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/DeserRC?label=DeserRC&style=social)
