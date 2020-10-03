@@ -1,6 +1,7 @@
-<img width="300" height="200" src="Celeste.png" align=right>
+<img width="200" height="150" src="Celeste.png" align=right>
 
-# **👑 | Celeste Plugins | 👑**
+# **👑 | Celeste Plugins | 👑**  
+  
 ### 🔥 | Plugins:
 - CelesteSHOP
 - CelesteHOMES
