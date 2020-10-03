@@ -1,4 +1,7 @@
-![](Celeste.png)
+<p align="center">
+  <img width="460" height="300" src="Celeste.png">
+</p>
+
 # **👑 | Celeste Plugins**
 
 ### 🔥 | Plugins:
