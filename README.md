@@ -1,8 +1,6 @@
 <img width="300" height="200" src="Celeste.png" align=right>
 
 # **👑 | Celeste Plugins | 👑**
-  ![Twitter Follow](https://img.shields.io/twitter/follow/DeserRC?label=DeserRC&style=social)
-
 ### 🔥 | Plugins:
 - CelesteSHOP
 - CelesteHOMES
