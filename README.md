@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="460" height="300" src="Celeste.png">
+  <img width="300" height="200" src="Celeste.png">
 </p>
 
 # **👑 | Celeste Plugins**
