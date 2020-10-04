@@ -75,7 +75,9 @@ public class InventoryListener implements Listener {
 
             if (config.getConfig("InventoryConfirm.Confirm.Slot").equals(e.getSlot())) {
                 if (config.getCategory(path + ".Command.Use")) {
-                    main.getServer().dispatchCommand(Bukkit.getConsoleSender(), config.getCategory(path + ".Command.Command"));
+                    String command = config.getCategory(path + ".Command.Command");
+                    command = command.replace("%player%",  p.getName());
+                    main.getServer().dispatchCommand(Bukkit.getConsoleSender(), command);
                 } else {
                     p.getInventory().addItem(is);
                 }
