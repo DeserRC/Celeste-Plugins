@@ -26,6 +26,13 @@ Categories:
       Lore:
         - ""
         - "&7Legendary of &e%player%"
+      LoreTemplate:
+        - ""
+        - "&7Buy this sword and win"
+        - "&7everything and everyone."
+        - ""
+        - "&fPrice: &a%price% points"
+        - "&fAmount: &a%amount%x"
       Enchantment:
         - "SHARPNESS:6"
         - "UNBREAKING:6"

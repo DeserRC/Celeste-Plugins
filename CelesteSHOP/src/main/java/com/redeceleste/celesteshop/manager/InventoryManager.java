@@ -100,25 +100,36 @@ public class InventoryManager {
 
     private void setItemsConfig(Inventory inv, Player p, String point, String path) {
         for (String menu : config.getKeys(path, ConfigType.config)) {
-            Integer slot = config.get(path + "." + menu + ".Slot", ConfigType.config);
+            Integer slot = config.getConfig(path + "." + menu + ".Slot");
             inv.setItem(slot, getItem(p, point, path + "." + menu, ConfigType.config));
         }
     }
 
     private void setItemsCategory(Inventory inv, Player p, String point, String path) {
         for (String menu : config.getKeys(path, ConfigType.category)) {
-            Integer slot = config.get(path + "." + menu + ".Slot", ConfigType.category);
-            inv.setItem(slot, getItem(p, point, path + "." + menu, ConfigType.category));
+            Integer slot = config.getCategory(path + "." + menu + ".Slot");
+            ItemBuilder ib = new ItemBuilder(getItem(p, point, path + "." + menu, ConfigType.category));
+
+            if (config.contains(path + "." + menu + ".LoreTemplate", ConfigType.category)) {
+                Integer price = config.getCategory(path + "." + menu + ".Price");
+                Integer amount = config.getCategory(path + "." + menu + ".Amount");
+                List<String> template = config.getList(path + "." + menu + ".LoreTemplate", ConfigType.category);
+
+                template = template.stream().map(r -> r.replace("%price%", price.toString()).replace("%amount%", amount.toString())).collect(Collectors.toList());;
+                ib.addLore(template);
+            }
+
+            inv.setItem(slot, ib.toItemStack());
         }
     }
 
     private void setTemplateConfig(Inventory inv, Player p, String point, String path) {
-        Integer slot = config.get(path + ".Slot", ConfigType.config);
+        Integer slot = config.getConfig(path + ".Slot");
         inv.setItem(slot, getItem(p, point, path, ConfigType.config));
     }
 
     private void setTemplateCategory(Inventory inv, Player p, String point, String path) {
-        Integer slot = config.get(path + ".Slot", ConfigType.category);
+        Integer slot = config.getCategory(path + ".Slot");
         inv.setItem(slot, getItem(p, point, path, ConfigType.category));
     }
 
@@ -136,6 +147,6 @@ public class InventoryManager {
 
         lore = lore.stream().map(r -> r.replace("%player%", p.getName()).replace("%points%", point)).collect(Collectors.toList());
 
-        return new ItemBuilder(material, amount).setData(data).setName(name).setGlow(glow).setLore(lore).addEnchants(en).toItemStack();
+        return new ItemBuilder(material, amount).setData(data).setName(name).setGlow(glow).setLore(lore).addEnchant(en).toItemStack();
     }
 }
