@@ -1,70 +1,74 @@
 Categories:
-  Title: "Swords"
+  Title: "&8Category - Swords"
   Size: 54
   Category-Template:
     Slot: 20
     Amount: 1
-    Material: "PAPER"
+    Material: "DIAMOND_SWORD"
     Data: 0
-    Name: "You a have %points% points"
-    Glow: false
+    Name: "&e&lSWORDS"
+    Glow: true
     Lore:
-      - "%player%"
-      - "You a have %points% points"
-      - "You a have %points% points"
+      - ""
+      - "&7Click here to buy the"
+      - "&7best server swords and"
+      - "&7go straight to the fight"
     Enchantment: []
 
   ItemsBuy:
     Looting8:
-      Slot: 23
+      Slot: 22
       Amount: 1
       Material: "DIAMOND_SWORD"
       Data: 0
-      Name: "Diamond Sword L8"
+      Name: "&eDiamond Sword - Full VI"
       Glow: false
       Lore:
         - ""
-        - "Buy this sword"
-        - ""
+        - "&7Legendary of &e%player%"
       Enchantment:
-        - "Sharpness:5"
-        - "Unbreaking:5"
-        - "Looting:8"
+        - "SHARPNESS:6"
+        - "UNBREAKING:6"
+        - "FIREASPECT:6"
       Price: 100
       Command:
         Use: false
         Command: "give %player% diamond_sword 1"
       MessageBuy:
         Use: true
-        Message: "You bought a Looting 8 sword"
+        Message: "&b&lSHOP &7You bought a &fFull VI sword&7."
       TitleBuy:
         Use: true
-        Title: "You bought a"
-        SubTitle: "Looting 8 sword"
+        Title: "&cThank you"
+        SubTitle: "&ffor purchasing"
       ActionBarBuy:
-        Use: true
-        Message: "You bought a Looting 8 sword"
+        Use: false
+        Message: "&fThank you for purchasing"
 
   ItemsDecoration:
     Information:
       Slot: 4
       Amount: 1
-      Material: "PAPER"
+      Material: "EMERALD"
       Data: 0
-      Name: "You a have %points% points"
-      Glow: false
+      Name: "&bYou a have &f%points% &bpoints"
+      Glow: true
       Lore:
-        - "%player%"
-        - "You a have %points% points"
-        - "You a have %points% points"
+        - ""
+        - "                 &f&lTERMS"
+        - "&6> &7You will not be able to ask for"
+        - "&7a refund of the product just to buy."
+        - "&6> &7Purchased items and benefits can"
+        - "&7be suspended and withdrawn at any time"
+        - "&7without notice."
       Enchantment: []
 
   Back:
-    Slot: 50
+    Slot: 53
     Amount: 1
     Material: "ARROW"
     Data: 0
-    Name: "Back"
+    Name: "&cBack"
     Glow: false
     Lore: []
     Enchantment: []

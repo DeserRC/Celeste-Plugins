@@ -1,72 +1,80 @@
 Message:
   #Look Points - Command "/points <Player> or /points"
-  LookPlayerNotFound: "&cPlayer Not Found"
-  LookPoints: "&cYou have %points% points."
-  LookPointsOtherPlayers: "&c%player% has %points% points."
+  LookPlayerNotFound: "&b&lSHOP &7Player Not Found."
+  LookPoints: "&b&lSHOP &7You have &f%points% &7points."
+  LookPointsOtherPlayers: "&b&lSHOP &f%player% &7has &f%points% &7points."
   #Pay Points - Command "/points pay <Player> <Amount>"
-  PayPointsInvalidArgument: "&cUse: /points pay <Player> <Amount>"
-  PayPointsSentHimself: "&cYou cannot send points to yourself."
-  PayInsufficientPoints: "&cInsufficient points you a have %points% points"
-  PayPlayerNotFound: "&cPlayer Not Found"
-  PaySucessSent: "&cYou sent %points% points to %player%"
-  PayPointsReceived: "&cYou received %points% points from %player%"
+  PayPointsInvalidArgument: "&b&lSHOP &7Invalid arguments, use: &f/points pay <Player> <Amount>"
+  PayPointsSentHimself: "&b&lSHOP &7You can't send points to yourself."
+  PayInsufficientPoints: "&b&lSHOP &7Insufficient balance, you a have &f%points% &7points."
+  PayPlayerNotFound: "&b&lSHOP &7Player Not Found."
+  PaySucessSent: "&b&lSHOP &7You sent &f%points% &7points to &f%player%&7."
+  PayPointsReceived: "&b&lSHOP &7You received &f%points% &7points from &f%player%&7."
   PayPointsReceivedTitle:
     Use: true
-    Title: "&cYou received"
-    SubTitle: "%points% points from %player%"
+    Title: "&c%player%"
+    SubTitle: "&fsent you %points% points"
   #Add Points - Command "/points add <Player> <Amount>"
-  AddPointsInvalidArgument: "&cUse: /points add <Player> <Amount>"
-  AddPlayerNotFound: "&cPlayer Not Found"
-  AddSucessSent: "&cYou added %points% points to %player%"
-  AddPointsReceived: "&cWere added %points% points to your account"
+  AddPointsInvalidArgument: "&b&lSHOP &7Invalid arguments, use: &f/points add <Player> <Amount>"
+  AddPlayerNotFound: "&b&lSHOP &7Player Not Found."
+  AddSucessSent: "&b&lSHOP &7You added &f%points% &7points to &f%player%&7."
+  AddPointsReceived: "&b&lSHOP &7Were added &f%points% &7points to your balance."
   AddPointsReceivedTitle:
     Use: true
     Title: "&cWere added"
-    SubTitle: "%points% points to your account"
+    SubTitle: "&f%points% points to your balance"
   #Remove Points - Command "/points remove <Player> <Amount>"
-  RemovePointsInvalidArgument: "&cUse: /points remove <Player> <Amount>"
-  RemovePlayerNotFound: "&cPlayer Not Found"
-  RemoveSucessSent: "&cYou removed %points% points to %player%"
-  RemovePointsReceived: "&cWere removed %points% points to your account"
+  RemovePointsInvalidArgument: "&b&lSHOP &7Invalid arguments, use: &f/points remove <Player> <Amount>"
+  RemovePlayerNotFound: "&b&lSHOP &7Player Not Found."
+  RemoveSucessSent: "&b&lSHOP &7You removed &f%points% &7points to &f%player%&7."
+  RemovePointsReceived: "&b&lSHOP &7Were removed &f%points% &7points to your balance."
   RemovePointsReceivedTitle:
     Use: true
     Title: "&cWere removed"
-    SubTitle: "%points% points to your account"
+    SubTitle: "&f%points% points to your balance"
   #Set Points - Command "/points set <Player> <Amount>"
-  SetPointsInvalidArgument: "&cUse: /points set <Player> <Amount>"
-  SetPlayerNotFound: "&cPlayer Not Found"
-  SetSucessSent: "&cYou set %points% points to %player%"
-  SetPointsReceived: "&cWere set %points% points to your account"
+  SetPointsInvalidArgument: "&b&lSHOP &7Invalid arguments, use: &f/points set <Player> <Amount>"
+  SetPlayerNotFound: "&b&lSHOP &7Player Not Found."
+  SetSucessSent: "&b&lSHOP &7You set &f%points% &7points to &f%player%&7."
+  SetPointsReceived: "&b&lSHOP &7Were set &f%points% &7points to your balance."
   SetPointsReceivedTitle:
     Use: true
     Title: "&cWere set"
-    SubTitle: "%points% points to your account"
+    SubTitle: "&f%points% points to your balance"
   #Reset Points - Command "/points set <Player> <Amount>"
-  ResetPointsInvalidArgument: "&cUse: /points reset <Player>"
-  ResetPlayerNotFound: "&cPlayer Not Found"
-  ResetSucessSent: "&cYou reset the points of %player%"
-  ResetPointsReceived: "&cYour points have been reset"
+  ResetPointsInvalidArgument: "&b&lSHOP &7Invalid arguments, use: &f/points reset <Player>"
+  ResetPlayerNotFound: "&b&lSHOP &7Player Not Found."
+  ResetSucessSent: "&b&lSHOP &7You reset the balance points of &f%player%&7."
+  ResetPointsReceived: "&b&lSHOP &7Your balance points have been reset."
   ResetPointsReceivedTitle:
     Use: true
-    Title: "&cYour points"
-    SubTitle: "have been reset"
+    Title: "&cYour balance points"
+    SubTitle: "&fhave been reset"
   #Reload Plugin - Command "/points reload"
-  ReloadMessage: "&cReloaded configuration"
+  ReloadMessage: "&b&lSHOP &7Reloaded configuration."
   #Help Points - Command "/points help"
   Help: |
-    &7CelesteShop
-    &7Use /pontos
+    &f&m-----------&r &b&lSHOP &f&m-----------
+    &b/shop,&7 items shop.
+    &b/points&7, view your balance.
+    &b/points pay, send points.
   HelpAdmin: |
-    &7CelesteShop
-    &7Use /pontos
-  #SHOP - Command "/shop"
+    &f&m-----------&r &b&lSHOP - ADMIN &f&m-----------
+    &b/shop,&7 items shop.
+    &b/points&7, view your balance.
+    &b/points&7 pay, send points.
+    &b/points&7 add, add points.
+    &b/points&7 remove, remove points.
+    &b/points&7 set, set points.
+    &b/points&7 reset reset points.
+  #SHOP - Command "/shop"w
   PointsInsufficientPoints:
     Use: true
-    Message: "You don't have enough points"
+    Message: "&b&lSHOP &7You don't have enough points."
   PointsInsufficientPointsActionBar:
-    Use: true
-    Message: "You don't have enough points"
+    Use: false
+    Message: "&fYou don't have enough points"
   PointsInsufficientPointsTitle:
     Use: true
-    Title: "You don't"
-    SubTitle: "have enough points"
+    Title: "&cYou don't"
+    SubTitle: "&fhave enough points"

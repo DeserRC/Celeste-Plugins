@@ -1,33 +1,37 @@
 MySQL:
   Use: false
   Host: "localhost:3306"
-  DataBase: "minecraft"
-  User: "root"
-  Password: "OBXq94zQCX4SgEmM"
+  DataBase: ""
+  User: ""
+  Password: ""
 
 Admin_Permission: "celesteshop.admin"
-NoPermission: "You not a have permission"
+NoPermission: "&b&lSHOP &7You not a have permission."
 
 Inventory:
-  Title: "SHOP - CATEGORIES"
+  Title: "&8SHOP - CATEGORIES"
   Size: 54
   ItemsDecoration:
     Information:
       Slot: 4
       Amount: 1
-      Material: "PAPER"
+      Material: "EMERALD"
       Data: 0
-      Name: "You a have %points% points"
-      Glow: false
+      Name: "&bYou a have &f%points% &bpoints"
+      Glow: true
       Lore:
-        - "%player%"
-        - "You a have %points% points"
-        - "You a have %points% points"
+        - ""
+        - "                 &f&lTERMS"
+        - "&6> &7You will not be able to ask for"
+        - "&7a refund of the product just to buy."
+        - "&6> &7Purchased items and benefits can"
+        - "&7be suspended and withdrawn at any time"
+        - "&7without notice."
       Enchantment: []
 
 InventoryConfirm:
-  Title: "SHOP - CATEGORIES"
-  Size: 54
+  Title: "SHOP - CONFIRM BUY"
+  Size: 45
   Confirm:
     Slot: 24
     Amount: 1
@@ -36,35 +40,39 @@ InventoryConfirm:
     Name: "&aAccept"
     Glow: false
     Lore:
-      - "%player%"
-      - "You a have %points% points"
-      - "You a have %points% points"
+      - "&7Click to accept"
+      - "&7the purchase."
     Enchantment: []
+
   Reject:
     Slot: 20
     Amount: 1
     Material: "WOOL"
     Data: 14
-    Name: "&aDeny"
+    Name: "&4Deny"
     Glow: false
     Lore:
-      - "%player%"
-      - "You a have %points% points"
-      - "You a have %points% points"
+      - "&7Click to deny"
+      - "&7the purchase."
     Enchantment: []
+
   ItemTemplate:
     Use: true
     Slot: 4
+
   ItemsDecoration:
     Information:
-      Slot: 4
+      Slot: 22
       Amount: 1
       Material: "PAPER"
       Data: 0
-      Name: "You a have %points% points"
-      Glow: false
+      Name: "&f&lTERMS"
+      Glow: true
       Lore:
-        - "%player%"
-        - "You a have %points% points"
-        - "You a have %points% points"
+        - ""
+        - "&6> &7You will not be able to ask for"
+        - "&7a refund of the product just to buy."
+        - "&6> &7Purchased items and benefits can"
+        - "&7be suspended and withdrawn at any time"
+        - "&7without notice."
       Enchantment: []
