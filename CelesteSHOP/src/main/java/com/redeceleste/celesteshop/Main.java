@@ -1,5 +1,6 @@
 package com.redeceleste.celesteshop;
 
+import com.redeceleste.celesteshop.command.impl.DrawPoints;
 import com.redeceleste.celesteshop.command.impl.PointsCommand;
 import com.redeceleste.celesteshop.command.impl.args.HelpCommandArgument;
 import com.redeceleste.celesteshop.command.impl.args.PayCommandArgument;
@@ -69,6 +70,7 @@ public class Main extends JavaPlugin {
                 new ReloadCommandArgument(this),
                 new HelpCommandArgument(this));
         new ShopCommand(this);
+        new DrawPoints(this);
     }
 
     public void loadListeners() {

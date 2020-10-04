@@ -7,6 +7,7 @@ MySQL:
 
 Admin_Permission: "celesteshop.admin"
 NoPermission: "&b&lSHOP &7You not a have permission."
+DrawTime: 10
 
 Inventory:
   Title: "&8SHOP - CATEGORIES"

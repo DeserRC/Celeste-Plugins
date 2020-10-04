@@ -61,13 +61,14 @@ Message:
   HelpAdmin: |
     &f&m-----------&r &b&lSHOP - ADMIN &f&m-----------
     &b/shop,&7 items shop.
+    &b/drawpoints, &7draw points
     &b/points&7, view your balance.
     &b/points&7 pay, send points.
     &b/points&7 add, add points.
     &b/points&7 remove, remove points.
     &b/points&7 set, set points.
     &b/points&7 reset reset points.
-  #SHOP - Command "/shop"w
+  #SHOP - Command "/shop"
   PointsInsufficientPoints:
     Use: true
     Message: "&b&lSHOP &7You don't have enough points."
@@ -78,3 +79,14 @@ Message:
     Use: true
     Title: "&cYou don't"
     SubTitle: "&fhave enough points"
+  #Draw - Command "/drawpoints"
+  DrawPointsInvalidArgument: "&b&lSHOP &7Invalid arguments, use: &f/drawpoints <Points>"
+  DrawPointsStart: "&b&lSHOP &7Draw started."
+  DrawPointsQueue:
+    - ""
+    - "&b&lDRAW: &fPoints will be drawn at %time% seconds"
+    - ""
+  DrawPointsWin:
+    - ""
+    - "&b&lDRAW: &f%player% won the draw of %points% points"
+    - ""
