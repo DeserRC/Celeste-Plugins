@@ -48,8 +48,8 @@ public class SQLite implements DataBase {
 
     @Override
     public synchronized void createTables() {
-        try (PreparedStatement statement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS `shop` (`key` VARCHAR(16) PRIMARY KEY, `points` INT(8) NOT NULL)")) {
-            statement.executeUpdate();
+        try (PreparedStatement stm = connection.prepareStatement("CREATE TABLE IF NOT EXISTS `shop` (`key` VARCHAR(16) PRIMARY KEY, `points` INT(8) NOT NULL)")) {
+            stm.executeUpdate();
         } catch(SQLException e) {
             System.err.printf("Can't create table in SQLite: %s", e.getMessage());
             Bukkit.getPluginManager().disablePlugin(main);

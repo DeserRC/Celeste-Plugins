@@ -8,13 +8,13 @@ import org.bukkit.entity.Player;
 
 public class PointsGetTask implements Runnable {
     private final Main main;
-    private final PointsFactory factory;
     private final PointsDAO dao;
+    private final PointsFactory factory;
 
     public PointsGetTask(Main main) {
         this.main = main;
-        this.factory = main.getPointsFactory();
         this.dao = main.getConnectionFactory().getDao();
+        this.factory = main.getPointsFactory();
     }
 
     @Override

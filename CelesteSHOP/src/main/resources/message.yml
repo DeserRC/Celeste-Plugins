@@ -50,6 +50,13 @@ Message:
     Use: true
     Title: "&cYour balance points"
     SubTitle: "&fhave been reset"
+  #Buy Points - No have Command
+  BuyPointsBroadCast: "&b&lSHOP &7%player% bought %points% points."
+  BuyPointsMessage: "&b&lSHOP &7Thank you for purchasing %points% points"
+  BuyPointsTitle:
+    Use: true
+    Title: "&cWere purchasing"
+    SubTitle: "&f%points% points"
   #Reload Plugin - Command "/points reload"
   ReloadMessage: "&b&lSHOP &7Reloaded configuration."
   #Help Points - Command "/points help"

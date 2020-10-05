@@ -94,4 +94,14 @@ public class PointsManager {
                 .setTarget(t)
                 .setOnline(online).buildReset());
     }
+
+    public void purchasePoints(String t, Integer value, Boolean online) {
+        Integer tValue = getPoints(t, true);
+
+        Bukkit.getPluginManager().callEvent(new PointsBuilder()
+                .setTarget(t)
+                .setTargetValue(tValue)
+                .setValue(value)
+                .setOnline(online).buildPurchase());
+    }
 }

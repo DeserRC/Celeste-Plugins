@@ -4,6 +4,7 @@ import com.redeceleste.celesteshop.Main;
 import com.redeceleste.celesteshop.dao.PointsDAO;
 import com.redeceleste.celesteshop.event.impl.*;
 import com.redeceleste.celesteshop.factory.PointsFactory;
+import com.redeceleste.celesteshop.manager.ConfigManager;
 import com.redeceleste.celesteshop.model.impl.Points;
 import com.redeceleste.celesteshop.util.impl.ChatUtil;
 import com.redeceleste.celesteshop.util.impl.TitleUtil;
@@ -17,6 +18,7 @@ public class PointsListener implements Listener {
     private final Main main;
     private final PointsFactory factory;
     private final PointsDAO dao;
+    private final ConfigManager config;
     private final ChatUtil chat;
     private final TitleUtil title;
 
@@ -24,6 +26,7 @@ public class PointsListener implements Listener {
         this.main = main;
         this.factory = main.getPointsFactory();
         this.dao = main.getConnectionFactory().getDao();
+        this.config = main.getConfigManager();
         this.chat = main.getMessageFactory().getChat();
         this.title = main.getMessageFactory().getTitle();
         main.getServer().getPluginManager().registerEvents(this, main);
@@ -201,5 +204,37 @@ public class PointsListener implements Listener {
         chat.send(t, "Message.ResetPointsReceived");
 
         title.send(t, "Message.ResetPointsReceivedTitle");
+    }
+
+    @EventHandler
+    public void onPointsPurchase(PointsPurchaseEvent e) {
+        if (e.isCancelled()) return;
+
+        if (!e.getOnline()) {
+            dao.replace(new Points(e.getTarget(), e.getTargetValue() + e.getValue()), true);
+
+            String message = config.getMessage("Message.BuyPointsBroadCast");
+            message = message.replace("%player%", e.getTarget()).replace("%points%", e.getValue().toString());
+
+            Bukkit.broadcastMessage(message);
+        }
+
+        if (!factory.getUpdate().contains(e.getTarget().toLowerCase())) {
+            factory.getUpdate().put(e.getTarget().toLowerCase());
+        }
+
+        factory.getPoints().put(e.getTarget().toLowerCase(), new Points(e.getTarget(), e.getTargetValue()+e.getValue()));
+
+        Player t = Bukkit.getPlayer(e.getTarget());
+
+        String message = config.getMessage("Message.BuyPointsBroadCast");
+        message = message.replace("%player%", t.getName()).replace("%points%", e.getValue().toString());
+
+        Bukkit.broadcastMessage(message);
+
+        chat.send(t, "Message.BuyPointsMessage",
+                chat.build("%points%", e.getValue()));
+
+        title.send(t, "Message.BuyPointsTitle");
     }
 }

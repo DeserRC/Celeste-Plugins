@@ -7,14 +7,14 @@ import com.redeceleste.celesteshop.model.PointsArgument;
 
 public class PointsUpdateTask implements Runnable {
     private final Main main;
-    private final PointsFactory factory;
     private final PointsDAO dao;
+    private final PointsFactory factory;
     private final Boolean async;
 
     public PointsUpdateTask(Main main, Boolean async) {
         this.main = main;
-        this.factory = main.getPointsFactory();
         this.dao = main.getConnectionFactory().getDao();
+        this.factory = main.getPointsFactory();
         this.async = async;
     }
 

@@ -11,11 +11,11 @@ import java.util.Map;
 
 public class TitleUtil extends ReflectionUtil {
     private final Main main;
-    private final ConfigManager manager;
+    private final ConfigManager config;
 
     public TitleUtil(Main main) {
         this.main = main;
-        this.manager = main.getConfigManager();
+        this.config = main.getConfigManager();
     }
 
     @Override @SafeVarargs @SneakyThrows
@@ -23,10 +23,10 @@ public class TitleUtil extends ReflectionUtil {
         String title = path;
         String subtitle = path;
 
-        if (manager.contains(path, type)) {
-            if (manager.get(path + ".Use", type)) {
-                title = manager.get(path + ".Title", type);
-                subtitle = manager.get(path + ".SubTitle", type);
+        if (config.contains(path, type)) {
+            if (config.get(path + ".Use", type)) {
+                title = config.get(path + ".Title", type);
+                subtitle = config.get(path + ".SubTitle", type);
             } else return;
         }
 

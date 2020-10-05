@@ -42,22 +42,26 @@ public class PointsBuilder {
     }
 
     public PointsPayEvent buildPay() {
-        return new PointsPayEvent(player, target, online, playerValue, targetValue, value);
+        return new PointsPayEvent(player, target, playerValue, targetValue, value, online);
     }
 
     public PointsAddEvent buildAdd() {
-        return new PointsAddEvent(player, target, online, targetValue, value);
+        return new PointsAddEvent(player, target, targetValue, value, online);
     }
 
     public PointsRemoveEvent buildRemove() {
-        return new PointsRemoveEvent(player, target, online, targetValue, value);
+        return new PointsRemoveEvent(player, target, targetValue, value, online);
     }
 
     public PointsSetEvent buildSet() {
-        return new PointsSetEvent(player, target, online, value);
+        return new PointsSetEvent(player, target, value, online);
     }
 
     public PointsResetEvent buildReset() {
         return new PointsResetEvent(player, target, online);
+    }
+
+    public PointsPurchaseEvent buildPurchase() {
+        return new PointsPurchaseEvent(target, targetValue, value, online);
     }
 }

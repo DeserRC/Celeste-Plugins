@@ -11,20 +11,20 @@ import java.util.Map;
 
 public class BarUtil extends ReflectionUtil {
     private final Main main;
-    private final ConfigManager manager;
+    private final ConfigManager config;
 
     public BarUtil(Main main) {
         this.main = main;
-        this.manager = main.getConfigManager();
+        this.config = main.getConfigManager();
     }
 
     @Override @SafeVarargs @SneakyThrows
     public final <T, U> void send(CommandSender sender, String path, ConfigType type, Map.Entry<T, U>... map) {
         String message = path;
 
-        if (manager.contains(path, type)) {
-            if (manager.get(path + ".Use", type)) {
-                message = manager.get(path + ".Message", type);
+        if (config.contains(path, type)) {
+            if (config.get(path + ".Use", type)) {
+                message = config.get(path + ".Message", type);
             } else return;
         }
 
