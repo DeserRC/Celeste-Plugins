@@ -8,6 +8,8 @@ MySQL:
 Admin_Permission: "celesteshop.admin"
 NoPermission: "&b&lSHOP &7You not a have permission."
 DrawTime: 10
+LogsTimeZone: "America/Sao_Paulo" #TimeZone list https://ghostbin.co/paste/uejn
+LogsFormat: "yyyy-MM-dd"
 
 Inventory:
   Title: "&8SHOP - CATEGORIES"

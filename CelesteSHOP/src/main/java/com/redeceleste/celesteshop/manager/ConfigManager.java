@@ -2,16 +2,19 @@ package com.redeceleste.celesteshop.manager;
 
 import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.model.ConfigType;
+import com.redeceleste.celesteshop.model.UpdateType;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
+import java.io.BufferedWriter;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Getter
@@ -19,6 +22,7 @@ public class ConfigManager {
     private final CelesteSHOP main;
     private final FileConfiguration message;
     private final MapManager<String, FileConfiguration> categories;
+    private File logs;
 
     public ConfigManager(CelesteSHOP main) {
         this.main = main;
@@ -111,6 +115,57 @@ public class ConfigManager {
         return config.contains(customConfig[1]);
     }
 
+    /**
+     * @param p Player or Product
+     * @param target Target Player
+     * @param value Action value
+     * @param type The type of log that should be reported "Access by: main/java/com.redeceleste.celesteshop/model/UpdateType.java"
+     */
+    public void putLog(String p, String target, Integer value, UpdateType type) {
+        String timeZone = getConfig("LogsTimeZone");
+        SimpleDateFormat sdf = new SimpleDateFormat("[HH:mm:ss] ");
+        sdf.setTimeZone(TimeZone.getTimeZone(timeZone));
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(logs, true))) {
+            String message = null;
+
+            switch (type) {
+                case buySHOP:
+                    message = "[BUY] " + target + " bought " + p + " for " + value + " points";
+                    break;
+                case purchase:
+                    message = "[PURCHASE] " + target + " bought " + value + " points";
+                    break;
+                case send:
+                    message = "[SENT]" + p + " Sent " + value + " points to " + target;
+                    break;
+                case received:
+                    message = "[RECEIVED] " + p + " Received " + value + " points from " + target;
+                    break;
+                case add:
+                    message = "[ADD] " + p + " added " + value + " points to " + target;
+                    break;
+                case remove:
+                    message = "[REMOVE] " + p + " removed " + value + " points from " + target;
+                    break;
+                case set:
+                    message = "[SET] " + p + " set " + value + " points to " + target;
+                    break;
+                case reset:
+                    message = "[RESET] " + p + " reset points to " + target;
+                    break;
+            }
+
+            if (message == null) throw new IOException();
+
+            bw.write(sdf.format(new Date()) + message);
+            bw.newLine();
+
+        } catch (IOException e) {
+            System.err.printf("An error occurred while saving the %s player logs of type %s: %s", target, type, e.getMessage());
+        }
+    }
+
     @SneakyThrows
     private void load() {
         //Config.yml
@@ -140,6 +195,16 @@ public class ConfigManager {
                 categories.put(file.getName(), fileConfiguration);
             }
         }
+
+        //Logs
+        String timeZone = getConfig("LogsTimeZone");
+        SimpleDateFormat sdf = new SimpleDateFormat(getConfig("LogsFormat"));
+        sdf.setTimeZone(TimeZone.getTimeZone(timeZone));
+
+        logs = new File(main.getDataFolder() + "/logs", sdf.format(new Date()) + ".log");
+
+        if (!logs.getParentFile().exists()) logs.getParentFile().mkdirs();
+        if (!logs.exists()) logs.createNewFile();
     }
 
     @SneakyThrows

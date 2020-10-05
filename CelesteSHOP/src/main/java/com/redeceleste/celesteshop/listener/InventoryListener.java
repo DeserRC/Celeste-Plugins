@@ -6,6 +6,7 @@ import com.redeceleste.celesteshop.manager.ConfigManager;
 import com.redeceleste.celesteshop.manager.InventoryManager;
 import com.redeceleste.celesteshop.model.ConfigType;
 import com.redeceleste.celesteshop.model.InventoryType;
+import com.redeceleste.celesteshop.model.UpdateType;
 import com.redeceleste.celesteshop.util.impl.BarUtil;
 import com.redeceleste.celesteshop.util.impl.ChatUtil;
 import com.redeceleste.celesteshop.util.impl.TitleUtil;
@@ -81,6 +82,10 @@ public class InventoryListener implements Listener {
                 } else {
                     p.getInventory().addItem(is);
                 }
+
+                String[] product = path.split("\\.");
+                Integer price = config.getCategory("path" + ".Price");
+                config.putLog(product[product.length-1], p.getName(), price, UpdateType.buySHOP);
 
                 chat.send(p, path + ".MessageBuy", ConfigType.category);
                 title.send(p, path + ".TitleBuy", ConfigType.category);

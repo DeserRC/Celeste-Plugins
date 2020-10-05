@@ -5,6 +5,7 @@ import com.redeceleste.celesteshop.dao.PointsDAO;
 import com.redeceleste.celesteshop.event.impl.*;
 import com.redeceleste.celesteshop.factory.PointsFactory;
 import com.redeceleste.celesteshop.manager.ConfigManager;
+import com.redeceleste.celesteshop.model.UpdateType;
 import com.redeceleste.celesteshop.model.impl.Points;
 import com.redeceleste.celesteshop.util.impl.ChatUtil;
 import com.redeceleste.celesteshop.util.impl.TitleUtil;
@@ -40,6 +41,9 @@ public class PointsListener implements Listener {
             dao.replace(new Points(e.getTarget(), e.getTargetValue() + e.getValue()), true);
             factory.getPoints().put(e.getPlayer().getName().toLowerCase(), new Points(e.getPlayer().getName(),e.getPlayerValue() - e.getValue()));
 
+            config.putLog(e.getPlayer().getName(), e.getTarget(), e.getValue(), UpdateType.send);
+            config.putLog(e.getTarget(), e.getPlayer().getName(), e.getValue(), UpdateType.received);
+
             chat.send(e.getPlayer(), "Message.PaySucessSent",
                     chat.build("%player%", e.getTarget()),
                     chat.build("%points%", e.getValue()));
@@ -62,6 +66,9 @@ public class PointsListener implements Listener {
         CommandSender p = e.getPlayer();
         Player t = Bukkit.getPlayer(e.getTarget());
 
+        config.putLog(p.getName(), t.getName(), e.getValue(), UpdateType.send);
+        config.putLog(t.getName(), p.getName(), e.getValue(), UpdateType.received);
+
         chat.send(p, "Message.PaySucessSent",
                 chat.build("%player%", t.getName()),
                 chat.build("%points%", e.getValue()));
@@ -82,6 +89,8 @@ public class PointsListener implements Listener {
         if (!e.getOnline()) {
             dao.replace(new Points(e.getTarget(), e.getTargetValue() + e.getValue()), true);
 
+            config.putLog(e.getPlayer().getName(), e.getTarget(), e.getValue(), UpdateType.add);
+
             chat.send(e.getPlayer(), "Message.AddSucessSent",
                     chat.build("%player%", e.getTarget()),
                     chat.build("%points%", e.getValue()));
@@ -97,6 +106,8 @@ public class PointsListener implements Listener {
 
         CommandSender p = e.getPlayer();
         Player t = Bukkit.getPlayer(e.getTarget());
+
+        config.putLog(p.getName(), t.getName(), e.getValue(), UpdateType.add);
 
         chat.send(p, "Message.AddSucessSent",
                 chat.build("%player%", t.getName()),
@@ -116,6 +127,8 @@ public class PointsListener implements Listener {
         if (!e.getOnline()) {
             dao.replace(new Points(e.getTarget(), e.getTargetValue() - e.getValue()), true);
 
+            config.putLog(e.getPlayer().getName(), e.getTarget(), e.getValue(), UpdateType.remove);
+
             chat.send(e.getPlayer(), "Message.RemoveSucessSent",
                     chat.build("%player%", e.getTarget()),
                     chat.build("%points%", e.getValue()));
@@ -131,6 +144,8 @@ public class PointsListener implements Listener {
 
         CommandSender p = e.getPlayer();
         Player t = Bukkit.getPlayer(e.getTarget());
+
+        config.putLog(p.getName(), t.getName(), e.getValue(), UpdateType.remove);
 
         chat.send(p, "Message.RemoveSucessSent",
                 chat.build("%player%", t.getName()),
@@ -150,6 +165,8 @@ public class PointsListener implements Listener {
         if (!e.getOnline()) {
             dao.replace(new Points(e.getTarget(), e.getValue()), true);
 
+            config.putLog(e.getPlayer().getName(), e.getTarget(), e.getValue(), UpdateType.set);
+
             chat.send(e.getPlayer(), "Message.SetSucessSent",
                     chat.build("%player%", e.getTarget()),
                     chat.build("%points%", e.getValue()));
@@ -164,6 +181,8 @@ public class PointsListener implements Listener {
 
         CommandSender p = e.getPlayer();
         Player t = Bukkit.getPlayer(e.getTarget());
+
+        config.putLog(p.getName(), t.getName(), e.getValue(), UpdateType.set);
 
         chat.send(p, "Message.SetSucessSent",
                 chat.build("%player%", t.getName()),
@@ -183,6 +202,8 @@ public class PointsListener implements Listener {
         if (!e.getOnline()) {
             dao.replace(new Points(e.getTarget(), 0), true);
 
+            config.putLog(e.getPlayer().getName(), e.getTarget(), null, UpdateType.reset);
+
             chat.send(e.getPlayer(), "Message.ResetSucessSent",
                     chat.build("%player%", e.getTarget()));
             return;
@@ -196,6 +217,8 @@ public class PointsListener implements Listener {
 
         CommandSender p = e.getPlayer();
         Player t = Bukkit.getPlayer(e.getTarget());
+
+        config.putLog(p.getName(), t.getName(), null, UpdateType.reset);
 
         chat.send(p, "Message.ResetSucessSent",
                 chat.build("%player%", t.getName()),
@@ -213,6 +236,8 @@ public class PointsListener implements Listener {
         if (!e.getOnline()) {
             dao.replace(new Points(e.getTarget(), e.getTargetValue() + e.getValue()), true);
 
+            config.putLog(null, e.getTarget(), e.getValue(), UpdateType.purchase);
+
             String message = config.getMessage("Message.BuyPointsBroadCast");
             message = message.replace("%player%", e.getTarget()).replace("%points%", e.getValue().toString());
 
@@ -226,6 +251,8 @@ public class PointsListener implements Listener {
         factory.getPoints().put(e.getTarget().toLowerCase(), new Points(e.getTarget(), e.getTargetValue()+e.getValue()));
 
         Player t = Bukkit.getPlayer(e.getTarget());
+
+        config.putLog(null, t.getName(), e.getValue(), UpdateType.purchase);
 
         String message = config.getMessage("Message.BuyPointsBroadCast");
         message = message.replace("%player%", t.getName()).replace("%points%", e.getValue().toString());
