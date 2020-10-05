@@ -1,6 +1,6 @@
 package com.redeceleste.celesteshop.listener;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.holder.InventoryHolder;
 import com.redeceleste.celesteshop.manager.ConfigManager;
 import com.redeceleste.celesteshop.manager.InventoryManager;
@@ -18,14 +18,14 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public class InventoryListener implements Listener {
-    private final Main main;
+    private final CelesteSHOP main;
     private final ConfigManager config;
     private final InventoryManager inventory;
     private final ChatUtil chat;
     private final TitleUtil title;
     private final BarUtil bar;
 
-    public InventoryListener(Main main) {
+    public InventoryListener(CelesteSHOP main) {
         this.main = main;
         this.config = main.getConfigManager();
         this.inventory = main.getInventoryManager();

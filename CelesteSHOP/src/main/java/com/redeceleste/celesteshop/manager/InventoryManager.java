@@ -1,6 +1,6 @@
 package com.redeceleste.celesteshop.manager;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.builder.ItemBuilder;
 import com.redeceleste.celesteshop.holder.InventoryHolder;
 import com.redeceleste.celesteshop.model.ConfigType;
@@ -18,14 +18,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class InventoryManager {
-    private final Main main;
+    private final CelesteSHOP main;
     private final ConfigManager config;
     private final PointsManager points;
     private final ChatUtil chat;
     private final TitleUtil titleUtil;
     private final BarUtil bar;
 
-    public InventoryManager(Main main) {
+    public InventoryManager(CelesteSHOP main) {
          this.main = main;
          this.config = main.getConfigManager();
          this.points = main.getPointsFactory().getManager();

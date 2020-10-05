@@ -2,9 +2,11 @@ package com.redeceleste.celestehomes.database;
 
 import java.sql.*;
 
-import com.redeceleste.celestehomes.Main;
+import com.redeceleste.celestehomes.CelesteHomes;
 import lombok.Getter;
 import org.bukkit.Bukkit;
+
+import static java.util.concurrent.CompletableFuture.supplyAsync;
 
 public class MySQL {
     @Getter
@@ -25,7 +27,7 @@ public class MySQL {
             createTables();
         } catch (SQLException ignored) {
             System.out.print("Can't connect to MySQL");
-            Bukkit.getPluginManager().disablePlugin(Main.getInstance());
+            Bukkit.getPluginManager().disablePlugin(CelesteHomes.getInstance());
         }
     }
 
@@ -44,7 +46,7 @@ public class MySQL {
             stm.executeUpdate();
         } catch (Exception ignored) {
             System.out.print("Can't create table in MySQL.");
-            Bukkit.getPluginManager().disablePlugin(Main.getInstance());
+            Bukkit.getPluginManager().disablePlugin(CelesteHomes.getInstance());
         }
     }
 

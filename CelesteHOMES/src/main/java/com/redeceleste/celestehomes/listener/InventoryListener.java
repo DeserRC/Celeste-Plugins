@@ -1,6 +1,6 @@
 package com.redeceleste.celestehomes.listener;
 
-import com.redeceleste.celestehomes.Main;
+import com.redeceleste.celestehomes.CelesteHomes;
 import com.redeceleste.celestehomes.builder.InventoryBuilder;
 import com.redeceleste.celestehomes.manager.ConfigManager;
 import com.redeceleste.celestehomes.manager.HomeManager;
@@ -15,7 +15,7 @@ import org.bukkit.inventory.Inventory;
 
 public class InventoryListener implements Listener {
     public InventoryListener() {
-        Main.getInstance().getServer().getPluginManager().registerEvents(this, Main.getInstance());
+        CelesteHomes.getInstance().getServer().getPluginManager().registerEvents(this, CelesteHomes.getInstance());
     }
 
     @EventHandler
@@ -30,7 +30,7 @@ public class InventoryListener implements Listener {
 
         if (inventory.getTitle().contains(ConfigManager.TitleGUI.replace("%player%", p.getName()))) {
             try {
-                UserArgument user = Main.getInstance().getUserDAO().cache.get(p);
+                UserArgument user = CelesteHomes.getInstance().getUserDAO().cache.get(p);
                 for (InventoryArgument ai : ConfigManager.Template) {
                     for (UserBuilder userBuilder : user.getHomes().values()) {
                         if (e.getCurrentItem().getItemMeta().getDisplayName().equals(ai.getName()

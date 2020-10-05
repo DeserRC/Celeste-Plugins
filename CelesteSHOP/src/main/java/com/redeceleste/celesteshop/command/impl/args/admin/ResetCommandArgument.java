@@ -1,6 +1,6 @@
 package com.redeceleste.celesteshop.command.impl.args.admin;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.command.CommandArgument;
 import com.redeceleste.celesteshop.manager.ConfigManager;
 import com.redeceleste.celesteshop.manager.PointsManager;
@@ -10,12 +10,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 
 public class ResetCommandArgument extends CommandArgument {
-    private final Main main;
+    private final CelesteSHOP main;
     private final PointsManager points;
     private final ConfigManager config;
     private final ChatUtil chat;
 
-    public ResetCommandArgument(Main main) {
+    public ResetCommandArgument(CelesteSHOP main) {
         super(false, "reset", "resetar");
         this.main = main;
         this.points = main.getPointsFactory().getManager();

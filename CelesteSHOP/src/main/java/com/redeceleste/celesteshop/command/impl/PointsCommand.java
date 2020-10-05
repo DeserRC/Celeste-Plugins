@@ -1,6 +1,6 @@
 package com.redeceleste.celesteshop.command.impl;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.command.Command;
 import com.redeceleste.celesteshop.command.CommandArgument;
 import com.redeceleste.celesteshop.manager.ConfigManager;
@@ -13,12 +13,12 @@ import org.bukkit.entity.Player;
 import java.util.Arrays;
 
 public class PointsCommand extends Command {
-    private final Main main;
+    private final CelesteSHOP main;
     private final PointsManager points;
     private final ConfigManager config;
     private final ChatUtil chat;
 
-    public PointsCommand(Main main) {
+    public PointsCommand(CelesteSHOP main) {
         super("points","point", "pontos", "ponto", "cashs", "cash");
         this.main = main;
         this.points = main.getPointsFactory().getManager();

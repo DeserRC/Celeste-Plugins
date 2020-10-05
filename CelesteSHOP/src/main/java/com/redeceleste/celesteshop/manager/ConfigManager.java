@@ -1,6 +1,6 @@
 package com.redeceleste.celesteshop.manager;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.model.ConfigType;
 import lombok.Getter;
 import lombok.SneakyThrows;
@@ -16,11 +16,11 @@ import java.util.stream.Collectors;
 
 @Getter
 public class ConfigManager {
-    private final Main main;
+    private final CelesteSHOP main;
     private final FileConfiguration message;
     private final MapManager<String, FileConfiguration> categories;
 
-    public ConfigManager(Main main) {
+    public ConfigManager(CelesteSHOP main) {
         this.main = main;
         this.message = new YamlConfiguration();
         this.categories = new MapManager<>();

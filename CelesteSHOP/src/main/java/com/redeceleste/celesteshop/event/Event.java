@@ -6,7 +6,7 @@ import org.bukkit.event.HandlerList;
 
 /*
 Run events via PointsManager
-Code: Main.getInstance().getPointsFactory().getManager()
+Code: CelesteSHOP.getInstance().getPointsFactory().getManager()
  */
 
 @Getter

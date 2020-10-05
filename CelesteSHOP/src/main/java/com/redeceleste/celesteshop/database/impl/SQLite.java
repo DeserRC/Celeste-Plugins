@@ -1,6 +1,6 @@
 package com.redeceleste.celesteshop.database.impl;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.database.DataBase;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -13,11 +13,11 @@ import java.sql.SQLException;
 
 @Getter
 public class SQLite implements DataBase {
-    private final Main main;
+    private final CelesteSHOP main;
     private final File file;
     private Connection connection;
 
-    public SQLite(Main main) {
+    public SQLite(CelesteSHOP main) {
         this.main = main;
         this.file = new File(main.getDataFolder(), "/shop.db");
         openConnection();

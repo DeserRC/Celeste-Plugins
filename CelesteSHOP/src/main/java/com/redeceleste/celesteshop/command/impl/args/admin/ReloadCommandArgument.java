@@ -1,6 +1,6 @@
 package com.redeceleste.celesteshop.command.impl.args.admin;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.command.CommandArgument;
 import com.redeceleste.celesteshop.manager.ConfigManager;
 import com.redeceleste.celesteshop.model.ConfigType;
@@ -8,11 +8,11 @@ import com.redeceleste.celesteshop.util.impl.ChatUtil;
 import org.bukkit.command.CommandSender;
 
 public class ReloadCommandArgument extends CommandArgument {
-    private final Main main;
+    private final CelesteSHOP main;
     private final ConfigManager config;
     private final ChatUtil chat;
 
-    public ReloadCommandArgument(Main main) {
+    public ReloadCommandArgument(CelesteSHOP main) {
         super(false, "reload", "recarregar");
         this.main = main;
         this.config = main.getConfigManager();

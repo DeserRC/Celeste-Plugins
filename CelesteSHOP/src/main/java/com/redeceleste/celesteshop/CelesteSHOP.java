@@ -23,9 +23,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
 @Getter
-public class Main extends JavaPlugin {
+public class CelesteSHOP extends JavaPlugin {
     @Getter
-    private static Main instance;
+    private static CelesteSHOP instance;
 
     private ScheduledExecutorService scheduled;
     private ConfigManager configManager;

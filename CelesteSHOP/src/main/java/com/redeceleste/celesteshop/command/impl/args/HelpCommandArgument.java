@@ -1,17 +1,17 @@
 package com.redeceleste.celesteshop.command.impl.args;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.command.CommandArgument;
 import com.redeceleste.celesteshop.manager.ConfigManager;
 import com.redeceleste.celesteshop.util.impl.ChatUtil;
 import org.bukkit.command.CommandSender;
 
 public class HelpCommandArgument extends CommandArgument {
-    private final Main main;
+    private final CelesteSHOP main;
     private final ConfigManager config;
     private final ChatUtil chat;
 
-    public HelpCommandArgument(Main main) {
+    public HelpCommandArgument(CelesteSHOP main) {
         super(false, "help", "ajuda");
         this.main = main;
         this.config = main.getConfigManager();

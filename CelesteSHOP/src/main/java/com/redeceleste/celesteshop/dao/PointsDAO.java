@@ -1,6 +1,6 @@
 package com.redeceleste.celesteshop.dao;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.database.DataBase;
 import com.redeceleste.celesteshop.model.PointsArgument;
 import com.redeceleste.celesteshop.model.impl.Points;
@@ -12,10 +12,10 @@ import java.util.HashSet;
 import java.util.concurrent.CompletableFuture;
 
 public class PointsDAO {
-    private final Main main;
+    private final CelesteSHOP main;
     private final DataBase dataBase;
 
-    public PointsDAO(Main main, DataBase dataBase) {
+    public PointsDAO(CelesteSHOP main, DataBase dataBase) {
         this.main = main;
         this.dataBase = dataBase;
     }

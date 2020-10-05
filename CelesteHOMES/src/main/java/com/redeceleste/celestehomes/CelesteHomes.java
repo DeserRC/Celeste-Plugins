@@ -21,10 +21,10 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 @Getter
-public class Main extends JavaPlugin {
+public class CelesteHomes extends JavaPlugin {
 
     @Getter
-    private static Main instance;
+    private static CelesteHomes instance;
     private MySQL mySQL;
     private UserDAO UserDAO = new UserDAO();
     private ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);

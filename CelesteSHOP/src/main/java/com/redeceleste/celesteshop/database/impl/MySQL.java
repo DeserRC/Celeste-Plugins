@@ -1,6 +1,6 @@
 package com.redeceleste.celesteshop.database.impl;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.database.DataBase;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -12,11 +12,11 @@ import java.sql.SQLException;
 
 @Getter
 public class MySQL implements DataBase {
-    private final Main main;
+    private final CelesteSHOP main;
     private final String host, database, user, password;
     private Connection connection;
 
-    public MySQL(Main main, String host, String user, String database, String password) {
+    public MySQL(CelesteSHOP main, String host, String user, String database, String password) {
         this.main = main;
         this.host = host;
         this.database = database;

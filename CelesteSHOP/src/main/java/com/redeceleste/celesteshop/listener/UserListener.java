@@ -1,6 +1,6 @@
 package com.redeceleste.celesteshop.listener;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.dao.PointsDAO;
 import com.redeceleste.celesteshop.factory.PointsFactory;
 import com.redeceleste.celesteshop.model.PointsArgument;
@@ -13,11 +13,11 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import java.util.concurrent.CompletableFuture;
 
 public class UserListener implements Listener {
-    private final Main main;
+    private final CelesteSHOP main;
     private final PointsFactory factory;
     private final PointsDAO dao;
 
-    public UserListener(Main main) {
+    public UserListener(CelesteSHOP main) {
         this.main = main;
         this.factory = main.getPointsFactory();
         this.dao = main.getConnectionFactory().getDao();

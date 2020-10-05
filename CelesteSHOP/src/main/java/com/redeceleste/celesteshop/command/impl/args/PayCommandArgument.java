@@ -1,6 +1,6 @@
 package com.redeceleste.celesteshop.command.impl.args;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.command.CommandArgument;
 import com.redeceleste.celesteshop.manager.PointsManager;
 import com.redeceleste.celesteshop.util.impl.ChatUtil;
@@ -10,11 +10,11 @@ import org.bukkit.command.CommandSender;
 import java.util.regex.Pattern;
 
 public class PayCommandArgument extends CommandArgument {
-    private final Main main;
+    private final CelesteSHOP main;
     private final PointsManager points;
     private final ChatUtil chat;
 
-    public PayCommandArgument(Main main) {
+    public PayCommandArgument(CelesteSHOP main) {
         super(true, "pay","payment", "enviar");
         this.main = main;
         this.points = main.getPointsFactory().getManager();

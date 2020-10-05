@@ -1,6 +1,6 @@
 package com.redeceleste.celestehomes.listener;
 
-import com.redeceleste.celestehomes.Main;
+import com.redeceleste.celestehomes.CelesteHomes;
 import com.redeceleste.celestehomes.model.UserArgument;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -10,16 +10,16 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 public class UserListener implements Listener {
     public UserListener() {
-        Main.getInstance().getServer().getPluginManager().registerEvents(this, Main.getInstance());
+        CelesteHomes.getInstance().getServer().getPluginManager().registerEvents(this, CelesteHomes.getInstance());
     }
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
-        Main.getInstance().getExecutorService().execute(() -> {
-            if (Main.getInstance().getUserDAO().isExists(p.getName())) {
-                UserArgument userArgument = Main.getInstance().getUserDAO().getArgument(p.getName());
-                Main.getInstance().getUserDAO().cache.put(userArgument.getPlayer(), userArgument);
+        CelesteHomes.getInstance().getExecutorService().execute(() -> {
+            if (CelesteHomes.getInstance().getUserDAO().isExists(p.getName())) {
+                UserArgument userArgument = CelesteHomes.getInstance().getUserDAO().getArgument(p.getName());
+                CelesteHomes.getInstance().getUserDAO().cache.put(userArgument.getPlayer(), userArgument);
             }
         });
     }
@@ -27,13 +27,13 @@ public class UserListener implements Listener {
     @EventHandler
     public void onQuit(PlayerQuitEvent e) {
         Player p = e.getPlayer();
-        Main.getInstance().getExecutorService().execute(() -> {
-            if (Main.getInstance().update.contains(p.getName())) {
-                UserArgument userArgument = Main.getInstance().getUserDAO().cache.get(p.getName());
-                Main.getInstance().getUserDAO().insert(userArgument);
-                Main.getInstance().update.remove(p.getName());
+        CelesteHomes.getInstance().getExecutorService().execute(() -> {
+            if (CelesteHomes.getInstance().update.contains(p.getName())) {
+                UserArgument userArgument = CelesteHomes.getInstance().getUserDAO().cache.get(p.getName());
+                CelesteHomes.getInstance().getUserDAO().insert(userArgument);
+                CelesteHomes.getInstance().update.remove(p.getName());
             }
-            Main.getInstance().getUserDAO().cache.remove(p.getName());
+            CelesteHomes.getInstance().getUserDAO().cache.remove(p.getName());
         });
     }
 }

@@ -1,9 +1,10 @@
 package com.redeceleste.celestehomes.manager;
 
-import com.redeceleste.celestehomes.Main;
+import com.redeceleste.celestehomes.CelesteHomes;
 import com.redeceleste.celestehomes.event.TeleportEvent;
 import com.redeceleste.celestehomes.util.impls.ActionBarUtil;
 import com.redeceleste.celestehomes.util.impls.TitleUtil;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -17,7 +18,7 @@ public class TeleportManager {
 
     public static void teleportPlayer(Player p, String name, String loc) {
         if (PermissionManager.hasDelayOtherTeleportBypass(p)) {
-            TeleportEvent.teleport(p, name, loc);
+            Bukkit.getPluginManager().callEvent(new TeleportEvent(p, name, loc));
             return;
         }
 
@@ -31,17 +32,17 @@ public class TeleportManager {
         }
 
         if (PermissionManager.hasDelayBypass(p)) {
-            TeleportEvent.teleport(p, name, loc);
+            Bukkit.getPluginManager().callEvent(new TeleportEvent(p, name, loc));
             return;
         }
 
-        Main.getInstance().getExecutorService().scheduleAtFixedRate(new BukkitRunnable() {
+        CelesteHomes.getInstance().getExecutorService().scheduleAtFixedRate(new BukkitRunnable() {
             Integer delay = Integer.parseInt(ConfigManager.Delay);
             Location pos1 = p.getLocation();
             @Override
             public void run() {
                 if (delay == 0) {
-                    TeleportEvent.teleport(p, name, loc);
+                    Bukkit.getPluginManager().callEvent(new TeleportEvent(p, name, loc));
                     cancel();
                 }
 

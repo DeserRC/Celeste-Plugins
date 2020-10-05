@@ -1,6 +1,6 @@
 package com.redeceleste.celesteshop.listener;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.dao.PointsDAO;
 import com.redeceleste.celesteshop.event.impl.*;
 import com.redeceleste.celesteshop.factory.PointsFactory;
@@ -15,14 +15,14 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
 public class PointsListener implements Listener {
-    private final Main main;
+    private final CelesteSHOP main;
     private final PointsFactory factory;
     private final PointsDAO dao;
     private final ConfigManager config;
     private final ChatUtil chat;
     private final TitleUtil title;
 
-    public PointsListener(Main main) {
+    public PointsListener(CelesteSHOP main) {
         this.main = main;
         this.factory = main.getPointsFactory();
         this.dao = main.getConnectionFactory().getDao();

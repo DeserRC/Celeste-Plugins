@@ -1,6 +1,6 @@
 package com.redeceleste.celesteshop.util.impl;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.manager.ConfigManager;
 import com.redeceleste.celesteshop.model.ConfigType;
 import com.redeceleste.celesteshop.util.ReflectionUtil;
@@ -10,10 +10,10 @@ import org.bukkit.command.CommandSender;
 import java.util.Map;
 
 public class TitleUtil extends ReflectionUtil {
-    private final Main main;
+    private final CelesteSHOP main;
     private final ConfigManager config;
 
-    public TitleUtil(Main main) {
+    public TitleUtil(CelesteSHOP main) {
         this.main = main;
         this.config = main.getConfigManager();
     }

@@ -1,6 +1,6 @@
 package com.redeceleste.celestehomes.manager;
 
-import com.redeceleste.celestehomes.Main;
+import com.redeceleste.celestehomes.CelesteHomes;
 import org.bukkit.entity.Player;
 
 public class PermissionManager {
@@ -16,7 +16,7 @@ public class PermissionManager {
     }
 
     public static Boolean hasAdmin(Player p) {
-        return p.hasPermission(ConfigManager.Permission + "admin") || p.isOp();
+        return p.hasPermission(ConfigManager.Permission + "admin");
     }
 
     public static Boolean hasDelayBypass(Player p) {
@@ -29,7 +29,7 @@ public class PermissionManager {
 
     public static Integer getAmountHomes(Player p) {
         try {
-            return Main.getInstance().getUserDAO().cache.get(p.getName()).getHomes().size();
+            return CelesteHomes.getInstance().getUserDAO().cache.get(p.getName()).getHomes().size();
         } catch (Exception e) {
             return 0;
         }
@@ -37,7 +37,7 @@ public class PermissionManager {
 
     public static Integer remainingHomes(Player p, Integer i) {
         try {
-            return i-Main.getInstance().getUserDAO().cache.get(p.getName()).getHomes().size();
+            return i- CelesteHomes.getInstance().getUserDAO().cache.get(p.getName()).getHomes().size();
         } catch (Exception e) {
             return i;
         }

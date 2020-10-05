@@ -1,6 +1,6 @@
 package com.redeceleste.celestehomes.manager;
 
-import com.redeceleste.celestehomes.Main;
+import com.redeceleste.celestehomes.CelesteHomes;
 import com.redeceleste.celestehomes.model.InventoryArgument;
 import com.redeceleste.celestehomes.model.impls.Inventory;
 
@@ -70,16 +70,16 @@ public class ConfigManager {
     }
 
     public static void reloadMessage() {
-        Main.getInstance().reloadConfig();
+        CelesteHomes.getInstance().reloadConfig();
         loadMessage();
     }
 
     private static String get(String path) {
-        return Main.getInstance().getConfig().getString(path, ChatColor.DARK_RED + "There was an error loading the message: " + ChatColor.YELLOW + path).replace('&', '\u00A7');
+        return CelesteHomes.getInstance().getConfig().getString(path, ChatColor.DARK_RED + "There was an error loading the message: " + ChatColor.YELLOW + path).replace('&', '\u00A7');
     }
 
     private static List<String> getList(String path) {
-        return Main.getInstance().getConfig().getStringList(path).stream().map(lore -> ChatColor.translateAlternateColorCodes('&', lore)).collect(Collectors.toList());
+        return CelesteHomes.getInstance().getConfig().getStringList(path).stream().map(lore -> ChatColor.translateAlternateColorCodes('&', lore)).collect(Collectors.toList());
     }
 
     //Get Custom Itens
@@ -87,7 +87,7 @@ public class ConfigManager {
         if (!Itens.isEmpty())
             Itens.clear();
 
-        for (String menu : Main.getInstance().getConfig().getConfigurationSection("Inventory.CustomInventory").getKeys(false)) {
+        for (String menu : CelesteHomes.getInstance().getConfig().getConfigurationSection("Inventory.CustomInventory").getKeys(false)) {
             Integer slot = Integer.parseInt(get("Inventory.CustomInventory." + menu + ".Slot"));
             Integer amount = Integer.parseInt(get("Inventory.CustomInventory." + menu + ".Amount"));
             Material material = Material.valueOf(get("Inventory.CustomInventory." + menu + ".Material"));

@@ -1,7 +1,7 @@
 package com.redeceleste.celestehomes.dao;
 
 import com.google.gson.Gson;
-import com.redeceleste.celestehomes.Main;
+import com.redeceleste.celestehomes.CelesteHomes;
 import com.redeceleste.celestehomes.model.UserArgument;
 import com.redeceleste.celestehomes.model.impls.User;
 
@@ -15,7 +15,7 @@ public class UserDAO {
     public final HashMap<String, UserArgument> cache = new HashMap<>();
 
     public Boolean isExists(String key) {
-        try (PreparedStatement stm = Main.getInstance().getMySQL().getConnection().prepareStatement("SELECT 1 FROM `homes` WHERE `key` = ?")) {
+        try (PreparedStatement stm = CelesteHomes.getInstance().getMySQL().getConnection().prepareStatement("SELECT 1 FROM `homes` WHERE `key` = ?")) {
             stm.setString(1, key);
             ResultSet rs = stm.executeQuery();
             return rs.next();
@@ -25,7 +25,7 @@ public class UserDAO {
 
     public HashSet<UserArgument> getAll() {
         HashSet<UserArgument> userArguments = new HashSet<>();
-        try (PreparedStatement stm = Main.getInstance().getMySQL().getConnection().prepareStatement("SELECT `json` FROM `homes`")) {
+        try (PreparedStatement stm = CelesteHomes.getInstance().getMySQL().getConnection().prepareStatement("SELECT `json` FROM `homes`")) {
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 String json = rs.getString("json");
@@ -36,7 +36,7 @@ public class UserDAO {
     }
 
     public UserArgument getArgument(String key) {
-        try (PreparedStatement stm = Main.getInstance().getMySQL().getConnection().prepareStatement("SELECT `json` FROM `homes` WHERE `key` = ?")) {
+        try (PreparedStatement stm = CelesteHomes.getInstance().getMySQL().getConnection().prepareStatement("SELECT `json` FROM `homes` WHERE `key` = ?")) {
             stm.setString(1, key);
             ResultSet rs = stm.executeQuery();
             if (rs.next()) {
@@ -48,7 +48,7 @@ public class UserDAO {
     }
 
     public void insert(UserArgument userArgument) {
-        try (PreparedStatement stm = Main.getInstance().getMySQL().getConnection().prepareStatement("INSERT INTO `homes`(`key`, `json`) VALUES (?,?) ON DUPLICATE KEY UPDATE `json` = ?")) {
+        try (PreparedStatement stm = CelesteHomes.getInstance().getMySQL().getConnection().prepareStatement("INSERT INTO `homes`(`key`, `json`) VALUES (?,?) ON DUPLICATE KEY UPDATE `json` = ?")) {
             String json = gson.toJson(userArgument);
             stm.setString(1, userArgument.getPlayer());
             stm.setString(2, json);
@@ -60,7 +60,7 @@ public class UserDAO {
     }
 
     public void delete(String key) {
-        try (PreparedStatement stm = Main.getInstance().getMySQL().getConnection().prepareStatement("DELETE FROM `homes` WHERE `key` = ?")) {
+        try (PreparedStatement stm = CelesteHomes.getInstance().getMySQL().getConnection().prepareStatement("DELETE FROM `homes` WHERE `key` = ?")) {
             stm.setString(1, key);
             stm.executeUpdate();
         } catch (Exception ignored) {

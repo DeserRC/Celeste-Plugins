@@ -1,6 +1,6 @@
 package com.redeceleste.celestehomes.manager;
 
-import com.redeceleste.celestehomes.Main;
+import com.redeceleste.celestehomes.CelesteHomes;
 import com.redeceleste.celestehomes.builder.InventoryBuilder;
 import com.redeceleste.celestehomes.model.InventoryArgument;
 import com.redeceleste.celestehomes.model.UserArgument;
@@ -46,7 +46,7 @@ public class InventoryManager {
         }
 
         try {
-            UserArgument user = Main.getInstance().getUserDAO().cache.get(p.getName());
+            UserArgument user = CelesteHomes.getInstance().getUserDAO().cache.get(p.getName());
             for (InventoryArgument ai : ConfigManager.Template) {
                 for (UserBuilder userBuilder : user.getHomes().values()) {
                     List<String> replacedLore = ai.getLore().stream().map(s -> s
@@ -61,6 +61,8 @@ public class InventoryManager {
                         String[] split = enchant.split(":");
                         item.addUnsafeEnchantment(ItemBuilder.serializeEnchant(split[0]), Integer.parseInt(split[1]));
                     }
+
+                    replacedLore.removeIf(a -> a.equalsIgnoreCase("AAA"));
                     inv.setItem(slotEmpty(inv, userBuilder.getNumber()), item);
                 }
             }

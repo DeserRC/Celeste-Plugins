@@ -1,6 +1,6 @@
 package com.redeceleste.celesteshop.manager;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.builder.PointsBuilder;
 import com.redeceleste.celesteshop.dao.PointsDAO;
 import com.redeceleste.celesteshop.factory.PointsFactory;
@@ -11,11 +11,11 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class PointsManager {
-    private final Main main;
+    private final CelesteSHOP main;
     private final PointsDAO dao;
     private final PointsFactory factory;
 
-    public PointsManager(Main main, PointsFactory factory) {
+    public PointsManager(CelesteSHOP main, PointsFactory factory) {
         this.main = main;
         this.dao = main.getConnectionFactory().getDao();
         this.factory = factory;

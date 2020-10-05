@@ -1,6 +1,6 @@
 package com.redeceleste.celesteshop.factory;
 
-import com.redeceleste.celesteshop.Main;
+import com.redeceleste.celesteshop.CelesteSHOP;
 import com.redeceleste.celesteshop.dao.PointsDAO;
 import com.redeceleste.celesteshop.database.DataBase;
 import com.redeceleste.celesteshop.database.impl.MySQL;
@@ -10,12 +10,12 @@ import lombok.Getter;
 
 @Getter
 public class ConnectionFactory {
-    private final Main main;
+    private final CelesteSHOP main;
     private final ConfigManager config;
     private final DataBase dataBase;
     private final PointsDAO dao;
 
-    public ConnectionFactory(Main main) {
+    public ConnectionFactory(CelesteSHOP main) {
         this.main = main;
         this.config = main.getConfigManager();
 
