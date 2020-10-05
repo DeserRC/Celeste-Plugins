@@ -24,6 +24,9 @@ import java.util.concurrent.ScheduledExecutorService;
 
 @Getter
 public class Main extends JavaPlugin {
+    @Getter
+    private static Main instance;
+
     private ScheduledExecutorService scheduled;
     private ConfigManager configManager;
     private InventoryManager inventoryManager;
@@ -35,6 +38,8 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        instance = this;
+
         scheduled = Executors.newScheduledThreadPool(Runtime.getRuntime().availableProcessors()*5);
 
         configManager = new ConfigManager(this);
