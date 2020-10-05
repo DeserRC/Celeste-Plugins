@@ -12,7 +12,7 @@ Code: CelesteSHOP.getInstance().getPointsFactory().getManager()
 @Getter
 public abstract class Event extends org.bukkit.event.Event implements Cancellable {
     private static final HandlerList handler = new HandlerList();
-    private Boolean cancel;
+    private Boolean cancel = false;
 
     public HandlerList getHandlers() {
         return handler;

@@ -31,6 +31,7 @@ public class PointsCommand extends Command {
         if (args.length == 0) {
             if (!(sender instanceof Player)) {
                 chat.send(sender, "This command cannot be executed from the console");
+                return false;
             }
 
             Integer points = this.points.getPoints(sender.getName(), true);
