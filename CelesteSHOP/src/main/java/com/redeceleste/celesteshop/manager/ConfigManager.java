@@ -187,10 +187,10 @@ public class ConfigManager {
 
         //Custom Categories
         File[] listCategory = fileCategory.listFiles(File::isFile);
-        FileConfiguration fileConfiguration = new YamlConfiguration();
 
         for (File file : listCategory) {
             if (!file.getName().equals("category-example.yml")) {
+                FileConfiguration fileConfiguration = new YamlConfiguration();
                 fileConfiguration.load(file);
                 categories.put(file.getName(), fileConfiguration);
             }
