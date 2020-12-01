@@ -159,7 +159,7 @@ public class InventoryManager {
 
     @SafeVarargs
     private final void setItems(Inventory inv, FileConfiguration file, String path, Map.Entry<String, String>... map) {
-        int slot = 0;
+        int slot = 9;
         for (String name : config.getKeys(path, file)) {
             String newPath = path + "." + name + ".";
             while (inv.getItem(slot) != null) {
