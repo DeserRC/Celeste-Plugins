@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.command.impl.arg;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.command.CommandArgument;
 import com.redeceleste.celestekits.manager.ConfigManager;
 import com.redeceleste.celestekits.manager.KitManager;
@@ -18,14 +18,14 @@ import java.io.File;
 import java.util.Map;
 
 public class KitSetArgument extends CommandArgument {
-    private final MockKits main;
+    private final CelesteKit main;
     private final ConfigManager config;
     private final KitManager kit;
     private final ChatUtil chat;
     private final BarUtil bar;
     private final TitleUtil title;
 
-    public KitSetArgument(MockKits main) {
+    public KitSetArgument(CelesteKit main) {
         super(true, "set", "setar");
         this.main = main;
         this.config = main.getConfigManager();
@@ -53,11 +53,11 @@ public class KitSetArgument extends CommandArgument {
 
         KitArgument kitArg = kit.getKit(args[0]);
         if (kitArg == null) {
-            chat.send(p, "error.Kit-Not-Found",
+            chat.send(p, "Errorr.Kit-Not-Found",
                     chat.build("{name}", args[0]));
-            bar.send(p, "error.Kit-Not-Found-Bar",
+            bar.send(p, "Errorr.Kit-Not-Found-Bar",
                     chat.build("{name}", args[0]));
-            title.send(p, "error.Kit-Not-Found-Title",
+            title.send(p, "Errorr.Kit-Not-Found-Title",
                     chat.build("{name}", args[0]));
             return;
         }

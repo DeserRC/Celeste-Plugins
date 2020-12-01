@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.command.impl;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.command.Command;
 import com.redeceleste.celestekits.command.CommandArgument;
 import com.redeceleste.celestekits.manager.ConfigManager;
@@ -24,7 +24,7 @@ import java.util.Map;
 import static com.redeceleste.celestekits.util.DateUtil.formatDate;
 
 public class KitCommand extends Command {
-    private final MockKits main;
+    private final CelesteKit main;
     private final ConfigManager config;
     private final InventoryManager inventory;
     private final KitManager kit;
@@ -33,7 +33,7 @@ public class KitCommand extends Command {
     private final BarUtil bar;
     private final TitleUtil title;
 
-    public KitCommand(MockKits main) {
+    public KitCommand(CelesteKit main) {
         super("kit", "kits");
         this.main = main;
         this.config = main.getConfigManager();

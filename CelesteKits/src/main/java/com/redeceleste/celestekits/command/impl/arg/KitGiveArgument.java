@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.command.impl.arg;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.builder.UserEventBuilder;
 import com.redeceleste.celestekits.command.CommandArgument;
 import com.redeceleste.celestekits.manager.ConfigManager;
@@ -14,14 +14,14 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class KitGiveArgument extends CommandArgument {
-    private final MockKits main;
+    private final CelesteKit main;
     private final ConfigManager config;
     private final KitManager kit;
     private final ChatUtil chat;
     private final BarUtil bar;
     private final TitleUtil title;
 
-    public KitGiveArgument(MockKits main) {
+    public KitGiveArgument(CelesteKit main) {
         super(false, "give", "dar", "enviar");
         this.main = main;
         this.config = main.getConfigManager();
@@ -48,22 +48,22 @@ public class KitGiveArgument extends CommandArgument {
 
         Player t = Bukkit.getPlayer(args[0]);
         if (t == null) {
-            chat.send(sender, "error.Player-Not-Found",
+            chat.send(sender, "Errorr.Player-Not-Found",
                     chat.build("{player}", args[0]));
-            bar.send(sender, "error.Player-Not-Found-Bar",
+            bar.send(sender, "Errorr.Player-Not-Found-Bar",
                     chat.build("{player}", args[0]));
-            title.send(sender, "error.Player-Not-Found-Title",
+            title.send(sender, "Errorr.Player-Not-Found-Title",
                     chat.build("{player}", args[0]));
             return;
         }
 
         KitArgument kitArg = kit.getKit(args[1]);
         if (kitArg == null) {
-            chat.send(sender, "error.Kit-Not-Found",
+            chat.send(sender, "Errorr.Kit-Not-Found",
                     chat.build("{name}", args[1]));
-            bar.send(sender, "error.Kit-Not-Found-Bar",
+            bar.send(sender, "Errorr.Kit-Not-Found-Bar",
                     chat.build("{name}", args[1]));
-            title.send(sender, "error.Kit-Not-Found-Title",
+            title.send(sender, "Errorr.Kit-Not-Found-Title",
                     chat.build("{name}", args[1]));
             return;
         }

@@ -21,9 +21,9 @@ import static java.util.concurrent.Executors.newScheduledThreadPool;
 import static org.bukkit.event.HandlerList.unregisterAll;
 
 @Getter
-public class MockKits extends JavaPlugin {
+public class CelesteKit extends JavaPlugin {
     @Getter
-    private static MockKits instance;
+    private static CelesteKit instance;
 
     private ScheduledExecutorService scheduled;
     private ConfigManager configManager;

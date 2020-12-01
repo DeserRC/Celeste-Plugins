@@ -1,17 +1,17 @@
 package com.redeceleste.celestekits.task;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.dao.UserDAO;
 import com.redeceleste.celestekits.factory.UserFactory;
 import com.redeceleste.celestekits.model.UserArgument;
 
 public class UserUpdateTask implements Runnable {
-    private final MockKits main;
+    private final CelesteKit main;
     private final UserFactory user;
     private final UserDAO dao;
     private final Boolean async;
 
-    public UserUpdateTask(MockKits main, Boolean async) {
+    public UserUpdateTask(CelesteKit main, Boolean async) {
         this.main = main;
         this.user = main.getUserFactory();
         this.dao = main.getConnectionFactory().getDao();

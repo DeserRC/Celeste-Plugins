@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.util.impl;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.manager.ConfigManager;
 import com.redeceleste.celestekits.util.MessagesUtil;
 import lombok.SneakyThrows;
@@ -16,7 +16,7 @@ import java.util.UUID;
 import static com.redeceleste.celestekits.util.ReflectionUtil.*;
 
 public class BarUtil extends MessagesUtil {
-    private final MockKits main;
+    private final CelesteKit main;
     private final ConfigManager config;
 
     private final Constructor<?> ppocCon;
@@ -26,7 +26,7 @@ public class BarUtil extends MessagesUtil {
     private final Object type;
 
     @SneakyThrows
-    public BarUtil(MockKits main) {
+    public BarUtil(CelesteKit main) {
         this.main = main;
         this.config = main.getConfigManager();
 

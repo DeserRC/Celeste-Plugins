@@ -12,7 +12,7 @@ MySQL: # MySQL Storage
 
 Permission: # All permissions
   # Administrator permission contains all plugin permissions and has no delay to get kit
-  Admin: "mockessentials.admin"
+  Admin: "kit.admin"
 
 Inventory-Categories: # Categories menu structure
   # Title format

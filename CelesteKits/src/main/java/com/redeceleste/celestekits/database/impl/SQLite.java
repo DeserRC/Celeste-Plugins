@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.database.impl;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.database.DataBase;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -13,11 +13,11 @@ import java.sql.SQLException;
 
 @Getter
 public class SQLite implements DataBase {
-    private final MockKits main;
+    private final CelesteKit main;
     private final File file;
     private Connection connection;
 
-    public SQLite(MockKits main) {
+    public SQLite(CelesteKit main) {
         this.main = main;
         this.file = new File(main.getDataFolder(), "/kits.db");
         openConnection();
@@ -42,7 +42,7 @@ public class SQLite implements DataBase {
         try {
             connection.close();
         } catch (SQLException e) {
-            System.err.printf("An error occurred while close SQLite: %s", e.getMessage());
+            System.err.printf("An Errorr occurred while close SQLite: %s", e.getMessage());
         }
     }
 

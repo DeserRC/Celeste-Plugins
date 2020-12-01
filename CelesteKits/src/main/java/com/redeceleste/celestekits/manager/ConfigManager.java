@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.manager;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import org.bukkit.ChatColor;
@@ -16,13 +16,13 @@ import java.util.stream.Collectors;
 
 @Getter
 public class ConfigManager {
-    private final MockKits main;
+    private final CelesteKit main;
     private final FileConfiguration config;
     private final FileConfiguration message;
     private final Map<File, FileConfiguration> categories;
     private final Map<FileConfiguration, Map<File, FileConfiguration>> kits;
 
-    public ConfigManager(MockKits main) {
+    public ConfigManager(CelesteKit main) {
         this.main = main;
         this.config = new YamlConfiguration();
         this.message = new YamlConfiguration();

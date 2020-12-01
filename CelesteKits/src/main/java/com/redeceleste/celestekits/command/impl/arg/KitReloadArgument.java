@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.command.impl.arg;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.command.CommandArgument;
 import com.redeceleste.celestekits.manager.ConfigManager;
 import com.redeceleste.celestekits.manager.KitManager;
@@ -10,14 +10,14 @@ import com.redeceleste.celestekits.util.impl.TitleUtil;
 import org.bukkit.command.CommandSender;
 
 public class KitReloadArgument extends CommandArgument {
-    private final MockKits main;
+    private final CelesteKit main;
     private final ConfigManager config;
     private final KitManager kit;
     private final ChatUtil chat;
     private final BarUtil bar;
     private final TitleUtil title;
 
-    public KitReloadArgument(MockKits main) {
+    public KitReloadArgument(CelesteKit main) {
         super(false, "reload", "rl");
         this.main = main;
         this.config = main.getConfigManager();

@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.listener;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.builder.UserEventBuilder;
 import com.redeceleste.celestekits.factory.KitFactory;
 import com.redeceleste.celestekits.holder.InventoryCategoryHolder;
@@ -28,7 +28,7 @@ import java.util.Map;
 import static com.redeceleste.celestekits.util.DateUtil.formatDate;
 
 public class InventoryListener implements Listener {
-    private final MockKits main;
+    private final CelesteKit main;
     private final KitFactory kit;
     private final ConfigManager config;
     private final InventoryManager inventory;
@@ -37,7 +37,7 @@ public class InventoryListener implements Listener {
     private final BarUtil bar;
     private final TitleUtil title;
 
-    public InventoryListener(MockKits main) {
+    public InventoryListener(CelesteKit main) {
         this.main = main;
         this.kit = main.getKitFactory();
         this.config = main.getConfigManager();

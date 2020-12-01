@@ -12,12 +12,12 @@ MySQL: # MySQL Storage
 
 Permission: # All permissions
   # Administrator permission
-  Admin: "mockspawners.admin"
+  Admin: "spawners.admin"
   # Permission to place spawner
   #
   # Placeholders:
   # {type} - The file name of the mob
-  Place-Spawner: "mockspawners.colocar.{type}"
+  Place-Spawner: "spawners.colocar.{type}"
 
 Logs: # Log system
   # Enables / Disables the spawners logs

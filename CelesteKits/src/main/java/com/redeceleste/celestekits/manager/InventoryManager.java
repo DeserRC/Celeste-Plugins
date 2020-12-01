@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.manager;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.builder.ItemBuilder;
 import com.redeceleste.celestekits.holder.InventoryConfirmHolder;
 import com.redeceleste.celestekits.holder.InventoryViewerHolder;
@@ -24,12 +24,12 @@ import static org.bukkit.Material.SKULL_ITEM;
 import static org.bukkit.Material.getMaterial;
 
 public class InventoryManager {
-    private final MockKits main;
+    private final CelesteKit main;
     private final ConfigManager config;
     private final KitManager kit;
     private final UserManager user;
 
-    public InventoryManager(MockKits main) {
+    public InventoryManager(CelesteKit main) {
         this.main = main;
         this.config = main.getConfigManager();
         this.kit = main.getKitFactory().getKit();

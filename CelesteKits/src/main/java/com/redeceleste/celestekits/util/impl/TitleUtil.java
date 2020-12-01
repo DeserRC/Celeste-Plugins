@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.util.impl;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.manager.ConfigManager;
 import com.redeceleste.celestekits.util.MessagesUtil;
 import lombok.SneakyThrows;
@@ -16,7 +16,7 @@ import static com.redeceleste.celestekits.util.ReflectionUtil.getNMS;
 import static com.redeceleste.celestekits.util.ReflectionUtil.sendPacket;
 
 public class TitleUtil extends MessagesUtil {
-    private final MockKits main;
+    private final CelesteKit main;
     private final ConfigManager config;
 
     private static Constructor<?> ppotTimeCon;
@@ -29,7 +29,7 @@ public class TitleUtil extends MessagesUtil {
     private static Object typeSubTitle;
 
     @SneakyThrows
-    public TitleUtil(MockKits main) {
+    public TitleUtil(CelesteKit main) {
         this.main = main;
         this.config = main.getConfigManager();
 

@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.manager;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.factory.KitFactory;
 import com.redeceleste.celestekits.holder.InventoryCategoryHolder;
 import com.redeceleste.celestekits.holder.InventoryMainHolder;
@@ -25,12 +25,12 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.bukkit.Material.AIR;
 
 public class KitManager {
-    private final MockKits main;
+    private final CelesteKit main;
     private final KitFactory kit;
     private final ConfigManager config;
     private InventoryManager inventory;
 
-    public KitManager(MockKits main, KitFactory kit) {
+    public KitManager(CelesteKit main, KitFactory kit) {
         this.main = main;
         this.kit = kit;
         this.config = main.getConfigManager();

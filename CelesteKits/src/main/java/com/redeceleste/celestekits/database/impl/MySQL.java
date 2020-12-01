@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.database.impl;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.database.DataBase;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -12,11 +12,11 @@ import java.sql.SQLException;
 
 @Getter
 public class MySQL implements DataBase {
-    private final MockKits main;
+    private final CelesteKit main;
     private final String host, database, user, password;
     private Connection connection;
 
-    public MySQL(MockKits main, String host, String user, String database, String password) {
+    public MySQL(CelesteKit main, String host, String user, String database, String password) {
         this.main = main;
         this.host = host;
         this.database = database;
@@ -44,7 +44,7 @@ public class MySQL implements DataBase {
         try {
             connection.close();
         } catch (SQLException e) {
-            System.err.printf("An error occurred while close MySQL: %s", e.getMessage());
+            System.err.printf("An Errorr occurred while close MySQL: %s", e.getMessage());
         }
     }
 

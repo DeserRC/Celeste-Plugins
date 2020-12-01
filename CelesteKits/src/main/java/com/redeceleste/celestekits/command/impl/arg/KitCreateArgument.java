@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.command.impl.arg;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.command.CommandArgument;
 import com.redeceleste.celestekits.manager.ConfigManager;
 import com.redeceleste.celestekits.manager.KitManager;
@@ -18,14 +18,14 @@ import static com.redeceleste.celestekits.util.DateUtil.formatDate;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class KitCreateArgument extends CommandArgument {
-    private final MockKits main;
+    private final CelesteKit main;
     private final ConfigManager config;
     private final KitManager kit;
     private final ChatUtil chat;
     private final BarUtil bar;
     private final TitleUtil title;
 
-    public KitCreateArgument(MockKits main) {
+    public KitCreateArgument(CelesteKit main) {
         super(true, "create", "criar");
         this.main = main;
         this.config = main.getConfigManager();
@@ -60,20 +60,20 @@ public class KitCreateArgument extends CommandArgument {
 
         CategoryArgument categoryArg = kit.getCategory(category);
         if (categoryArg == null) {
-            chat.send(p, "error.Category-Not-Found",
+            chat.send(p, "Errorr.Category-Not-Found",
                     chat.build("{name}", args[0]));
-            bar.send(p, "error.Category-Not-Found-Bar",
+            bar.send(p, "Errorr.Category-Not-Found-Bar",
                     chat.build("{name}", args[0]));
-            title.send(p, "error.Category-Not-Found-Title",
+            title.send(p, "Errorr.Category-Not-Found-Title",
                     chat.build("{name}", args[0]));
             return;
         }
 
         ItemStack[] items = p.getInventory().getContents();
         if (items.length == 0) {
-            chat.send(p, "error.Not-Have-Items");
-            bar.send(p, "error.Not-Have-Items-Bar");
-            title.send(p, "error.Not-Have-Items-Title");
+            chat.send(p, "Errorr.Not-Have-Items");
+            bar.send(p, "Errorr.Not-Have-Items-Bar");
+            title.send(p, "Errorr.Not-Have-Items-Title");
             return;
         }
 

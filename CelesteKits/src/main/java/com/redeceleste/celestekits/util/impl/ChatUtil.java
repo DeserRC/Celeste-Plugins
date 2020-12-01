@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.util.impl;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.manager.ConfigManager;
 import com.redeceleste.celestekits.util.MessagesUtil;
 import org.bukkit.command.CommandSender;
@@ -9,10 +9,10 @@ import org.bukkit.configuration.file.FileConfiguration;
 import java.util.Map;
 
 public class ChatUtil extends MessagesUtil {
-    private final MockKits main;
+    private final CelesteKit main;
     private final ConfigManager config;
 
-    public ChatUtil(MockKits main) {
+    public ChatUtil(CelesteKit main) {
         this.main = main;
         this.config = main.getConfigManager();
     }

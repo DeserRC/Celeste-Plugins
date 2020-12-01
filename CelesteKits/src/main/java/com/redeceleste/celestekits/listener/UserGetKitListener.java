@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.listener;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.event.impl.UserGetKitEvent;
 import com.redeceleste.celestekits.manager.ConfigManager;
 import com.redeceleste.celestekits.manager.InventoryManager;
@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 public class UserGetKitListener implements Listener {
-    private final MockKits main;
+    private final CelesteKit main;
     private final ConfigManager config;
     private final InventoryManager inventory;
     private final UserManager user;
@@ -28,7 +28,7 @@ public class UserGetKitListener implements Listener {
     private final BarUtil bar;
     private final TitleUtil title;
 
-    public UserGetKitListener(MockKits main) {
+    public UserGetKitListener(CelesteKit main) {
         this.main = main;
         this.config = main.getConfigManager();
         this.inventory = main.getInventoryManager();

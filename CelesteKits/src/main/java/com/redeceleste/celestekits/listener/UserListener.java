@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.listener;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.dao.UserDAO;
 import com.redeceleste.celestekits.factory.UserFactory;
 import com.redeceleste.celestekits.model.UserArgument;
@@ -14,12 +14,12 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import java.util.concurrent.CompletableFuture;
 
 public class UserListener implements Listener {
-    private final MockKits main;
+    private final CelesteKit main;
     private final UserFactory user;
     private final UserDAO dao;
 
     @SneakyThrows
-    public UserListener(MockKits main) {
+    public UserListener(CelesteKit main) {
         this.main = main;
         this.user = main.getUserFactory();
         this.dao = main.getConnectionFactory().getDao();

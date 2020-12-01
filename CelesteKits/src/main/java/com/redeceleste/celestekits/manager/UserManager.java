@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.manager;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.dao.UserDAO;
 import com.redeceleste.celestekits.factory.UserFactory;
 import com.redeceleste.celestekits.model.UserArgument;
@@ -10,11 +10,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserManager {
-    private final MockKits main;
+    private final CelesteKit main;
     private final UserFactory user;
     private final UserDAO dao;
 
-    public UserManager(MockKits main, UserFactory user) {
+    public UserManager(CelesteKit main, UserFactory user) {
         this.main = main;
         this.user = user;
         this.dao = main.getConnectionFactory().getDao();

@@ -1,6 +1,6 @@
 package com.redeceleste.celestekits.factory;
 
-import com.redeceleste.celestekits.MockKits;
+import com.redeceleste.celestekits.CelesteKit;
 import com.redeceleste.celestekits.dao.UserDAO;
 import com.redeceleste.celestekits.database.DataBase;
 import com.redeceleste.celestekits.database.impl.MySQL;
@@ -10,12 +10,12 @@ import lombok.Getter;
 
 @Getter
 public class ConnectionFactory {
-    private final MockKits main;
+    private final CelesteKit main;
     private final ConfigManager config;
     private final DataBase dataBase;
     private final UserDAO dao;
 
-    public ConnectionFactory(MockKits main) {
+    public ConnectionFactory(CelesteKit main) {
         this.main = main;
         this.config = main.getConfigManager();
 
