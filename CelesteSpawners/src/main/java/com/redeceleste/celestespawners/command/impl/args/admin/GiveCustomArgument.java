@@ -80,27 +80,27 @@ public class GiveCustomArgument extends CommandArgument {
         chat.send(sender, "Give-Custom.Success",
                 chat.build("{player}", t.getName()),
                 chat.build("{amount}", amount),
-                chat.build("{type}", type.getName()));
+                chat.build("{type}", name));
         bar.send(sender, "Give-Custom.Success-Bar",
-                chat.build("{player}", t.getName()),
+                chat.build("{player}", name),
                 chat.build("{amount}", amount),
-                chat.build("{type}", type.getName()));
+                chat.build("{type}", name));
         title.send(sender, "Give-Custom.Success-Title",
                 chat.build("{player}", t.getName()),
                 chat.build("{amount}", amount),
-                chat.build("{type}", type.getName()));
+                chat.build("{type}", name));
 
         chat.send(t, "Give-Custom.Receive",
                 chat.build("{executor}", sender.getName()),
                 chat.build("{amount}", amount),
-                chat.build("{type}", type.getName()));
+                chat.build("{type}", name));
         bar.send(t, "Give-Custom.Receive-Bar",
                 chat.build("{executor}", sender.getName()),
                 chat.build("{amount}", amount),
-                chat.build("{type}", type.getName()));
+                chat.build("{type}", name));
         title.send(t, "Give-Custom.Receive-Title",
                 chat.build("{executor}", sender.getName()),
                 chat.build("{amount}", amount),
-                chat.build("{type}", type.getName()));
+                chat.build("{type}", name));
     }
 }

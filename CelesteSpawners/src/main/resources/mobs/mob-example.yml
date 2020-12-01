@@ -72,7 +72,7 @@ Drops: # These will be the items that the monster will drop
     # The material date of the item
     Data: 0
     # The name of the item
-    Name: "&6Cabeça de Super Zombie"
+    Name: "&6Head of Super Zombie"
     # Enables / Disables The glow in the item
     Glow: false
     # The lore of the item
