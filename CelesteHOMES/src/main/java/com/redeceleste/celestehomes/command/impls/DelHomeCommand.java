@@ -26,7 +26,7 @@ public class DelHomeCommand extends CreateCommand {
         }
 
         HomeManager.delHome(p, args[0]);
-        p.sendMessage(ConfigManager.HomeSucessDeleted);
+        p.sendMessage(ConfigManager.HomeSuccessDeleted);
         return false;
     }
 }

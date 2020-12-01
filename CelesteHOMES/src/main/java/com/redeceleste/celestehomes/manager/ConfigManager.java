@@ -14,10 +14,10 @@ import java.util.stream.Collectors;
 
 public class ConfigManager {
     public static String Permission, NoPermission, Reload, MinimumCharactersHome, Delay, DelayFromOtherTeleport;
-    public static String SetHomeArgumentsInvalid, BlackListWorldMessage, HomeLimitReached, FewCharacters, ContainsHome, HomeSucessCreate;
-    public static String DelHomeArgumentsInvalid, DelHomeNotFound, HomeSucessDeleted;
-    public static String HomeNotFound, HomeInvalidArgument, DelayFromOtherTeleportMessage, AHomeInvalidArgument, PlayerNotFound, MessageWaitingTeleportTitle, MessageWaitingTeleportSubTitle, MessageSucessTeleportTitle, MessageSucessTeleportSubTitle, MessageCancelTeleportTitle, MessageCancelTeleportSubTitle;
-    public static String SoundWaitingTeleport, SoundSucessTeleport, SoundCancelTeleport;
+    public static String SetHomeArgumentsInvalid, BlackListWorldMessage, HomeLimitReached, FewCharacters, ContainsHome, HomeSuccessCreate;
+    public static String DelHomeArgumentsInvalid, DelHomeNotFound, HomeSuccessDeleted;
+    public static String HomeNotFound, HomeInvalidArgument, DelayFromOtherTeleportMessage, AHomeInvalidArgument, PlayerNotFound, MessageWaitingTeleportTitle, MessageWaitingTeleportSubTitle, MessageSuccessTeleportTitle, MessageSuccessTeleportSubTitle, MessageCancelTeleportTitle, MessageCancelTeleportSubTitle;
+    public static String SoundWaitingTeleport, SoundSuccessTeleport, SoundCancelTeleport;
     public static String TitleGUI;
     public static HashSet<InventoryArgument> Itens = new HashSet<>();
     public static HashSet<InventoryArgument> Template = new HashSet<>();
@@ -40,11 +40,11 @@ public class ConfigManager {
         HomeLimitReached = get("Message.HomeLimitReached");
         FewCharacters = get("Message.FewCharacters");
         ContainsHome = get("Message.ContainsHome");
-        HomeSucessCreate = get("Message.HomeSucessCreate");
+        HomeSuccessCreate = get("Message.HomeSuccessCreate");
 
         DelHomeArgumentsInvalid = get("Message.DelHomeArgumentsInvalid");
         DelHomeNotFound = get("Message.DelHomeNotFound");
-        HomeSucessDeleted = get("Message.HomeSucessDeleted");
+        HomeSuccessDeleted = get("Message.HomeSuccessDeleted");
 
         HomeInvalidArgument = get("Message.HomeInvalidArgument");
         HomeNotFound = get("Message.HomeNotFound");
@@ -54,13 +54,13 @@ public class ConfigManager {
 
         MessageWaitingTeleportTitle = get("Message.MessageWaitingTeleport.Title");
         MessageWaitingTeleportSubTitle = get("Message.MessageWaitingTeleport.SubTitle");
-        MessageSucessTeleportTitle = get("Message.MessageSucessTeleport.Title");
-        MessageSucessTeleportSubTitle = get("Message.MessageSucessTeleport.SubTitle");
+        MessageSuccessTeleportTitle = get("Message.MessageSuccessTeleport.Title");
+        MessageSuccessTeleportSubTitle = get("Message.MessageSuccessTeleport.SubTitle");
         MessageCancelTeleportTitle = get("Message.MessageCancelTeleport.Title");
         MessageCancelTeleportSubTitle = get("Message.MessageCancelTeleport.SubTitle");
 
         SoundWaitingTeleport = get("Sounds.SoundWaitingTeleport");
-        SoundSucessTeleport = get("Sounds.SoundSucessTeleport");
+        SoundSuccessTeleport = get("Sounds.SoundSuccessTeleport");
         SoundCancelTeleport = get("Sounds.SoundCancelTeleport");
 
         TitleGUI = get("Inventory.Title");
@@ -75,7 +75,7 @@ public class ConfigManager {
     }
 
     private static String get(String path) {
-        return CelesteHomes.getInstance().getConfig().getString(path, ChatColor.DARK_RED + "There was an error loading the message: " + ChatColor.YELLOW + path).replace('&', '\u00A7');
+        return CelesteHomes.getInstance().getConfig().getString(path, ChatColor.DARK_RED + "There was an error loading Message: " + ChatColor.YELLOW + path).replace('&', '\u00A7');
     }
 
     private static List<String> getList(String path) {

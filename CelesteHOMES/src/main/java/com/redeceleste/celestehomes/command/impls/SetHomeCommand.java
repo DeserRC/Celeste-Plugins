@@ -49,7 +49,7 @@ public class SetHomeCommand extends CreateCommand {
         }
 
         HomeManager.setHome(p, args[0]);
-        p.sendMessage(ConfigManager.HomeSucessCreate);
+        p.sendMessage(ConfigManager.HomeSuccessCreate);
         return false;
     }
 }
