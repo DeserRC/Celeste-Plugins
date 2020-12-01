@@ -42,30 +42,30 @@ public class GiveCustomArgument extends CommandArgument {
         }
 
         if (!(args.length == 3) || Pattern.compile("[^0-9]").matcher(args[2]).find() || Integer.parseInt(args[2]) < 1) {
-            chat.send(sender, "GiveCustom.Invalid-Argument");
-            bar.send(sender, "GiveCustom.Invalid-Argument-Bar");
-            title.send(sender, "GiveCustom.Invalid-Argument-Title");
+            chat.send(sender, "Give-Custom.Invalid-Argument");
+            bar.send(sender, "Give-Custom.Invalid-Argument-Bar");
+            title.send(sender, "Give-Custom.Invalid-Argument-Title");
             return;
         }
 
         Player t = Bukkit.getPlayer(args[0]);
         if (t == null) {
-            chat.send(sender, "GiveCustom.Player-Not-Found",
+            chat.send(sender, "Give-Custom.Player-Not-Found",
                     chat.build("{player}", args[0]));
-            bar.send(sender, "GiveCustom.Player-Not-Found-Bar",
+            bar.send(sender, "Give-Custom.Player-Not-Found-Bar",
                     chat.build("{player}", args[0]));
-            title.send(sender, "GiveCustom.Player-Not-Found-Title",
+            title.send(sender, "Give-Custom.Player-Not-Found-Title",
                     chat.build("{player}", args[0]));
             return;
         }
 
         boolean spawnerExist = spawnerCustom.isExist(args[1]);
         if (!spawnerExist) {
-            chat.send(sender, "GiveCustom.Spawner-Not-Found",
+            chat.send(sender, "Give-Custom.Spawner-Not-Found",
                     chat.build("{type}", args[1]));
-            bar.send(sender, "GiveCustom.Spawner-Not-Found-Bar",
+            bar.send(sender, "Give-Custom.Spawner-Not-Found-Bar",
                     chat.build("{type}", args[1]));
-            title.send(sender, "GiveCustom.Spawner-Not-Found-Title",
+            title.send(sender, "Give-Custom.Spawner-Not-Found-Title",
                     chat.build("{type}", args[1]));
             return;
         }
@@ -77,28 +77,28 @@ public class GiveCustomArgument extends CommandArgument {
         ItemStack item = spawnerCustom.getSpawner(name, amount, type);
         t.getInventory().addItem(item);
 
-        chat.send(sender, "GiveCustom.Success",
+        chat.send(sender, "Give-Custom.Success",
                 chat.build("{player}", t.getName()),
                 chat.build("{amount}", amount),
                 chat.build("{type}", type.getName()));
-        bar.send(sender, "GiveCustom.Success-Bar",
+        bar.send(sender, "Give-Custom.Success-Bar",
                 chat.build("{player}", t.getName()),
                 chat.build("{amount}", amount),
                 chat.build("{type}", type.getName()));
-        title.send(sender, "GiveCustom.Success-Title",
+        title.send(sender, "Give-Custom.Success-Title",
                 chat.build("{player}", t.getName()),
                 chat.build("{amount}", amount),
                 chat.build("{type}", type.getName()));
 
-        chat.send(t, "GiveCustom.Receive",
+        chat.send(t, "Give-Custom.Receive",
                 chat.build("{executor}", sender.getName()),
                 chat.build("{amount}", amount),
                 chat.build("{type}", type.getName()));
-        bar.send(t, "GiveCustom.Receive-Bar",
+        bar.send(t, "Give-Custom.Receive-Bar",
                 chat.build("{executor}", sender.getName()),
                 chat.build("{amount}", amount),
                 chat.build("{type}", type.getName()));
-        title.send(t, "GiveCustom.Receive-Title",
+        title.send(t, "Give-Custom.Receive-Title",
                 chat.build("{executor}", sender.getName()),
                 chat.build("{amount}", amount),
                 chat.build("{type}", type.getName()));
