@@ -88,7 +88,6 @@ public class WarpManager {
 
             main.getScheduled().scheduleAtFixedRate(() -> {
                 Location newLoc = p.getLocation();
-                if (delay.getAndDecrement() == 0) future.cancel(true);
                 if (cancelOnMove) if (loc.getX() != newLoc.getX() || loc.getY() != newLoc.getY() || loc.getZ() != newLoc.getZ() || loc.getWorld() != newLoc.getWorld()) {
                         chat.send(p, "Warp.Move");
                         bar.send(p, "Warp.Move-Bar");
@@ -103,17 +102,29 @@ public class WarpManager {
                         chat.build("{time}", delay));
                 title.send(p, "Warp.Delay-Title",
                         chat.build("{time}", delay));
+
+                if (delay.getAndDecrement() == 0) {
+                    Sound soundTeleport = Sound.valueOf(config.getConfig("Sounds.Teleport"));
+                    p.teleport(getWarp(name));
+                    p.playSound(p.getLocation(), soundTeleport, 1, 1);
+
+                    chat.send(p, name.toLowerCase() + ".Message", config.getWarp());
+                    bar.send(p, name.toLowerCase() + ".Message-Bar", config.getWarp());
+                    title.send(p, name.toLowerCase() + ".Message-Title", config.getWarp());
+                    future.cancel(true);
+                }
                 p.playSound(p.getLocation(), soundDelay, 1,1);
             }, 0,1, SECONDS);
+        } else {
+            Sound soundTeleport = Sound.valueOf(config.getConfig("Sounds.Teleport"));
+            p.teleport(getWarp(name));
+            p.playSound(p.getLocation(), soundTeleport, 1, 1);
+
+            chat.send(p, name.toLowerCase() + ".Message", config.getWarp());
+            bar.send(p, name.toLowerCase() + ".Message-Bar", config.getWarp());
+            title.send(p, name.toLowerCase() + ".Message-Title", config.getWarp());
+            return true;
         }
-
-        Sound soundTeleport = Sound.valueOf(config.getConfig("Sounds.Teleport"));
-        p.teleport(getWarp(name));
-        p.playSound(p.getLocation(), soundTeleport, 1,1);
-
-        chat.send(p, name.toLowerCase() + ".Message", config.getWarp());
-        bar.send(p, name.toLowerCase() + ".Message-Bar", config.getWarp());
-        title.send(p, name.toLowerCase() + ".Message-Title", config.getWarp());
         return true;
     }
 
