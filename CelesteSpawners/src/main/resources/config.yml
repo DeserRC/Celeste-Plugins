@@ -73,7 +73,7 @@ Spawner: # All spawners structure
     # {type} - Mob name
     Lore:
       - "&7Amount: &6{amount}"
-      - "&Mob: &6{type}"
+      - "&7Mob: &6{type}"
   Custom-Spawner: # Custom Spawner format
     # The name format
     #
