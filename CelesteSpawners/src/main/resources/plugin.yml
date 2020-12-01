@@ -1,0 +1,5 @@
+name: CelesteSpawners
+version: 1.0
+author: Deser
+softdepend: [Vault, HolographicDisplays]
+main: com.redeceleste.celestespawners.CelesteSpawners

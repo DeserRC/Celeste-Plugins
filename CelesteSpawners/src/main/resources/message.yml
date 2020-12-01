@@ -1,0 +1,344 @@
+No-Permission: # When the player does not have permission
+  # Message which will be sent if the player is not allowed to permission a task that only admin can do
+  Admin: "&6&lSPAWNERS &7You do not have permission."
+  # Message which will be sent when the player is not allowed to place a spawner
+  #
+  # Placeholders:
+  # {type} - Mob name
+  Place-Spawner: "&6&lSPAWNERS &7You do not have permission to place spawner of &6{type}&7."
+
+Remove-Entities: # Command - /killall
+  # Message which will be sent when {time} seconds are left to clear all entities (Broadcast)
+  #
+  # Placeholders:
+  # {time} - Time remaining to clear all entities
+  Start: "&6&lSERVER &7All items and mobs will be removed in &6{time} &7seconds."
+  # Message which will be sent when entities have been removed (Broadcast)
+  Finish: "&6&lSERVER &7All items and mobs have been removed."
+
+Give: # Command - /spawner give
+  # Message which will be sent if the player gives spawner to another player
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {amount} - Amount given
+  # {type} - Mob name
+  Success: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7You sent &6{amount} &7spawners of &6{type} &7to &6{player}&7."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You sent &6{amount} &7spawners of &6{type} &7to &6{player}"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{amount} &7spawners"
+    SubTitle: "&7of &6{type} &7were give to &6{player}"
+
+  # Message which will be sent when the player receives spawners
+  #
+  # Placeholders:
+  # {executor} - Executor name
+  # {amount} - Amount given
+  # {type} - Mob name
+  Receive: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7You receive &6{amount} &7spawners of &6{type}&7."
+  Receive-Bar: # ActionBar message
+    Use: false
+    Message: "&7You receive &6{amount} &7spawners of &6{type}"
+  Receive-Title: # Title and SubTitle message
+    Use: false
+    Title: "&7You receive"
+    SubTitle: "&6{amount} &7spawners of &6{type}"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+  # Message which will be sent if the spawner is not found
+  #
+  # Placeholders:
+  # {type} - The given mob name
+  Spawner-Not-Found: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7This spawners does not exist."
+  Spawner-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7This spawners does not exist"
+  Spawner-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7This spawners does not exist"
+
+  # Message which will be sent when the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7Invalid argument, use &6/spawner give <player> <spawner> <amount>"
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/spawner give <player> <spawner> <amount>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Utilize o comando &6/spawner give <player> <spawner> <amount>"
+
+Give-Custom: # Command - /spawner givecustom
+  # Message which will be sent if the player gives spawner custom to another player
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {amount} - Amount given
+  # {type} - Mob name
+  Success: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7You send &6{amount} &7spawners of &6{type} &7to &6{player}&7."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You send &6{amount} &7spawners of &6{type} &7to &6{player}"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{amount} &7spawners"
+    SubTitle: "&7of &6{type} &7were give to &6{player}"
+
+  # Message which will be sent when the player receives spawners custom
+  #
+  # Placeholders:
+  # {executor} - Executor name
+  # {amount} - Amount given
+  # {type} - Mob name
+  Receive: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7You receive &6{amount} &7spawners of &6{type}&7."
+  Receive-Bar: # ActionBar message
+    Use: false
+    Message: "&7You receive &6{amount} &7spawners of &6{type}"
+  Receive-Title: # Title and SubTitle message
+    Use: false
+    Title: "&7You receive"
+    SubTitle: "&6{amount} &7spawners of &6{type}"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+  # Message which will be sent if the spawner custom is not found
+  #
+  # Placeholders:
+  # {type} - The given mob name
+  Spawner-Not-Found: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7This spawners does not exist."
+  Spawner-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7This spawners does not exist"
+  Spawner-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7This spawners does not exist"
+
+  # Message which will be sent when the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7Invalid argument, use &6/spawner givecustom <player> <spawner> <amount>"
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/spawner givecustom <player> <spawner> <amount>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Utilize o comando &6/spawner givecustom <player> <spawner> <amount>"
+
+Help: # Command - /spawner help
+  # Message which will be sent if the player types an invalid command argument and does not have admin permission
+  Message: |
+    &f&m-----------&r &6&lSPAWNER &f&m-----------
+    &6/spawner, &7Spawner shop.
+  # Message which will be sent if the player types an invalid command argument and has administrator permission
+  Message-Admin: |
+    &f&m-----------&r &6&LSPAWNER - ADMIN &f&m-----------
+    &6/spawner, &7Spawner shop.
+    &6/spawner give, &7Give spawner to a player.
+    &6/spawner givecustom, &7Give custom spawner to a player
+    &6/killall, &7Remove all items and mobs
+
+
+Place: # Place Spawner
+  # Message which will be sent when the player places more than one spawner
+  #
+  # Placeholders:
+  # {amount} - Amount placed
+  # {totalamount} - Total amount
+  # {type} - Mob name
+  Success: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7You placed &6{amount} &7spawners of &6{type} &7successfully (&6{totalamount}&7)."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You placed &6{amount} &7spawners of &6{type} &7successfully (&6{totalamount}&7)"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{amount} &7spawners"
+    SubTitle: "&7of &6{type} &7were placed (&6{totalamount}&7)"
+
+  # Message which will be sent when the player places a one spawner
+  #
+  # Placeholders:
+  # {totalamount} - Total amount
+  # {type} - Mob name
+  Success-Singular: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7You placed &61 &7spawner of &6{type} &7successfully (&6{totalamount}&7)."
+  Success-Singular-Bar: # ActionBar message
+    Use: false
+    Message: "&7You placed &61 &7spawner of &6{type} &7successfully (&6{totalamount}&7)"
+  Success-Singular-Title: # Title and SubTitle message
+    Use: false
+    Title: "&61 &7spawner"
+    SubTitle: "&7of &6{type} &7were placed (&6{totalamount}&7)"
+
+  # Message which will be sent when the player is in a cooldown period and tries to place another spawner
+  #
+  # Placeholders:
+  # {time} - The remaining cooldown time
+  Cooldown: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7You need wait &6{time} &7seconds to place another spawner."
+  Cooldown-Bar: # ActionBar message
+    Use: false
+    Message: "&7You need wait &6{time} &7seconds to place another spawner"
+  Cooldown-Title: # Title and SubTitle message
+    Use: false
+    Title: "&7Wait"
+    SubTitle: "&6{time} &7seconds to place another spawner"
+
+  # Message which will be sent when the player is trying to place a spawner in an unallowed world
+  #
+  # Placeholders:
+  # {world} - The name of the world
+  Black-List: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7You cannot place spawners this world."
+  Black-List-Bar: # ActionBar message
+    Use: false
+    Message: "&7You cannot place spawners this world"
+  Black-List-Title: # Title and SubTitle message
+    Use: false
+    Title: "&7BlackList"
+    SubTitle: "&7You cannot place spawners this world"
+
+Break: # Break Spawner
+  # Message which will be sent when the player breaks more than one spawner
+  #
+  # Placeholders:
+  # {amount} - The broken amount
+  # {totalamount} - The remaining amount
+  # {type} - Mob name
+  Success: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7You broke &6{amount} &7spawners of &6{type} &7and were placed in your inventory (&6{totalamount}&7)."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You broke &6{amount} &7spawners of &6{type} &7and were placed in your inventory (&6{totalamount}&7)"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{amount} &7spawners of &6{type}"
+    SubTitle: "&7were broke and placed in your inventory (&6{totalamount}&7)"
+
+  # Message which will be sent when the player break a one spawner
+  #
+  # Placeholders:
+  # {totalamount} - The remaining amount
+  # {type} - Mob name
+  Success-Singular: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7You broke &61 &7spawner of &6{type} &7and were placed in your inventory (&6{totalamount}&7)."
+  Success-Singular-Bar: # ActionBar message
+    Use: false
+    Message: "&7You broke &61 &7spawner of &6{type} &7and were placed in your inventory (&6{totalamount}&7)"
+  Success-Singular-Title: # Title and SubTitle message
+    Use: false
+    Title: "&61 &7spawner of &6{type}"
+    SubTitle: "&7were broke and placed in your inventory (&6{totalamount}&7)"
+
+  # Message which will be sent when the player breaks more than one spawner without a silktouch (The silk touch setting must be active)
+  #
+  # Placeholders:
+  # {amount} - The broken amount
+  # {totalamount} - The remaining amount
+  # {type} - Mob name
+  Fail: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7You broke &6{amount} &7spawners of &6{type} &7without silk touch (&6{totalamount}&7)."
+  Fail-Bar: # ActionBar message
+    Use: false
+    Message: "&7You broke &6{amount} &7spawners of &6{type} &7without silk touch (&6{totalamount}&7)"
+  Fail-Title: # Title and SubTitle message
+    Use: false
+    Title: "&7Broken spawners without silk touch"
+    SubTitle: "&7and &6{amount} &7spawners of &6{type} &7were lost (&6{totalamount}&7)"
+
+  # Message which will be sent when the player breaks a one spawner without silktouch (The silk touch setting must be active)
+  #
+  # Placeholders:
+  # {totalamount} - The remaining amount
+  # {type} - Mob name
+  Fail-Singular: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7You broke &61 &7spawner of &6{type} &7without silk touch (&6{totalamount}&7)."
+  Fail-Singular-Bar: # ActionBar message
+    Use: false
+    Message: "&7You broke &61 &7spawners of &6{type} &7without silk touch (&6{totalamount}&7)"
+  Fail-Singular-Title: # Title and SubTitle message
+    Use: false
+    Title: "&7Spawner broken without silk touch"
+    SubTitle: "&7and &61 &7spawner of &6{type} &7were lost (&6{totalamount}&7)"
+
+Purchase: # Purchasing items
+  # When the player tries to make a purchase and does not have enough money
+  #
+  # Placeholders:
+  # {money} - Price of the item
+  Without-Money: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7You don't have enough money to make this purchase"
+  Without-Money-Bar: # ActionBar message
+    Use: false
+    Message: "&7You don't have enough money"
+  Without-Money-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7You don't have enough money"
+
+  # Message is sent when the player tries to buy an item and does not have enough space
+  No-Space: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7You doesn't have enough space."
+  No-Space-Bar: # ActionBar message
+    Use: false
+    Message: "&7You doesn't have enough space"
+  No-Space-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Space"
+    SubTitle: "&7You doesn't have enough space"

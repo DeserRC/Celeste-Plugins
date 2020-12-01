@@ -1,0 +1,148 @@
+MySQL: # MySQL Storage
+  # Enables / Disables storage by MySQL
+  Use: false
+  # The MySQL server IP
+  Host: "localhost:3306"
+  # The name of the database which will be stored in the table
+  DataBase: ""
+  # The MySQL login username
+  User: ""
+  # The MySQL password
+  Password: ""
+
+Permission: # All permissions
+  # Administrator permission
+  Admin: "mockspawners.admin"
+  # Permission to place spawner
+  #
+  # Placeholders:
+  # {type} - The file name of the mob
+  Place-Spawner: "mockspawners.colocar.{type}"
+
+Logs: # Log system
+  # Enables / Disables the spawners logs
+  Use-Spawner: true
+  # Enables / Disables the purchase logs
+  Use-Purchase: true
+  # The time zone that must be registered
+  #
+  # All Time Zones https://ghostbin.co/paste/uejn
+  Time-Zone: "America/Sao_Paulo"
+  # The format the name the log should have
+  Format: "yyyy-MM-dd"
+
+Black-List-World: # Worlds which will not be able to place spawners without admin permission
+  - "world1"
+
+Sounds: # Sounds of all plugin functions (All Minecraft sounds https://helpch.at/docs/1.8.8/index.html?org/bukkit/Sound.html)
+  # Sound when placing a spawner
+  Place-Spawner: "ANVIL_LAND"
+  # Sound when stacking a spawner
+  Stack-Spawner: "CLICK"
+  # Sound when breaking a spawner
+  Break-Spawner: "WOOD_CLICK"
+  # Sound when breaking a spawner without a silk touch (The silk touch setting must be active)
+  Without-Silk-Touch: "ITEM_BREAK"
+  # Sound when the player buys an item
+  Purchased-Item: "VILLAGER_YES"
+  # Sound when giving an error when buying an item
+  Purchase-Error: "VILLAGER_NO"
+
+Times: # The time for all plugin tasks
+  # The time spawners are saved in the database (In minutes)
+  Update-Spawners: 30
+  # The time it takes the spawner to spawn a mob (In seconds)
+  Entity-Spawn: 15
+  # The time that entities will be removed (In minutes)
+  Remove-Entities: 10
+  # Time in advance which will notify players that all entities will be removed (In seconds)
+  Remove-Entities-Start: 5
+
+Spawner: # All spawners structure
+  Spawner: # Spawner format
+    # The name format
+    #
+    # Placeholders:
+    # {amount} - Amount of spawners
+    # {type} - Mob name
+    Name: "&7Spawners of &6{type}"
+    # The lore format
+    #
+    # Placeholders:
+    # {amount} - Amount of spawners
+    # {type} - Mob name
+    Lore:
+      - "&7Amount: &6{amount}"
+      - "&Mob: &6{type}"
+  Custom-Spawner: # Custom Spawner format
+    # The name format
+    #
+    # Placeholders:
+    # {amount} - Amount of spawners
+    # {type} - Mob name
+    Name: "&7Custom Spawners of &c{type}"
+    # The lore format
+    #
+    # Placeholders:
+    # {amount} - Amount of spawners
+    # {type} - Mob name
+    Lore:
+      - "&7Amount: &c{amount}"
+      - "&7Mob: &c{type}"
+
+  # Enables / Disables US format numbers (In the US format, numbers will be separated by commas) - (If disabled, numbers will be separated by periods)
+  Use-US-Format: false
+
+  Silk-Touch: # Structure of silk touch
+    # Enables / Disables the removal of generators only with silk touch
+    Use: true
+    # Enables / Disables The player breaks a spawner without silk, he will break all his stacks
+    Remove-Stacked: true
+
+  Random-Spawn: # Structure of spawn mob
+    # Enables / Disables The mob will always be spawn in a different radius, avoiding farm afk
+    Use: true
+    # The radius he can spawn
+    Radius: 3
+
+  # The maximum distance a player can load a spawner
+  Range-Limit: 5
+  # The multiplier for each looting level
+  Looting-Multiplier: 1.0
+
+Stack-Spawner: # Stack spawner system
+  # The radius that the spawners will be stacked
+  Radius: 5
+  Hologram: # Structure of Hologram
+    # The height that the hologram will be above the spawner
+    Height: 2.0
+    # The hologram format
+    #
+    # Placeholders:
+    # {mobhead} - The mob head
+    # {amount} - Amount of spawners
+    # {type} - Mob name
+    Format:
+      - "{mobhead}"
+      - "&7Mob: &f{type}"
+      - "&7Amount: &f{amount}"
+
+Stack-Mobs: # Stack mob system
+  # The radius that the mobs will be stacked
+  Radius: 5
+  # The name format
+  #
+  # Placeholders:
+  # {amount} - Amount of spawners
+  # {type} - Mob name
+  Name: "&6{type} &7[&6{amount}x&7]"
+
+Stack-Items: # Stack items system
+  # The radius that the items will be stacked
+  Radius: 5
+  # The name format
+  #
+  # Placeholders:
+  # {amount} - Amount of spawners
+  # {type} - Mob name
+  Name: "&6{type} &7[&6{amount}x&7]"

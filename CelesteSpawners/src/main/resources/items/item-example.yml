@@ -1,0 +1,87 @@
+# The page the item will be on
+Page: 1
+# The position of the item in the menu
+Slot: 32
+# Amount of item
+Amount: 1
+# The material of the item
+Material: "MOB_SPAWNER"
+# The material date of the item
+Data: 0
+# The name of the item
+#
+# Placeholders:
+# {player} - Player name
+# {money} - Price of the item
+# {amount} - Amount of items
+# {page} - Page number
+Name: "&7Spawner of &6Zombie"
+# Enables / Disables The glow in the item
+Glow: false
+# The lore of the item
+#
+# Placeholders:
+# {player} - Player name
+# {money} - Price of the item
+# {name} - Item name
+# {amount} - Amount of items
+# {page} - Page number
+Lore: []
+# The lore which will remain in the menu view only
+#
+# Placeholders:
+# {player} - Player name
+# {money} - Price of the item
+# {name} - Item name
+# {amount} - Amount of items
+# {page} - Page number
+Lore-Showcase:
+  - ""
+  - "&7When purchasing this item"
+  - "&7you receive one spawner"
+  - "&7of Zombie"
+  - ""
+  - "&7Price: &a${money}"
+  - "&7Amount: [&a{amount}x&7]"
+# The enchantment in the item (Remember if you want to disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+Enchantment:
+  - "UNBREAKING:10"
+Head: # Head drop system
+  # Enables / Disables The head system
+  Use: true
+  # The UUID of the head (Generate this UUID by https://www.uuidgenerator.net/)
+  UUID: "a74e6bb7-ee4f-40a2-a057-b899d56634ac"
+  # The texture of the head (These heads will be the Minecraft textures URL code) - (If it is null it will be the head of the mob)
+  Texture: "56fc854bb84cf4b7697297973e02b79bc10698460b51a639c60e5e417734e11"
+Command: # Command item delivery system
+  # Enables / Disables the item delivery system by command (If enabled, the plugin will not deliver the item, it will only execute the command)
+  Use: true
+  # The command list that is to be executed at the time of delivery
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {amount} - Amount of items
+  Commands:
+    - "spawner give {player} zombie {amount}"
+Price: # The price the items will cost
+  # The cash price
+  Money: 100000.0
+Messages: # All purchase message
+  # Messages which will be sent to the player when he completes the purchase
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {money} - Price of the item
+  # {name} - Item name
+  # {amount} - Amount of items
+  # {page} - Page number
+  Chat: # Text message
+    Use: true
+    Message: "&6&lSPAWNER &7You bought an {name}"
+  Bar: # ActionBar message
+    Use: true
+    Message: "&a${money} &7were remove"
+  Title: # Title and SubTitle message
+    Use: true
+    Title: "&7Thank you for purchasing"
+    SubTitle: "{name}"

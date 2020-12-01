@@ -1,0 +1,312 @@
+Inventory: # The shopping menu structure
+  # The title format
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {money} - The player amount of money
+  Title: "&7Spawner Shop"
+  # The menu size (Only multiples of 9)
+  Size: 54
+  Custom-Items: # Items that have function
+    Next-Page: # The format of the referring item the next page
+      # The position of the item in the menu
+      Slot: 53
+      # Amount of item
+      Amount: 1
+      # The material of the item
+      Material: ""
+      # The material date of the item
+      Data: 0
+      # The name of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - The player amount of money
+      # {page} - Page number
+      Name: "&aNext page"
+      # Enables / Disables The glow in the item
+      Glow: false
+      # The lore of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - The player amount of money
+      # {page} - Page number
+      Lore: []
+      # The enchantment in the item (Remember if you want to disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+      Enchantment: []
+      Head: # Head drop system
+        # Enables / Disables The head system
+        Use: true
+        # The texture of the head (These heads will be the Minecraft textures URL code) - (If it is null it will be the head of the mob)
+        Texture: "2a3b8f681daad8bf436cae8da3fe8131f62a162ab81af639c3e0644aa6abac2f"
+    Previous-Page: # The format of the referring item the previous page
+      # The position of the item in the menu
+      Slot: 45
+      # Amount of item
+      Amount: 1
+      # The material of the item
+      Material: ""
+      # The material date of the item
+      Data: 0
+      # The name of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - The player amount of money
+      # {page} - Page number
+      Name: "&cPrevious page"
+      # Enables / Disables The glow in the item
+      Glow: false
+      # The lore of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - The player amount of money
+      # {page} - Page number
+      Lore: []
+      # The enchantment in the item (Remember if you want to disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+      Enchantment: []
+      Head: # Head drop system
+        # Enables / Disables The head system
+        Use: true
+        # The texture of the head (These heads will be the Minecraft textures URL code) - (If it is null it will be the head of the mob)
+        Texture: "8652e2b936ca8026bd28651d7c9f2819d2e923697734d18dfdb13550f8fdad5f"
+  Decoration: # Items that have no function, only decorative
+    Information: # Just any name
+      # The position of the item in the menu
+      Slot: 4
+      # Amount of item
+      Amount: 1
+      # The material of the item
+      Material: ""
+      # The material date of the item
+      Data: 0
+      # The name of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - The player amount of money
+      # {page} - Page number
+      Name: "&9Information"
+      # Enables / Disables The glow in the item
+      Glow: true
+      # The lore of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - The player amount of money
+      # {page} - Page number
+      Lore:
+        - "&7You have &a${money}"
+      # The enchantment in the item (Remember if you want to disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+      Enchantment: []
+      Head: # Head drop system
+        # Enables / Disables The head system
+        Use: true
+        # The texture of the head (These heads will be the Minecraft textures URL code) - (If it is null it will be the head of the mob)
+        Texture: "16439d2e306b225516aa9a6d007a7e75edd2d5015d113b42f44be62a517e574f"
+
+Inventory-Confirm: # The purchase confirmation structure
+  # The title format
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {money} - Price of the item
+  # {name} - Item name
+  Title: "&7Spawner Shop - Confirmation"
+  # The menu size (Only multiples of 9)
+  Size: 45
+  Custom-Items: # Items that have function
+    Confirm: # The item format for confirming actions
+      # The position of the item in the menu
+      Slot: 24
+      # Amount of item
+      Amount: 1
+      # The material of the item
+      Material: ""
+      # The material date of the item
+      Data: 5
+      # The name of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - Price of the item
+      # {name} - Item name
+      # {amount} - Amount of items
+      # {page} - Page number that the item is on
+      Name: "&aAccept"
+      # Enables / Disables The glow in the item
+      Glow: false
+      # The lore of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - Price of the item
+      # {name} - Item name
+      # {amount} - Amount of items
+      # {page} - Page number that the item is on
+      Lore:
+        - "&7You will buy"
+        - "&6{amount} {name}"
+        - ""
+        - "&7Price: &a${money}"
+      # The enchantment in the item (Remember if you want to disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+      Enchantment: []
+      Head: # Head drop system
+        # Enables / Disables The head system
+        Use: true
+        # The texture of the head (These heads will be the Minecraft textures URL code) - (If it is null it will be the head of the mob)
+        Texture: "eac0da9494b974bdbcb78861df96aa5aaa5da35c658721718ab26dc2ff67d87"
+    Deny: # The item format for deny actions
+      # The position of the item in the menu
+      Slot: 20
+      # Amount of item
+      Amount: 1
+      # The material of the item
+      Material: ""
+      # The material date of the item
+      Data: 0
+      # The name of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - Price of the item
+      # {name} - Item name
+      # {amount} - Amount of items
+      # {page} - Page number that the item is on
+      Name: "&4Deny"
+      # Enables / Disables The glow in the item
+      Glow: false
+      # The lore of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - Price of the item
+      # {name} - Item name
+      # {amount} - Amount of items
+      # {page} - Page number that the item is on
+      Lore: []
+      # The enchantment in the item (Remember if you want to disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+      Enchantment: []
+      Head: # Head drop system
+        # Enables / Disables The head system
+        Use: true
+        # The texture of the head (These heads will be the Minecraft textures URL code) - (If it is null it will be the head of the mob)
+        Texture: "3a1d1f6fec429e7cbabc6965b03285ec5ac918ee6e5c3511aef81f52a848e71"
+    Add: # The item format for add amount
+      # The position of the item in the menu
+      Slot: 33
+      # Amount of item
+      Amount: 1
+      # The material of the item
+      Material: ""
+      # The material date of the item.
+      Data: 0
+      # The name of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - Price of the item
+      # {name} - Item name
+      # {amount} - Amount of items
+      # {page} - Page number that the item is on
+      Name: "&9Add"
+      # Enables / Disables The glow in the item
+      Glow: false
+      # The lore of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - Price of the item
+      # {name} - Item name
+      # {amount} - Amount of items
+      # {page} - Page number that the item is on
+      Lore: []
+      # The enchantment in the item (Remember if you want to disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+      Enchantment: []
+      Head: # Head drop system
+        # Enables / Disables The head system
+        Use: true
+        # The texture of the head (These heads will be the Minecraft textures URL code) - (If it is null it will be the head of the mob)
+        Texture: "9a2d891c6ae9f6baa040d736ab84d48344bb6b70d7f1a280dd12cbac4d777"
+    Remove: # The item format for remove amount
+      # The position of the item in the menu
+      Slot: 29
+      # Amount of item
+      Amount: 1
+      # The material of the item
+      Material: ""
+      # The material date of the item
+      Data: 0
+      # The name of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - Price of the item
+      # {name} - Item name
+      # {amount} - Amount of items
+      # {page} - Page number that the item is on
+      Name: "&9Remove"
+      # Enables / Disables The glow in the item
+      Glow: false
+      # The lore of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - Price of the item
+      # {name} - Item name
+      # {amount} - Amount of items
+      # {page} - Page number that the item is on
+      Lore: []
+      # The enchantment in the item (Remember if you want to disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+      Enchantment: []
+      Head: # Head drop system
+        # Enables / Disables The head system
+        Use: true
+        # The texture of the head (These heads will be the Minecraft textures URL code) - (If it is null it will be the head of the mob)
+        Texture: "935e4e26eafc11b52c11668e1d6634e7d1d0d21c411cb085f9394268eb4cdfba"
+  Decoration: # Items that have no function, only decorative
+    Information: # Just any name
+      # The position of the item in the menu
+      Slot: 22
+      # Amount of item
+      Amount: 1
+      # The material of the item
+      Material: ""
+      # The material date of the item
+      Data: 0
+      # The name of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - Price of the item
+      # {name} - Item name
+      # {amount} - Amount of items
+      # {page} - Page number that the item is on
+      Name: "&f&lInformation"
+      # Enables / Disables The glow in the item
+      Glow: true
+      # The lore of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {money} - Price of the item
+      # {name} - Item name
+      # {amount} - Amount of items
+      # {page} - Page number that the item is on
+      Lore:
+        - "&7Item: {name}"
+        - "&7Amount: {amount}"
+        - ""
+        - "&7Price: &a${money}"
+      # The enchantment in the item (Remember if you want to disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+      Enchantment: []
+      Template: # System showing a template of the item
+        # Enables / Disables this decorative item to be a copy of the item the player is looking to buy
+        Use: true
+      Head: # Head drop system
+        # Enables / Disables The head system
+        Use: false
+        # The texture of the head (These heads will be the Minecraft textures URL code) - (If it is null it will be the head of the mob)
+        Texture: ""

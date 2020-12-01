@@ -1,0 +1,111 @@
+# Mob name (Which will be the name which will appear on the hologram)
+Name: "Super Zombie"
+# Which will be the type of mob (All MineCraft Mobs https://helpch.at/docs/1.8.8/index.html?org/bukkit/entity/package-summary.html)
+Mob: "Zombie"
+# The texture of the head (These heads will be the Minecraft textures URL code) - (If it is null it will be the head of the mob)
+Head: "4c15a58df02e98442f7940da48c4e0557e0835f1ff2350cb42379d9a8eac010b"
+Armor: # Which will be the armor that the mob will wear
+  Hand: # The type of item you will be holding
+    # Enables / Disables Must be used
+    Use: false
+    # The material of the item
+    Material: ""
+    # The material date of the item
+    Data: 0
+    # Enables / Disables The glow in the item
+    Glow: false
+    # The enchantment in the item (Remember if you want to disable the glow)
+    Enchantment: []
+  Helmet: # The type of helmet
+    # Enables / Disables Must be used
+    Use: true
+    # The material of the helmet
+    Material: "SKULL_ITEM"
+    # The material date of the helmet
+    Data: 0
+    # Enables / Disables The glow in the item
+    Glow: true
+    # The enchantment in the helmet (Remember if you want to disable the glow)
+    Enchantment: []
+    # Enables / Disables The mob helmet should be the head
+    Use-Head: true
+  Chestplate: # The type of chestplate
+    # Enables / Disables Must be used
+    Use: true
+    # The material of the chestplate
+    Material: "DIAMOND_CHESTPLATE"
+    # The material date of the chestplate
+    Data: 0
+    # Enables / Disables The glow in the item
+    Glow: true
+    # The enchantment in the chestplate (Remember if you want to disable the glow)
+    Enchantment: []
+  Leggings: # The type of leggings
+    # Enables / Disables Must be used
+    Use: true
+    # The material of the leggings
+    Material: "DIAMOND_LEGGINGS"
+    # The material date of the leggings
+    Data: 0
+    # Enables / Disables The glow in the item
+    Glow: false
+    # The enchantment in the leggings (Remember if you want to disable the glow)
+    Enchantment: []
+  Boots: # The type of boots
+    # Enables / Disables Must be used
+    Use: true
+    # The material of the boots
+    Material: "DIAMOND_BOOTS"
+    # The material date of the boots
+    Data: 0
+    # Enables / Disables The glow in the item
+    Glow: false
+    # The enchantment in the boots (Remember if you want to disable the glow)
+    Enchantment: []
+
+Drops: # These will be the items that the monster will drop
+  Head: # Just any name
+    # The drop chance of that item
+    Chance: 100
+    # The material of the item
+    Material: "SKULL_ITEM"
+    # The material date of the item
+    Data: 0
+    # The name of the item
+    Name: "&6Cabeça de Super Zombie"
+    # Enables / Disables The glow in the item
+    Glow: false
+    # The lore of the item
+    Lore: []
+    # The enchantment in the item (Remember if you want to disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+    Enchantment: []
+    Head: # Head drop system
+      # Enables / Disables The head system
+      Use: true
+      # The UUID of the head (Generate this UUID by https://www.uuidgenerator.net/)
+      UUID: "87082c4f-ac9f-4c53-883c-57ebbc634d34"
+      # The texture of the head (These heads will be the Minecraft textures URL code) - (If it is null it will be the head of the mob)
+      Texture: "4c15a58df02e98442f7940da48c4e0557e0835f1ff2350cb42379d9a8eac010b"
+  Potato: # Just any name
+    # The drop chance of that item
+    Chance: 50
+    # The material of the item
+    Material: "POTATO"
+    # The material date of the item
+    Data: 0
+    # The name of the item
+    Name: "&6&lPOTATO"
+    # Enables / Disables The glow in the item
+    Glow: false
+    # The lore of the item
+    Lore: []
+    # The enchantment in the item (Remember if you want to disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+    Enchantment:
+      - "UNBREAKING:10"
+    Head: # Head drop system
+      # Enables / Disables The head system
+      Use: false
+      # The UUID of the head (Generate this UUID by https://www.uuidgenerator.net/)
+      UUID: ""
+      # The texture of the head (These heads will be the Minecraft textures URL code [If it is null it will be the head of the mob])
+      Texture: ""
