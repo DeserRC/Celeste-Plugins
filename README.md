@@ -8,14 +8,14 @@
 
 ### 📝 | Descriptions:
 ### **CelesteEssentials:**  
-**Commands:</b>** /anvil, /broadcast, /broadcastworld, /burn, /clear, /compact, /craft, /crash, /effect, /enchant, /essentials, /exp, /fly, /food, /gamemode, /gc, /give, /god, /hat, /head, /heal, /jump, /kill, /lightning, /lore, /more, /name, /potion, /powertool, /repair, /speed, /sudo, /teleport, /teleporthere, /time, /top, /whois, /gammabright, /motd, /ping, /trash and /warp   
-**Description:** Just an essentials basic with warps systems with menu, custom commands, optimized exp, quick respawn when dead, teleported to spawn when joining or dead, canceling climatic functions, basics commands, alias for commands and anti void.   
-**Support:** YAML.
+- **Commands:</b>** /anvil, /broadcast, /broadcastworld, /burn, /clear, /compact, /craft, /crash, /effect, /enchant, /essentials, /exp, /fly, /food, /gamemode, /gc, /give, /god, /hat, /head, /heal, /jump, /kill, /lightning, /lore, /more, /name, /potion, /powertool, /repair, /speed, /sudo, /teleport, /teleporthere, /time, /top, /whois, /gammabright, /motd, /ping, /trash and /warp   
+- **Description:** Just an essentials basic with warps systems with menu, custom commands, optimized exp, quick respawn when dead, teleported to spawn when joining or dead, canceling climatic functions, basics commands, alias for commands and anti void.   
+- **Support:** YAML.
 
 ### **CelesteSpawners:**  
-**Commands:</b>** /spawner give, /spawner givecustom, /spawner shop and /killall
-**Description:** This plugin constains spawners, custom spawners, stack spawners, stack mobs, stack items, clear mobs and items every specific time and spawners are loaded only when they have nearby players.  
-**Support:** MySQL and SQLite.
+- **Commands:</b>** /spawner give, /spawner givecustom, /spawner shop and /killall
+- **Description:** This plugin constains spawners, custom spawners, stack spawners, stack mobs, stack items, clear mobs and items every specific time and spawners are loaded only when they have nearby players.  
+- **Support:** MySQL and SQLite.
 
 ### **CelesteSHOP:**  
 - **Commands:</b>** /cashs and /shop   
