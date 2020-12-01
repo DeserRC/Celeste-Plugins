@@ -3,6 +3,7 @@
 # **👑 | Celeste Plugins | 👑**  
   
 ### 🔥 | Plugins:
+- CelesteKits
 - CelesteEssentials
 - CelesteSpawners
 - CelesteSHOP
