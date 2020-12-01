@@ -8,7 +8,7 @@
 
 ### 📝 | Descriptions:
 - **CelesteEssentials:**  
-**Commands:</b>** /Anvil, /BroadCast, /BroadCastWorld, /Burn, /Clear, /Compact, /Craft, /Crash, /Effect, /Enchant, /Essentials, /Exp, /Fly, /Food, /Gamemode, /GC, /Give, /God, /Hat, /Head, /Heal, /Jump, /Kill, /Lightning, /Lore, /More, /Name, /Potion, /PowerTool, /Repair, /Speed, /Sudo, /Teleport, /TeleportHere, /Time, /Top, /Whois, /GammaBright, /Motd, /Ping, /Trash and /Warp
+**Commands:</b>** /anvil, /broadcast, /broadcastworld, /burn, /clear, /compact, /craft, /crash, /effect, /enchant, /essentials, /exp, /fly, /food, /gamemode, /gc, /give, /god, /hat, /head, /heal, /jump, /kill, /lightning, /lore, /more, /name, /potion, /powertool, /repair, /speed, /sudo, /teleport, /teleporthere, /time, /top, /whois, /gammabright, /motd, /ping, /trash and /warp
 **Description:** Just an essentials basic with warps systems with menu, custom commands, optimized exp, quick respawn when dead, teleported to spawn when joining or dead, canceling climatic functions, basics commands, alias for commands and anti void.
 **Support:** YAML.
 
