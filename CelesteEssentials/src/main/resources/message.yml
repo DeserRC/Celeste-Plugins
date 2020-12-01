@@ -2013,13 +2013,13 @@ Warp: # Command - /warp
   #
   # Placeholders:
   # {time} - Delay to teleport
-  Oflay: # Text message
+  Delay: # Text message
     Use: false
     Message: "&6&lESSENTIALS &7You will be teleported em &6{time} &7seconds."
-  Oflay-Bar: # ActionBar message
+  Delay-Bar: # ActionBar message
     Use: false
     Message: "&7Teleporting in &6{time} &7seconds"
-  Oflay-Title: # Title and SubTitle message
+  Delay-Title: # Title and SubTitle message
     Use: true
     Title: "&6Teleporting in"
     SubTitle: "&6{time} &7seconds"
