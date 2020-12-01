@@ -22,7 +22,7 @@
 
 ### **CelesteSpawners:**  
 - **Commands:</b>** /spawner give, /spawner givecustom, /spawner shop and /killall
-- **Description:** This plugin constains spawners, custom spawners, stack spawners, stack mobs, stack items, clear mobs and items every specific time and spawners are loaded only when they have nearby players.  
+- **Description:** This plugin contains spawners, custom spawners, stack spawners, stack mobs, stack items, clear mobs and items every specific time and spawners are loaded only when they have nearby players.  
 - **Support:** MySQL and SQLite.
 
 ### **CelesteSHOP:**  
