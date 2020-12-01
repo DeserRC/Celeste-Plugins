@@ -7,6 +7,16 @@
 - CelesteHOMES
 
 ### 📝 | Descriptions:
+- **CelesteEssentials:**  
+**Commands:</b>** /Anvil, /BroadCast, /BroadCastWorld, /Burn, /Clear, /Compact, /Craft, /Crash, /Effect, /Enchant, /Essentials, /Exp, /Fly, /Food, /Gamemode, /GC, /Give, /God, /Hat, /Head, /Heal, /Jump, /Kill, /Lightning, /Lore, /More, /Name, /Potion, /PowerTool, /Repair, /Speed, /Sudo, /Teleport, /TeleportHere, /Time, /Top, /Whois, /GammaBright, /Motd, /Ping, /Trash and /Warp
+**Description:** Just an essentials basic with warps systems with menu, custom commands, optimized exp, quick respawn when dead, teleported to spawn when joining or dead, canceling climatic functions, basics commands, alias for commands and anti void.
+**Support:** YAML.
+
+- **CelesteSpawners:**  
+**Commands:</b>** /spawner give, /spawner givecustom, /spawner shop and /killall
+**Description:** This plugin constains spawners, custom spawners, stack spawners, stack mobs, stack items, clear mobs and items every specific time and spawners are loaded only when they have nearby players.  
+**Support:** MySQL and SQLite.
+
 - **CelesteSHOP:**  
 **Commands:</b>** /cashs and /shop   
 **Description:** This plugin contains a points system, shop of items and commands by points, admin commands, title and actionbar and all messages and menus can be configured.  
