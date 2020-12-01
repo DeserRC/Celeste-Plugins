@@ -1,0 +1,125 @@
+MySQL: # MySQL Storage
+  # Enables / Disables storage by MySQL
+  Use: false
+  # The MySQL server IP
+  Host: "localhost:3306"
+  # The name of the database that will be stored in the table
+  DataBase: ""
+  # The MySQL login username
+  User: ""
+  # The MySQL password
+  Password: ""
+
+Permission: # All permissions (The permission name refers to the command it answers)
+  # Administrator permission (Contains all permissions bellow)
+  Admin: "mockessentials.admin"
+  Anvil: "mockessentials.anvil"
+  BroadCast: "mockessentials.bc"
+  Burn: "mockessentials.burn"
+  Clear: "mockessentials.clear"
+  Clear-Other-Players: "mockessentials.clear.other"
+  Compact: "mockessentials.compact"
+  Craft: "mockessentials.craft"
+  Crash: "mockessentials.crash"
+  Effect: "mockessentials.effect"
+  Enchant: "mockessentials.enchant"
+  Exp: "mockessentials.exp"
+  Fly: "mockessentials.fly"
+  Fly-Other-Players: "mockessentials.fly.other"
+  Food: "mockessentials.food"
+  Food-Other-Players: "mockessentials.food.other"
+  Gamemode: "mockessentials.gm"
+  Gamemode-Other-Players: "mockessentials.gm.other"
+  GC: "mockessentials.gc"
+  Give: "mockessentials.give"
+  God: "mockessentials.god"
+  God-Other-Players: "mockessentials.god.other"
+  Hat: "mockessentials.hat"
+  Head: "mockessentials.head"
+  Heal: "mockessentials.heal"
+  Heal-Other-Players: "mockessentials.heal.other"
+  Jump: "mockessentials.jump"
+  Kill: "mockessentials.kill"
+  Kill-Other-Players: "mockessentials.kill.other"
+  Lightning: "mockessentials.lightning"
+  Lore: "mockessentials.lore"
+  More: "mockessentials.more"
+  Name: "mockessentials.name"
+  Potion: "mockessentials.potion"
+  PowerTool: "mockessentials.powertool"
+  Reload: "mockessentials.reloadWarp"
+  Repair: "mockessentials.repair"
+  Speed: "mockessentials.speed"
+  Sudo: "mockessentials.sudo"
+  Teleport: "mockessentials.tp"
+  Teleport-Bypass-Delay: "mockessentials.delay.bypass"
+  TeleportHere: "mockessentials.tphere"
+  Time: "mockessentials.time"
+  Top: "mockessentials.top"
+  Warp: "mockessentials.warp"
+  Whois: "mockessentials.whois"
+
+Sounds: # All MineCraft Sounds - https://helpch.at/docs/1.8.8/index.html?org/bukkit/Sound.html
+  # Sound which will be sent if the player teleport success
+  Teleport: "ENDERMAN_TELEPORT"
+  # Sound which will be sent if the player is in the teleport delay
+  Delay: "ORB_PICKUP"
+  # Sound which will be sent if the player move on teleport
+  Move: "VILLAGER_NO"
+
+Commands: # Custom Commands
+  Site: # Just any name
+    # Command which will has to be executed
+    Command: "site"
+    # Message which will send
+    Message:
+      - ""
+      - "&7WebSite: &6https://google.com"
+      - ""
+
+Inventory-Warp: # Inventory Warp System
+  # Title menu
+  Title: "&8Warps"
+  # Size menu
+  Size: 54
+  Decoration: # Items that have no function, only decorative
+    Information: # Just any name
+      # The position of the item in the menu
+      Slot: 4
+      # The coins of item
+      Amount: 1
+      # The material of the item
+      Material: ""
+      # The material date of the item
+      Data: 0
+      # The name of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      Name: "&6Warps"
+      # Enables / Disables The glow in the item
+      Glow: true
+      # The lore of the item
+      #
+      # Placeholders:
+      # {player} - Player name
+      Lore: []
+      # The enchantment in the item (Remember if you want to disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+      Enchantment: []
+      Head: # Head drop system
+        # Enables / Disables The head system
+        Use: true
+        # The texture of the head (These heads will be the Minecraft textures URL code) - (If it is null it will be the head of the mob)
+        Texture: "16439d2e306b225516aa9a6d007a7e75edd2d5015d113b42f44be62a517e574f"
+
+Inventory-Trash: # Inventory Trash System
+  # Title menu
+  Title: "&8Trash"
+  # Size menu
+  Size: 45
+
+Teleport: # Teleport System
+  # Delay to player complete teleport
+  Delay: 3
+  # Teleportation must be canceled when the player moves
+  Cancel-On-Move: false

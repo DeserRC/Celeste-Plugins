@@ -1,0 +1,2147 @@
+# Message pattern when something is enabled
+Enable: "&6Enable"
+# Message pattern when something is disabled
+Disable: "&6Disable"
+
+No-Permission: # When the player does not have permission
+  # Message which will be sent if the player is not allowed to permission a task that only admin can do
+  Admin: "&6&lESSENTIALS &7You don’t have permission."
+  # Message which will be sent if the player is not allowed to permission to go there
+  #
+  # Placeholders:
+  # {warp} - Warp name
+  Warp: "&6You don’t have permission to go on this warp"
+
+Anvil: # Command - /anvil
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/anvil&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/anvil"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/anvil"
+
+BroadCast: # Command - /broadcast
+  # Message which will be sent if broadcast sent successfully
+  #
+  # Placeholders:
+  # {message} - Message sent
+  Success: # Text message
+    Use: false
+    Message: "&6&lESSENTIALS &7Broadcast successfully sent."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Broadcast successfully sent"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Broadcast"
+    SubTitle: "&7Successfully sent"
+
+  # Message which will be sent to all players if broadcast sent successfully (BroadCast)
+  #
+  # Placeholders:
+  # {executor} - Executor name
+  # {message} - Message sent
+  Receive:
+    - ""
+    - "&6&lALERT &7{message}"
+    - ""
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/broadcast <message>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/broadcast <message>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/broadcast <message>"
+
+BroadCast-World: # Command - /broadcastworld
+  # Message which will be sent if broadcast to a world is sent successfully to a world
+  #
+  # Placeholders:
+  # {message} - Message sent
+  Success: # Text message
+    Use: false
+    Message: "&6&lESSENTIALS &7Broadcast successfully sent."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Broadcast successfully sent"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Broadcast"
+    SubTitle: "&7Successfully sent"
+
+  # Message which will be sent to all players that world if broadcast sent successfully (BroadCast)
+  #
+  # Placeholders:
+  # {executor} - Executor name
+  # {message} - Message sent
+  Receive:
+    - ""
+    - "&6&lALERT &7{message}"
+    - ""
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/broadcastworld <world> <message>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/broadcastworld <world> <message>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/broadcastworld <world> <message>"
+
+  # Message which will be sent if a world value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {world} - The given world name
+  World-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7The specific world does not exist&7."
+  World-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7World does not exist"
+  World-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7World does not exist"
+
+Burn: # Command - /burn
+  # Message which will be sent if the player burned successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {time} - Time that will be burn
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You burned &6{player} &7for &6{time} &7seconds."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&6{player} &7was set on fire"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{player}"
+    SubTitle: "&7Was set on fire for &6{time} &7seconds"
+
+  # Message which will be sent when the player burn
+  #
+  # Placeholders:
+  # {executor} - Executor name
+  # {time} - Time that will be burn
+  Receive: # Text message
+    Use: false
+    Message: "&6&lESSENTIALS &7You were set on fire."
+  Receive-Bar: # ActionBar message
+    Use: false
+    Message: "&7You were set on fire"
+  Receive-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{executor}"
+    SubTitle: "&7Put you on fire"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/burn <player> <time>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/burn <player> <time>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/burn <player> <time>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+Clear: # Command - /clear
+  # Message which will be sent if the player clears own inventory successfully
+  #
+  # Placeholders:
+  # {amount} - Amount of items removed
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You cleaned your inventory."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Cleaned inventory"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Clear"
+    SubTitle: "&7Cleaned inventory"
+
+  # Message which will be sent if the player clears another player inventory successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {amount} - Amount of items removed
+  Success-Other-Player: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You cleaned the inventory of &6{player}&7."
+  Success-Other-Player-Bar: # ActionBar message
+    Use: false
+    Message: "&7Inventory of &6{player} &7successfully cleaned "
+  Success-Other-Player-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{player}"
+    SubTitle: "&7had the inventory cleaned"
+
+  # Message which will be sent when the player has his inventory cleared
+  #
+  # Placeholders:
+  # {executor} - Executor name
+  # {amount} - Amount of items removed
+  Receive: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Your inventory was cleaned by&6{executor}&7."
+  Receive-Bar: # ActionBar message
+    Use: false
+    Message: "&7Your inventory was cleaned by&6{executor}"
+  Receive-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{executor}"
+    SubTitle: "&7Cleaned your inventory"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/clear <player>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/clear <player>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/clear <player>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+Compact: # Command - /compact
+  # Message which will be sent if the player compact items successfully
+  #
+  # Placeholders:
+  # {amount} - Amount of items compacted
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Compacted &6{amount} &7items."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&6{amount} &7items Compacted"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{amount} &7items"
+    SubTitle: "&7Compacted"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/compact&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/compact"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/compact"
+
+  # Message which will be sent if the player not a have items compactable
+  No-Items-Compactable: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You have no item to compact."
+  No-Items-Compactable-Bar: # ActionBar message
+    Use: false
+    Message: "&7No items to compact"
+  No-Items-Compactable-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7You have no item compactable"
+
+Craft: # Command - /craft
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/craft&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/craft"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/craft"
+
+Crash: # Command - /crash
+  # Message which will be sent if the player crash another player successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7The player &6{player} &7was crashed with success."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&6{player} &7crashed"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{player}"
+    SubTitle: "&7Was crashed with success"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/crash <player>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/crash <player>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/crash <player>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+Effectt: # Command - /effect - (All effect - https://helpch.at/docs/1.10.2/inofx.html?org/bukkit/potion/PotionEffecttType.html)
+  # Message which will be sent if the player applied effect another player successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {effect} - effect name
+  # {time} - effect duration
+  # {level} - effect level
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You aplicou effect of &6{effect} &7à &6{player}&7."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&6{player} &7had effect applied of &6{effect}"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{player}"
+    SubTitle: "&7had effect applied of &6{effect}"
+
+  # Message which will be sent if the player receive effect
+  #
+  # Placeholders:
+  # {executor} - Executor name
+  # {effect} - effect name
+  # {time} - effect duration
+  # {level} - effect level
+  Receive: # Text message
+    Use: false
+    Message: "&6&lESSENTIALS &6{executor} &7applied on you effect of &6{effect}."
+  Receive-Bar: # ActionBar message
+    Use: false
+    Message: "&6{executor} &7applied on you effect of &6{effect}"
+  Receive-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{executor}"
+    SubTitle: "&7applied on you effect of &6{effect}"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/effect <player> <time> <strenght>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/effect <player> <time> <strenght>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/effect <player> <time> <strenght>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+  # Message which will be sent if a effect value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {effect} - The given effect name
+  Effectt-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Effect not found."
+  Effectt-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Effect not found"
+  Effectt-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Effect not found"
+
+Enchant: # Command - /enchant
+  # Message which will be sent if the player enchants an item successfully
+  #
+  # Placeholders:
+  # {name} - Enchantment name
+  # {level} - Level of enchantment
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Item enchanted with success."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Item enchanted with success"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Success"
+    SubTitle: "&7Item enchanted"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/enchant <enchantment> <level>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/enchant <enchantment> <level>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/enchant <enchantment> <level>"
+
+  # Message which will be sent if the player is not holding any item
+  Item-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You are not holding any item."
+  Item-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7You are not holding any item"
+  Item-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7You are not holding any item"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {name} - The given enchantment name
+  Enchant-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Enchantment not found."
+  Enchant-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Enchantment not found"
+  Enchant-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Enchantment not found"
+
+Exp: # Command - /exp
+  # Message pattern when player adding exp to an another player
+  Add: "&6Added {level} &7levels of xp to"
+  # Message pattern when player removing exp to an another player
+  Remove: "&6Removed {level} &7levels of xp to"
+  # Message pattern when player set exp to an another player
+  Set: "&6Set {level} &7levels of xp to"
+  # Message pattern when player reset exp to an another player
+  Reset: "&6Reset &7exp levels of"
+
+  # Message which will be sent if the player changes exp of another player successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {level} - Exp level
+  # {mode} - Action taken
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You {mode} &6{player}&7."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You {mode} &6{player}"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&7XP"
+    SubTitle: "{mode} &6{player}"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: |
+      &7Invalid arguments:
+      &7> &6/exp add <player> <level>
+      &7> &6/exp remove <player> <level>
+      &7> &6/exp set <player> <level>
+      &7> &6/exp reset <player>
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid arguments."
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Invalid arguments"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+Fly: # Command - /fly
+  # Message which will be sent if the player enable/disable own flying successfully
+  #
+  # Placeholders:
+  # {mode} - If the flight was enabled or disabled
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You {mode} &7your flight."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You {mode} &7your flight"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Flight"
+    SubTitle: "&7You {mode} &7your flight"
+
+  # Message which will be sent if the player enable/disable flying of another player successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {mode} - If the flight was enabled or disabled
+  Success-Other-Player: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You {mode} &7o flight of &6{player}&7."
+  Success-Other-Player-Bar: # ActionBar message
+    Use: false
+    Message: "&6{player} &7had your flight {mode}"
+  Success-Other-Player-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{player}"
+    SubTitle: "&7Had your flight {mode}"
+
+  # Message which will be sent when the player has his flight enabled/disabled
+  #
+  # Placeholders:
+  # {executor} - Executor name
+  # {mode} - If the flight was enabled or disabled
+  Receive: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Your flight was {mode} &7for &6{executor}&7."
+  Receive-Bar: # ActionBar message
+    Use: false
+    Message: "&6{executor} {mode} &7your flight"
+  Receive-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{executor}"
+    SubTitle: "{mode} &7your flight"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/fly <player>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/fly <player>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/fly <player>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+Food: # Command - /food
+  # Message which will be sent if the player sate own hunger successfully
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You sate your own hunger."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You sate your own hunger."
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Fome"
+    SubTitle: "&7Sate hunger"
+
+  # Message which will be sent if the player sate another player hunger successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  Success-Other-Player: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You sate hunger of &6{player}&7."
+  Success-Other-Player-Bar: # ActionBar message
+    Use: false
+    Message: "&7You sate hunger of &6{player}&7."
+  Success-Other-Player-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{player}"
+    SubTitle: "&7Had sate hunger"
+
+  # Message which will be sent when the player has sate hunger
+  #
+  # Placeholders:
+  # {executor} - Executor name
+  Receive: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Your hunger was sate for &6{executor}&7."
+  Receive-Bar: # ActionBar message
+    Use: false
+    Message: "&7Your hunger was sate for &6{executor}"
+  Receive-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{executor}"
+    SubTitle: "&7Sate your hunger"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/food <player>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/food <player>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/food <player>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+Gamemode: # Command - /gamemode
+  # Message pattern when player changes own gamemode to survival
+  Survival: "&6Survival"
+  # Message pattern when player changes own gamemode to creative
+  Creative: "&6Creative"
+  # Message pattern when player changes own gamemode to spectator
+  Spectator: "&6Spectator"
+  # Message pattern when player changes own gam mode to adventure
+  Adventure: "&6Adventure"
+
+  # Message which will be sent if the player changes gamemode successfully
+  #
+  # Placeholders:
+  # {mode} - Gamemode name
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You changed your gamemode to {mode}&7."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You changed your gamemode to {mode}"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Gamemode"
+    SubTitle: "&7Was changed to {mode}"
+
+  # Message which will be sent if the player changes gamemode of another player successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {mode} - Gamemode name
+  Success-Other-Player: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You changed o gamemode of &6{player} &7to {mode}&7."
+  Success-Other-Player-Bar: # ActionBar message
+    Use: false
+    Message: "&6{player} &7had your gamemode changed to {mode}"
+  Success-Other-Player-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{player}"
+    SubTitle: "&7Had your gamemode changed to {mode}"
+
+  # Message which will be sent when the player has gamemode changed
+  #
+  # Placeholders:
+  # {executor} - Executor name
+  # {mode} - Gamemode name
+  Receive: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &6{executor} &7changed your gamemode to {mode}&7."
+  Receive-Bar: # ActionBar message
+    Use: false
+    Message: "&6{executor} &7changed your gamemode to {mode}"
+  Receive-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{executor}"
+    SubTitle: "&7Changed your gamemode to {mode}"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/gamemode <player> <mode>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/gamemode <player> <mode>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/gamemode <player> <mode>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+  # Message which will be sent if a gamemode value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {mode} - The given gamemode name
+  Gamemode-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Gamemode not found."
+  Gamemode-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Gamemode not found"
+  Gamemode-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Gamemode not found"
+
+GammaBright: # Command /gammabright
+  # Message which will be sent if the player enable/disable gamma bright successfully
+  #
+  # Placeholders:
+  # {mode} - If the god mode was enabled or disabled
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You {mode} &7the light."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You changed your gamemode to {mode}"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Gamemode"
+    SubTitle: "&7Was changed to {mode}"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/light&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/light"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/light"
+
+GC: # Command - /gc
+  # Message which will be sent when the player checks the status of the server
+  #
+  # Placeholders:
+  # {players} - Amount Players
+  # {time} - Uptime
+  # {tps} - The tps values
+  # {maxmemory} - Maximum amount of memory available
+  # {totalmemory} - Total amount of memory currently available for use
+  # {freememory} - Total amount of memory currently available
+  # {worlds} - Amount of worlds
+  # {chunks} - Amount chunks load
+  # {entities} - Total of entities
+  Success:
+    - "&7Players: &6{players}"
+    - "&7UpTime: &6{time}"
+    - ""
+    - "&7TPS 1m, 5m, 15m: {tps}"
+    - ""
+    - "&7Max Memory: &6{maxmemory}"
+    - "&7Total Memory: &6{totalmemory}"
+    - "&7Free Memoory: &6{freememory}"
+    - ""
+    - "&7Amount of Worlds: &6{worlds}"
+    - "&7Loaded Chunks: &6{chunks}"
+    - "&7Total of Entities: &6{entities}"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/gc&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/gc"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/gc"
+
+Give: # Command - /give
+  # Message which will be sent if the player to give an item successfully
+  #
+  # Placeholders:
+  # {material} - Material name
+  # {amount} - Amount of items
+  #
+  # Placeholders Command:
+  # Give custom name item -     /give <player> <material:data> <amount> name:&7Item_Lendario_of_&6Deser
+  # Give custom lore item -    /give <player> <material:data> <amount> lore:&7Item_Lendario_of_&6Deser,&5&lRARO
+  # Give custom enchant item - /give <player> <material:data> <amount> enchant:<enchant>:<level>,<enchant>:<level>
+  # Give custom potion -       /give <player> <material:data> <amount> potion:<effect>:<time>:<level>,<effect>:<time>:<level>
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You gave yourself &6{amount} {material}&7."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You gave yourself &6{amount} {material}"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Dar"
+    SubTitle: "&7You gave yourself &6{amount} {material}"
+
+  # Message which will be sent if the player to give of another player an item successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {material} - Material name
+  # {amount} - Amount of items
+  Success-Other-Player: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You sent &6{amount} {material} &7to &6{player}&7."
+  Success-Other-Player-Bar: # ActionBar message
+    Use: false
+    Message: "&6{player} &7recebeu &6{amount} {material}"
+  Success-Other-Player-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{player}"
+    SubTitle: "&7recebeu &6{amount} {material}"
+
+  # Message which will be sent when the player has receives an item
+  #
+  # Placeholders:
+  # {executor} - Executor name
+  # {material} - Material name
+  # {amount} - Amount of items
+  Receive: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You recebeu &6{amount} {material} &7of &6{executor}&7."
+  Receive-Bar: # ActionBar message
+    Use: false
+    Message: "&6{executor} &7te sent &6{amount} {material}"
+  Receive-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{executor}"
+    SubTitle: "&7te sent &6{amount} {material}"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/give <player> <item> <amount>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/give <player> <item> <amount>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/give <player> <item> <amount>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+  # Message which will be sent if a material value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {material} - The given material name
+  Material-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Material not found."
+  Material-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Material not found"
+  Material-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Material not found"
+
+God: # Command - /god
+  # Message which will be sent if the player enable/disable own god mode successfully
+  #
+  # Placeholders:
+  # {mode} - If the god mode was enabled or disabled
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You {mode} &7your mode god."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You {mode} &7your mode god"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6God"
+    SubTitle: "&7You {mode} &7your mode god"
+
+  # Message which will be sent if the player enable/disable god mode of another player successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {mode} - If the god mode was enabled or disabled
+  Success-Other-Player: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You {mode} &7o mode god of &6{player}&7."
+  Success-Other-Player-Bar: # ActionBar message
+    Use: false
+    Message: "&6{player} &7had your mode god {mode}"
+  Success-Other-Player-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{player}"
+    SubTitle: "&7Had your mode god {mode}"
+
+  # Message which will be sent when the player has his god mode enabled/disabled
+  #
+  # Placeholders:
+  # {executor} - Executor name
+  # {mode} - If the god mode was enabled or disabled
+  Receive: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Your mode god was {mode} &7for &6{executor}&7."
+  Receive-Bar: # ActionBar message
+    Use: false
+    Message: "&6{executor} {mode} &7your mode god"
+  Receive-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{executor}"
+    SubTitle: "{mode} &7your mode god"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/god <player>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/god <player>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/god <player>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+Hat: # Command - /hat
+  # Message which will be sent when the player puts an item on head
+  #
+  # Placeholders:
+  # {name} - The name of the item that he put on his head
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Helmet put on/removed with success."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Helmet put on/removed with success"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Helmet"
+    SubTitle: "&7put on/removed with success"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/hat&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/hat"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/hat"
+
+  # Message which will be sent when the player has no items in hand and no helmet and executes the command
+  Hat-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid hat."
+  Hat-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid hat"
+  Hat-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Invalid hat"
+
+Head: # Command - /head
+  # Message which will be sent if the player getMessage a head successfully
+  #
+  # Placeholders:
+  # {player} - Name of the head player
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You caught the head of player &6{player}&7."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You caught the head of player &6{player}"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Cabeça"
+    SubTitle: "&7You caught the head of player &6{player}"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/head <player>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/head <player>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/head <player>"
+
+Heal: # Command - /heal
+  # Message which will be sent if the player recover own life successfully
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You healed your own life."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You healed your own life"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Life"
+    SubTitle: "&7Life healed"
+
+  # Message which will be sent if the player recover another player life successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  Success-Other-Player: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You healed a life of &6{player}&7."
+  Success-Other-Player-Bar: # ActionBar message
+    Use: false
+    Message: "&7You healed a life of &6{player}"
+  Success-Other-Player-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{player}"
+    SubTitle: "&7Had a life healed"
+
+  # Message which will be sent when the player has recover life
+  #
+  # Placeholders:
+  # {executor} - Executor name
+  Receive: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Your life was healed for &6{executor}&7."
+  Receive-Bar: # ActionBar message
+    Use: false
+    Message: "&7Your life was healed for &6{executor}"
+  Receive-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{executor}"
+    SubTitle: "&7Healed your life"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/heal <player>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/heal <player>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/heal <player>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found&7."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+Jump: # Command - /jump
+  # Message which will be sent if the player is teleported to the location he is looking at successfully
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You were teleported with success."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Teleported with success"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Teleported"
+    SubTitle: "&7with success"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/jump&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/jump"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/jump"
+
+Kill: # Command - /kill
+  # Message which will be sent if the player kill himself successfully
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You se killed."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You {mode} &7your mode god"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6God"
+    SubTitle: "&7You {mode} &7your mode god"
+
+  # Message which will be sent if the player kill another player successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  Success-Other-Player: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You killed the player &6{player}&7."
+  Success-Other-Player-Bar: # ActionBar message
+    Use: false
+    Message: "&6{player} &7was dead"
+  Success-Other-Player-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{player}"
+    SubTitle: "&7was dead"
+
+  # Message which will be sent if the player is killed
+  #
+  # Placeholders:
+  # {executor} - Executor name
+  Receive: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You were dead for &6{executor}&7."
+  Receive-Bar: # ActionBar message
+    Use: false
+    Message: "&6{executor} killed you"
+  Receive-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{executor}"
+    SubTitle: "killed you"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/kill <player>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/kill <player>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/kill <player>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+Lightning: # Command - /lightning
+  # Message which will be sent if the player sent lightning to the location he is looking at successfully
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Lightning sent with success."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Lightning sent with success"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Lightning"
+    SubTitle: "&7sent with success"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/lightning&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/lightning"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/lightning"
+
+Lore: # Command - /lore
+  # Message which will be sent if the item lore replaced successfully
+  #
+  # Placeholders:
+  # {message} - Lore message
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Lore redefined with success."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Lore redefined"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Lore"
+    SubTitle: "&7Redefined with success"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/lore <position> <message>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/lore <position> <message>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/lore <position> <message>"
+
+  # Message which will be sent if the player is not holding any item
+  Item-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You are not holding any item."
+  Item-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7You are not holding any item"
+  Item-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7You are not holding any item"
+
+More: # Command - /more
+  # Message which will be sent if the item amount replaced to 64 successfully
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Name redefined with success."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Name redefined"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Name"
+    SubTitle: "&7Redefined with success"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/more&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/more"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/more"
+
+  # Message which will be sent if the player is not holding any item
+  Item-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You are not holding any item."
+  Item-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7You are not holding any item"
+  Item-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7You are not holding any item"
+
+Motd: # Command - /motd
+  # Message which will be sent if the item name replaced successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  Success: # Text message
+    Use: true
+    Message:
+      - "&9"
+      - "                          &6RedeCeleste &7- &fRankup OP"
+      - "                             &7Welcome, &6{player}&7!"
+      - "              &7Follow the rules to not be harmed."
+      - "            &7Buy &6&lCASHS &7in &fhttps://reofmock.com/loja"
+      - "                &7If you need help use the &a/help."
+      - "                         &7We offer a good game!"
+      - "&1"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/motd&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/motd"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/motd"
+
+Name: # Command - /name
+  # Message which will be sent if the item name replaced successfully
+  #
+  # Placeholders:
+  # {message} - Lore message
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Name redefined with success."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Name redefined"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Name"
+    SubTitle: "&7Redefined with success"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/name <message>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/name <message>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/name <message>"
+
+  # Message which will be sent if the player is not holding any item
+  Item-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You are not holding any item."
+  Item-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7You are not holding any item"
+  Item-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7You are not holding any item"
+
+Ping: # Command - /ping
+  # Message which will be sent if the player check own ping successfully
+  #
+  # Placeholders:
+  # {ping} - Ping value
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Your ping is &6{ping} &7ms."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Your ping is &6{ping} &7ms"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Ping"
+    SubTitle: "&7Is &6{ping} &7ms"
+
+  # Message which will be sent if the player check another player ping successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {ping} - Ping value
+  Success-Other-Player: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &6{player} &7has the ping of &6{ping} &7ms."
+  Success-Other-Player-Bar: # ActionBar message
+    Use: false
+    Message: "&6{player} &7has the ping of &6{ping} &7ms"
+  Success-Other-Player-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{player}"
+    SubTitle: "&7has the ping of &6{ping} &7ms"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/ping <player>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/ping <player>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/ping <player>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+Potion: # Command - /potion - (All potions - https://helpch.at/docs/1.10.2/inofx.html?org/bukkit/potion/PotionEffecttType.html)
+  # Message pattern when player adding an effect to the potion
+  Add: "&6Added"
+  # Message pattern when player removing an effect to the potion
+  Remove: "&6Removed"
+  # Message pattern when player set an effect to the potion
+  Set: "&6Set"
+  # Message pattern when player reset the effect to the potion
+  Reset: "&6Reseted"
+
+  # Message which will be sent if the player changes an potion successfully
+  #
+  # Placeholders:
+  # {mode} - Action taken
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You &6{mode} &7effects to the potion."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You &6{mode} &7effects to the potion"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Potion"
+    SubTitle: "&6{mode} &7effects"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: |
+      &7Invalid arguments:
+      &7> &6/potion add <potion> <time> <level>
+      &7> &6/potion remove <potion>
+      &7> &6/potion set <potion> <time> <level>
+      &7> &6/potion reset
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid arguments."
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Invalid arguments"
+
+  # Message which will be sent if the player is not holding a potion
+  Item-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You are not holding a potion."
+  Item-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7You are not holding a potion"
+  Item-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7You are not holding a potion"
+
+  # Message which will be sent if a potion value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {potion} - The given potion name
+  Potion-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Potion not found."
+  Potion-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Potion not found"
+  Potion-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Potion not found"
+
+PowerTool: # Command - /powertool
+  # Message which will be sent if the player set a command for an item successfully
+  #
+  # Placeholders:
+  # {material} - Material name
+  # {command} - Command
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Command defined with success."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Command defined with success"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6PowerTool"
+    SubTitle: "&7Command defined with success"
+
+  # Message which will be sent if the player remove a command for an item successfully
+  #
+  # Placeholders:
+  # {material} - Material name
+  Success-Remove: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Command removed with success."
+  Success-Remove-Bar: # ActionBar message
+    Use: false
+    Message: "&7Command removed with success"
+  Success-Remove-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6PowerTool"
+    SubTitle: "&7Command removed with success"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/pt <command>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/pt <command>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/pt <command>"
+
+  # Message which will be sent if the player is not holding any item
+  Item-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You are not holding any item."
+  Item-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7You are not holding any item"
+  Item-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7You are not holding any item"
+
+Reload: # Command - /essentials reloadWarp
+  # Message which will be sent if the player reloadWarp config successfully
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Setting reloaded with success."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Setting reloaded"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Success"
+    SubTitle: "&7Reloading the setting"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/repair&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/repair"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/repair"
+
+Repair: # Command - /repair
+  # Message which will be sent if the player repair an item successfully
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Item repaired with success."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Item repaired with success"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Success"
+    SubTitle: "&7Item repaired"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/repair&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/repair"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/repair"
+
+  # Message which will be sent if the player is not holding any item
+  Item-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You are not holding any item."
+  Item-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7You are not holding any item"
+  Item-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7You are not holding any item"
+
+  # Message which will be sent if the player item not repairable
+  Item-Not-Repairable: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Esse item não poof ser reparável."
+  Item-Not-Repairable-Bar: # ActionBar message
+    Use: false
+    Message: "&7Item not repairable"
+  Item-Not-Repairable-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Item not repairable"
+
+SellHead: # Command - /sellhead
+  # Message which will be sent if the player sell the heads successfully
+  #
+  # Placeholders:
+  # {amount} - Head amount sell
+  # {coins} - Heads price sell
+  # {oldcoins} - Old coins value
+  # {totalcoins} - Total coins
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You sold &6{amount} heads &7by the price of &6{coins} &7coins."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&6{amount} &7heads were sold for &6{coins} &7coins"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Heads"
+    SubTitle: "&6{amount} &7heads were sold for &6{coins} &7coins"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/sellhead&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/sellhead"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/sellhead"
+
+  # Message which will be sent if the player not a have items to sell
+  No-Have-Items-Sell: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You have no item to sell."
+  No-Have-Items-Sell-Bar: # ActionBar message
+    Use: false
+    Message: "&7No items to sell"
+  No-Have-Items-Sell-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7You have no item to sell"
+
+Speed: # Command - /speed
+  # Message pattern when player changes Fly speed
+  Fly: "&6Flying"
+  # Message pattern when player changes walk speed
+  Walk: "&6Walk"
+
+  # Message which will be sent if the player changes the speed successfully
+  #
+  # Placeholders:
+  # {mode} - Mode changed
+  # {speed} - Speed that changed
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You changed a speed of {mode} &7to &6{speed}&7."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You changed a speed of {mode} &7to &6{speed}"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Speed"
+    SubTitle: "&7You changed a speed of {mode} &7to &6{speed}"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/speed <Fly/Walk> <Speed 0-10>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/speed <Fly/Walk> <Speed 0-10>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/speed <Fly/Walk> <Speed 0-10>"
+
+Sudo: # Command - /speed
+  # Message which will be sent if the player teleporting to top successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {command} - Command
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You forced the player &6{player} &7to execute o command &6{command}&7."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You forced the player &6{player} &7to execute o command &6{command}"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Sudo"
+    SubTitle: "&7You forced the player &6{player} &7to execute o command &6{command}"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/sudo <player> <command>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/sudo <player> <command>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/sudo <player> <command>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+Teleport: # Command - /teleport
+  # Message which will be sent if the player teleport successfully
+  #
+  # Placeholders:
+  # {target} - Target player name or Location
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You were teleported with success to &6{target}&7."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Teleported with success to &6{target}"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{target}"
+    SubTitle: "&7Was your destiny of teleport"
+
+  # Message which will be sent if the player teleport another player successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {target} - Target player name or Location
+  Success-Other-Player: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You teleported &6{player} &7to &6{target}&7."
+  Success-Other-Player-Bar: # ActionBar message
+    Use: false
+    Message: "&6{player} &7was teleported to &6{target}}"
+  Success-Other-Player-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{player}"
+    SubTitle: "&7was teleported to &6{target}"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/teleport <player> <target>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/teleport <player> <target>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/teleport <player> <target>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+TeleportHere: # Command - /teleporthere
+  # Message which will be sent if the player teleports a player to him successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7You teleported &6{player} &7to you"
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7You teleported &6{player} &7to you"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6{player}"
+    SubTitle: "&7was teleported to you"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/tphere <player>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/tphere <player>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/tphere <player>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+Time: # Command - /time (24 hours formatPrefix)
+  # Message which will be sent if the player set the time successfully
+  #
+  # Placeholders:
+  # {world} - Name of affected world
+  # {time} - The set time
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Time changed to &6{time}&7."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Time changed to &6{time}"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Time"
+    SubTitle: "&7changed to &6{time}"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/time <time>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/time <time>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/time <time>"
+
+Top: # Command - /top
+  # Message which will be sent if the player teleporting to top successfully
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Teleporting to the top."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Teleporting to the top"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Top"
+    SubTitle: "&7Teleporting to the top"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/top&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/top"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/top"
+
+Trash: # Command - /trash
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/trash can&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/trash can"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/trash can"
+
+Warp: # Command - /warp
+  # Message which will be sent if the player create a warp successfully
+  #
+  # Placeholders:
+  # {warp} - Warp name
+  Success: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Warp created with success."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Warp created with success"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Warp"
+    SubTitle: "&7Warp created with success"
+
+  # Message which will be sent if the player delete a warp successfully
+  #
+  # Placeholders:
+  # {warp} - Warp name
+  Success-Delete: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Warp deleted with success."
+  Success-Delete-Bar: # ActionBar message
+    Use: false
+    Message: "&7Warp deleted with success"
+  Success-Delete-Title: # Title and SubTitle message
+    Use: false
+    Title: "Warp"
+    SubTitle: "&7Warp deleted with success"
+
+  # Message which will be sent if the player is teleporting late for a warp
+  #
+  # Placeholders:
+  # {time} - Delay to teleport
+  Oflay: # Text message
+    Use: false
+    Message: "&6&lESSENTIALS &7You will be teleported em &6{time} &7seconds."
+  Oflay-Bar: # ActionBar message
+    Use: false
+    Message: "&7Teleporting in &6{time} &7seconds"
+  Oflay-Title: # Title and SubTitle message
+    Use: true
+    Title: "&6Teleporting in"
+    SubTitle: "&6{time} &7seconds"
+
+  # Message which will be sent if the player is teleporting late for a warp
+  Move: # Text message
+    Use: false
+    Message: "&6&lESSENTIALS &7You moved durante o teleport."
+  Move-Bar: # ActionBar message
+    Use: false
+    Message: "&7Teleporting canceled"
+  Move-Title: # Title and SubTitle message
+    Use: true
+    Title: "&6You moved"
+    SubTitle: "&7durante o teleport"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/warp&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/warp"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/warp"
+
+  # Message which will be sent if a warp value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {warp} - The given warp name
+  Warp-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Warp not found."
+  Warp-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Warp not found"
+  Warp-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Warp not found"
+
+Whois: # Command - /whois
+  # Message which will be sent when the player checks the status of the another player
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {heal} - Player life
+  # {hunger} - Player hunger
+  # {exp} - Player exp level
+  # {playtime} - Player play time
+  # {location} - Player location
+  # {ip} - Player ip adress
+  # {geo} - Player country
+  # {gamemode} - Player gamemode
+  # {god} - If the player is in god mode
+  # {op} - If the player have op
+  # {fly} - If the player has fly enabled
+  # {speedwalk} - Walk speed
+  # {speedfly} - Fly speed
+  Success:
+    - "&7Player: &6{player}"
+    - ""
+    - "&7Life: &6{heal}"
+    - "&7Hunger: &6{hunger}"
+    - "&7EXP (Level): &6{exp}"
+    - "&7UpTime: &6{playtime}"
+    - ""
+    - "&7Location: &6{location}"
+    - "&7IP: &6{ip}"
+    - "&7Country: &6{geo}"
+    - ""
+    - "&7Gamemode: &6{gamemode}"
+    - "&7OP: &6{op}"
+    - "&7Fly: &6{fly}"
+    - "&7Speed of walk: &6{speedwalk}"
+    - "&7Speed of flight: &6{speedfly}"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Invalid argument, use &6/whois <player>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid argument, use &6/whois <player>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use command &6/whois <player>"
+
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lESSENTIALS &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+Help: # Command - /essentials help
+  # Message which will be sent if a player does not have admin permission
+  Message: |
+    &6&lESSENTIALS
+    &7► &6/coin
+    &7► &6/light
+    &7► &6/motd
+    &7► &6/ping
+    &7► &6/trash
+    &7► &6/warp
+  # Message which will be sent if a player has administrator permission
+  Message-Admin: |
+    &6&lESSENTIALS - ADMIN
+    &7► &6/coin
+    &7► &6/light
+    &7► &6/motd
+    &7► &6/ping
+    &7► &6/trash
+    &7► &6/warp
