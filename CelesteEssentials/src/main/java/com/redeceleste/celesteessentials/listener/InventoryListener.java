@@ -37,6 +37,7 @@ public class InventoryListener implements Listener {
             String path = name + ".";
             int slot = config.get(path + ".Inventory.Slot", warpFile);
             if (slot != e.getSlot()) continue;
+            p.closeInventory();
             warp.teleportPlayer(p, name);
         }
     }
