@@ -1,0 +1,256 @@
+MySQL: # MySQL Storage
+  # Enables / Disables storage by MySQL
+  Use: false
+  # The MySQL server IP
+  Host: "localhost:3306"
+  # The name of the database that will be stored in the table
+  DataBase: ""
+  # The MySQL login username
+  User: ""
+  # The MySQL password
+  Password: ""
+
+Permission: # All permissions
+  # Administrator permission contains all plugin permissions and has no delay to get kit
+  Admin: "mockessentials.admin"
+
+Inventory-Categories: # Categories menu structure
+  # Title format
+  Title: "&7KIT - Category"
+  # Menu size (Only multiples of 9)
+  Size: 45
+  Decoration: # Items that have no function, only decorative
+    Information: # Any name
+      # Position of the item in menu
+      Slot: 4
+      # Amount item
+      Amount: 1
+      # Item material
+      Material: ""
+      # Item data material
+      Data: 0
+      # Item name
+      Name: "&6Informações"
+      # Enables / Disables Glow
+      Glow: false
+      # Item Lore
+      Lore:
+        - ""
+        - "&7Select an category"
+        - "&7of kits to view"
+        - ""
+        - "&7For get best kits"
+        - "&7Buy &e&lVIP &7at:"
+        - "&6https://google.com"
+      # Item enchantment (Remember in disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+      Enchantment: []
+      Head: # Head system
+        # Enables / Disables Item be a head
+        Use: true
+        # Head texture (These heads which will be the Minecraft textures URL code)
+        Texture: "16439d2e306b225516aa9a6d007a7e75edd2d5015d113b42f44be62a517e574f"
+
+Inventory-Confirm: # Confirmation menu structure
+  # Title format
+  Title: "&7KIT - Confirmation"
+  # Menu size (Only multiples of 9)
+  Size: 45
+  Custom-Items: # Items that have function
+    Confirm: # Item of confirmation action
+      # Position of the item in menu
+      Slot: 24
+      # Amount item
+      Amount: 1
+      # Item material
+      Material: ""
+      # Item data material
+      Data: 0
+      # Item name
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {name} - Kit name
+      # {delay} - Delay to get the kit again
+      # {stats} - Player status
+      Name: "&aAccept"
+      # Enables / Disables Glow
+      Glow: false
+      # Item Lore
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {name} - Kit name
+      # {delay} - Delay to get the kit again
+      # {stats} - Player status
+      Lore:
+        - ""
+        - "&7You can only get"
+        - "&7again in &6{delay}"
+      # Item enchantment (Remember in disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+      Enchantment: []
+      Head: # Head system
+        # Enables / Disables Item be a head
+        Use: true
+        # Head texture (These heads which will be the Minecraft textures URL code)
+        Texture: "eac0da9494b974bdbcb78861df96aa5aaa5da35c658721718ab26dc2ff67d87"
+    Deny: # Item of deny action
+      # Position of the item in menu
+      Slot: 20
+      # Amount item
+      Amount: 1
+      # Item material
+      Material: ""
+      # Item data material
+      Data: 0
+      # Item name
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {name} - Kit name
+      # {delay} - Delay to get the kit again
+      # {stats} - Player status
+      Name: "&cDeny"
+      # Enables / Disables Glow
+      Glow: false
+      # Item Lore
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {name} - Kit name
+      # {delay} - Delay to get the kit again
+      # {stats} - Player status
+      Lore:
+        - ""
+        - "&7You will deny the action"
+        - "&7to get the kit"
+      # Item enchantment (Remember in disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+      Enchantment: []
+      Head: # Head system
+        # Enables / Disables Item be a head
+        Use: true
+        # Head texture (These heads which will be the Minecraft textures URL code)
+        Texture: "3a1d1f6fec429e7cbabc6965b03285ec5ac918ee6e5c3511aef81f52a848e71"
+  Decoration: # Items that have no function, only decorative
+    Template: # Any name
+      # Position of the item in menu
+      Slot: 22
+      # Amount item
+      Amount: 1
+      # Item material
+      Material: ""
+      # Item data material
+      Data: 0
+      # Item name
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {name} - Kit name
+      # {delay} - Delay to get the kit again
+      # {stats} - Player status
+      Name: ""
+      # Enables / Disables Glow
+      Glow: false
+      # Item Lore
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {name} - Kit name
+      # {delay} - Delay to get the kit again
+      # {stats} - Player status
+      Lore: []
+      # Item enchantment (Remember in disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+      Enchantment: []
+      Template: # System showing a template of kit
+        # Enables / Disables this decorative copy from item of kit template
+        Use: true
+      Head: # Head system
+        # Enables / Disables Item be a head
+        Use: false
+        # Head texture (These heads which will be the Minecraft textures URL code)
+        Texture: ""
+
+Inventory-View: # Preview menu structure
+  # Title format
+  Title: "&7KIT - View"
+  # Menu size (Only multiples of 9)
+  Size: 54
+  Custom-Items: # Items that have function
+    Back: # Format of the item referring to back
+      # Position of the item in menu
+      Slot: 49
+      # Amount item
+      Amount: 1
+      # Item material
+      Material: "ARROW"
+      # Item date material
+      Data: 0
+      # Item name
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {name} - Kit name
+      # {delay} - Delay to get the kit again
+      # {stats} - Player status
+      Name: "&6Back"
+      # Enables / Disables Glow
+      Glow: false
+      # Item lore
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {name} - Kit name
+      # {delay} - Delay to get the kit again
+      # {stats} - Player status
+      Lore:
+        - ""
+        - "&7Click here to"
+        - "&7Back to"
+        - "&7menu"
+      # Item enchantment (Remember in disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+      Enchantment: []
+      Head: # Head system
+        # Enables / Disables Item be a head
+        Use: false
+        # Head texture (These heads which will be the Minecraft textures URL code)
+        Texture: ""
+  Decoration: # Items that have no function, only decorative
+    Information: # Any name
+      # Position of the item in menu
+      Slot: 4
+      # Amount item
+      Amount: 1
+      # Item material
+      Material: ""
+      # Item data material
+      Data: 0
+      # Item name
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {name} - Kit name
+      # {delay} - Delay to get the kit again
+      # {stats} - Player status
+      Name: "&6Information"
+      # Enables / Disables Glow
+      Glow: false
+      # Item Lore
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {name} - Kit name
+      # {delay} - Delay to get the kit again
+      # {stats} - Player status
+      Lore:
+        - ""
+        - "&7Kit &6{name}"
+        - "&7Delay &6{delay}"
+      # Item enchantment (Remember in disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+      Enchantment: []
+      Template: # System showing a template of kit
+        # Enables / Disables this decorative copy from item of kit template
+        Use: false
+      Head: # Head system
+        # Enables / Disables Item be a head
+        Use: true
+        # Head texture (These heads which will be the Minecraft textures URL code)
+        Texture: "16439d2e306b225516aa9a6d007a7e75edd2d5015d113b42f44be62a517e574f"

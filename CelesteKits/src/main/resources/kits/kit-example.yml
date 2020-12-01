@@ -1,0 +1,86 @@
+# Category the kit is in
+Category: "category-example"
+# Title format
+Delay: 86400
+# Permission to get kit
+Permission: ""
+# Position of the item in menu
+Slot: 22
+# Amount item
+Amount: 1
+# Item material
+Material: "COBBLESTONE"
+# Item data material
+Data: 0
+# Item name
+#
+# Placeholders:
+# {player} - Player name
+# {delay} - Delay to get the kit again
+# {stats} - Player status
+Name: "&6&lEXEMPLO"
+# Enables / Disables Glow
+Glow: true
+# Item Lore
+#
+# Placeholders:
+# {player} - Player name
+# {name} - Kit name
+# {delay} - Delay to get the kit again
+# {stats} - Player status
+Lore:
+  - ""
+  - "&7Kit exemplo"
+  - "&c&lEXCLUSIVO: &7para Animais"
+  - ""
+  - "&7Status:"
+  - "&6{stats}"
+# Item enchantment (Remember in disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+Enchantment: []
+Head: # Head system
+  # Enables / Disables Item be a head
+  Use: false
+  # Head texture (These heads which will be the Minecraft textures URL code)
+  Texture: ""
+
+Items: # Kit items
+  1: # Any name
+    # The amount of item
+    Amount: 1
+    # Item material
+    Material: ""
+    # Item data material
+    Data: 0
+    # Item name
+    #
+    # Placeholders:
+    # {player} - Player name
+    # {name} - Kit name
+    Name: "&7Spawner de &6Zombie"
+    # Enables / Disables Glow
+    Glow: false
+    # Item Lore
+    #
+    # Placeholders:
+    # {player} - Player name
+    # {name} - Kit name
+    Lore: []
+    # Item enchantment (Remember in disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+    Enchantment: []
+    Head: # Head system
+      # Enables / Disables Item be a head
+      Use: true
+      # UUID of head (Generate this UUID by https://www.uuidgenerator.net/)
+      UUID: "a74e6bb7-ee4f-40a2-a057-b899d56634ac"
+      # Head texture (These heads which will be the Minecraft textures URL code)
+      Texture: "56fc854bb84cf4b7697297973e02b79bc10698460b51a639c60e5e417734e11"
+    Command: # Command item delivery system
+      # Enables / Disables Item give by command (If enabled, the plugin will not give the item, it will only execute the command)
+      Use: true
+      # Command list that execute at the time of give
+      #
+      # Placeholders:
+      # {player} - Player name
+      # {name} - Kit name
+      Commands:
+        - "spawner give {player} zombie 10"

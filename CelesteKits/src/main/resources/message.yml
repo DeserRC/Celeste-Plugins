@@ -1,0 +1,240 @@
+Pattern: # Pattern Inventory
+  # Message pattern when player can get the kit
+  # Placeholders:
+  #
+  # {name} - Kit name
+  Available: "&6Available"
+  # Message pattern when player cannot get the kit
+  # Placeholders:
+  #
+  # {name} - Kit name
+  # {delay} - Time the player can get again
+  No-Available: "&e{delay} left to get again"
+  # Message pattern when player is not permission to get the kit
+  # Placeholders:
+  #
+  # {name} - Kit name
+  No-Permission: "&cNo permission"
+
+No-Permission: # When the player does not have permission
+  # Message which will be sent if the player is not allowed to permission a task that only admin can do
+  Admin: "&6&lKIT &7You do not have permission."
+  # Message which will be sent if the player is not allowed to get an kit
+  #
+  # Placeholders:
+  # {name} - Kit name
+  Kit: "&6&lKIT &7You are not allowed to get this kit."
+
+Error: # Messages which will be sent if there is an Error in the execution on command
+  # Message which will be sent if a player value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {player} - The given player name
+  Player-Not-Found: # Text message
+    Use: true
+    Message: "&6&lKIT &7Player not found."
+  Player-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Player not found"
+  Player-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Player not found"
+
+  # Message which will be sent if a category value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {name} - The given category name
+  Category-Not-Found: # Text message
+    Use: true
+    Message: "&6&lKIT &7category not found."
+  Category-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7category not found"
+  Category-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7category not found"
+
+  # Message which will be sent if a kit value is expected but the given one is not found
+  #
+  # Placeholders:
+  # {name} - The given kit name
+  Kit-Not-Found: # Text message
+    Use: true
+    Message: "&6&lKIT &7Kit not found."
+  Kit-Not-Found-Bar: # ActionBar message
+    Use: false
+    Message: "&7Kit not found"
+  Kit-Not-Found-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Kit not found"
+
+Kit: # Command - /kit
+  # Message which will be sent if a player get a kit successfully
+  #
+  # Placeholders:
+  # {name} - Kit name
+  Success: # Text message
+    Use: true
+    Message: "&6&lKIT &7You get kit successfully."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Kit get successfully."
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6KIT"
+    SubTitle: "&7Kit get successfully"
+
+  # Message which will be sent if the arguments are not valid"
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lKIT &7Invalid arguments, use &6/kit&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid arguments, use &6/kit"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use &6/kit"
+
+  # Message which will be sent if a player is with delayed to get the kit
+  #
+  # Placeholders:
+  # {name} - Kit name
+  # {delay} - Time the player can get again
+  Delay: # Text message
+    Use: true
+    Message: "&6&lKIT &6{delay} &7to get this kit again."
+  Delay-Bar: # ActionBar message
+    Use: false
+    Message: "&7Wait &6{delay} &7to get this kit again"
+  Delay-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Wait &6{delay}"
+
+Give: # Command - /kit give
+  # Message which will be sent if a send a kit successfully
+  #
+  # Placeholders:
+  # {player} - Player name
+  # {name} - Kit name
+  Success: # Text message
+    Use: true
+    Message: "&6&lKIT &7You sent an kit to &6{player}&7 successfully"
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Kit sent successfully"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6KIT"
+    SubTitle: "&7Kit sent successfully"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lKIT &7Invalid arguments, use &6/kit give <player> <kit>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid arguments, use &6/kit give <player> <kit>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use &6/kit give <player> <kit>"
+
+Create: # Command - /kit create
+  # Message which will be send if a player create a kit successfully
+  #
+  # Placeholders:
+  # {name} - Kit name
+  # {permission} - Permission
+  # {delay} - Delay
+  Success: # Text message
+    Use: true
+    Message: "&6&lKIT &7Kit created successfully."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Kit created successfully"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6KIT"
+    SubTitle: "&7Created successfully"
+
+    # Message which will be sent if the arguments are not valid"
+    Invalid-Argument: # Text message
+      Use: true
+      Message: "&6&lKIT &7Invalid arguments, use &6/kit create <category> <kit> <permission> <delay>&7."
+    Invalid-Argument-Bar: # ActionBar message
+      Use: false
+      Message: "&7Invalid arguments, use &6/kit create <category> <kit> <permission> <delay>"
+    Invalid-Argument-Title: # Title and SubTitle message
+      Use: false
+      Title: "&6Error"
+      SubTitle: "&7Use &6/kit create <category> <kit> <permission> <delay>"
+
+Set: # Command - /kit set
+  # Message which will be sent if a player set the items a kit successfully
+  #
+  # Placeholders:
+  # {name} - Kit name
+  Success: # Text message
+    Use: true
+    Message: "&6&lKIT &7Kit items set successfully."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Kit items set successfully"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6KIT"
+    SubTitle: "&7kit items set successfully"
+
+  # Message which will be sent if the arguments are not valid
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lKIT &7Invalid arguments, use &6/kit set <kit>&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid arguments, use &6/kit set <kit>"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use &6/kit set <kit>"
+
+  # Message which will be sent if a player not contains items in inventory
+  Not-Have-Items: # Text message
+    Use: true
+    Message: "&6&lKIT &7You not a have items."
+  Not-Have-Items-Bar: # ActionBar message
+    Use: false
+    Message: "&7You not a have items"
+  Not-Have-Items-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7You not a have items"
+
+Reload: # Command - /kit reload
+  # Message which will be sent if a player reload the plugin
+  Success: # Text message
+    Use: true
+    Message: "&6&lKIT &7Configuration reloaded successfully."
+  Success-Bar: # ActionBar message
+    Use: false
+    Message: "&7Configuration reloaded successfully"
+  Success-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6KIT"
+    SubTitle: "&7Configuration reloaded successfully"
+
+  # Message which will be sent if the arguments are not valid"
+  Invalid-Argument: # Text message
+    Use: true
+    Message: "&6&lKIT &7Invalid arguments, use &6/kit reload&7."
+  Invalid-Argument-Bar: # ActionBar message
+    Use: false
+    Message: "&7Invalid arguments, use &6/kit reload"
+  Invalid-Argument-Title: # Title and SubTitle message
+    Use: false
+    Title: "&6Error"
+    SubTitle: "&7Use &6/kit reload"

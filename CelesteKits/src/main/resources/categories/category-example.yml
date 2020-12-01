@@ -1,0 +1,79 @@
+# Title format
+Title: "&7Category - &e&lEXAMPLE"
+# Menu size (Only multiples of 9)
+Size: 45
+# Position of the item in menu
+Slot: 22
+# Amount item
+Amount: 1
+# Item material
+Material: "STONE"
+# Item data material
+Data: 0
+# Item name
+Name: "&7Kit &e&lEXAMPLE"
+# Enables / Disables Glow
+Glow: false
+# Item Lore
+Lore: []
+# Item enchantment (Remember in disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+Enchantment: []
+Head: # Head system
+  # Enables / Disables Item be a head
+  Use: false
+  # Head texture (These heads which will be the Minecraft textures URL code)
+  Texture: ""
+Custom-Items: # Items that have function
+  Back: # Format of the item referring to back
+    # Position of the item in menu
+    Slot: 49
+    # Amount item
+    Amount: 40
+    # Item material
+    Material: "ARROW"
+    # Item date material
+    Data: 0
+    # Item name
+    Name: "&6Back"
+    # Enables / Disables Glow
+    Glow: false
+    # Item lore
+    Lore:
+      - ""
+      - "&7Click here to"
+      - "&7Back to"
+      - "&7menu"
+    # Item enchantment (Remember in disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+    Enchantment: []
+    Head: # Head system
+      # Enables / Disables Item be a head
+      Use: false
+      # Head texture (These heads which will be the Minecraft textures URL code)
+      Texture: ""
+Decoration: # Items that have no function, only decorative
+  Information: # Any name
+    # Position of the item in menu
+    Slot: 4
+    # Amount item
+    Amount: 1
+    # Item material
+    Material: ""
+    # Item data material
+    Data: 0
+    # Item name
+    Name: "&6Information"
+    # Enables / Disables Glow
+    Glow: false
+    # Item Lore
+    Lore:
+      - ""
+      - "&7For get best kits"
+      - "&7Buy &e&lVIP &7at:"
+      - "&6https://google.com"
+    # Item enchantment (Remember in disable the glow) - (All Minecraft enchants https://ghostbin.co/paste/w2ttacs)
+    Enchantment: []
+    Head: # Head system
+      # Enables / Disables Item be a head
+      Use: true
+      # Head texture (These heads which will be the Minecraft textures URL code)
+      Texture: "16439d2e306b225516aa9a6d007a7e75edd2d5015d113b42f44be62a517e574f"
