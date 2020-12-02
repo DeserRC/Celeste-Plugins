@@ -10,7 +10,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import static java.util.regex.Pattern.compile;
+import java.util.regex.Pattern;
 
 public class ExpAddArg extends CommandArgument {
     private final CelesteEssentials main;
