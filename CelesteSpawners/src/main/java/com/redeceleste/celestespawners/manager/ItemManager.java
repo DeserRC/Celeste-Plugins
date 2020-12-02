@@ -117,6 +117,10 @@ public class ItemManager {
         return item.getMetadata("item").get(0).asInt();
     }
 
+    public boolean containsBlackList(Item item) {
+        return item.hasMetadata("blacklist");
+    }
+
     public boolean containsMetaData(Item item) {
         return item.hasMetadata("item");
     }

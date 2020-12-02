@@ -31,6 +31,8 @@ public class ItemListener implements Listener {
     @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
     public void onItemSpawn(ItemSpawnEvent e) {
         Item itemEntity = e.getEntity();
+        if (!item.containsBlackList(itemEntity)) return;
+
         Location loc = e.getLocation();
         ItemStack itemStack = itemEntity.getItemStack();
         Item nearestItem = item.getNearestItem(loc, itemStack);
@@ -53,6 +55,7 @@ public class ItemListener implements Listener {
         ItemStack itemStack = itemEntity.getItemStack();
         int entityAmount;
 
+        if (!item.containsBlackList(itemEntity) || !item.containsBlackList(itemEntity)) return;
         if (item.containsMetaData(itemEntity)) entityAmount = item.getAmount(itemEntity);
         else entityAmount = itemStack.getAmount();
 

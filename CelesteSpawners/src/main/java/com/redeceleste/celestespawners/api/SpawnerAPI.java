@@ -1,6 +1,8 @@
 package com.redeceleste.celestespawners.api;
 
 import com.redeceleste.celestespawners.CelesteSpawners;
+import com.redeceleste.celestespawners.event.impl.EntitySpawnEvent;
+import com.redeceleste.celestespawners.event.impl.PlayerKilledEntityEvent;
 import com.redeceleste.celestespawners.exception.SpawnerNotFoundException;
 import com.redeceleste.celestespawners.factory.SpawnerFactory;
 import com.redeceleste.celestespawners.manager.impl.SpawnerCustomManager;
@@ -24,6 +26,14 @@ import static com.redeceleste.celestespawners.util.LocationUtil.serialize;
  * @see BlockBreakEvent
  * Called when the player place a spawner
  * @see BlockPlaceEvent
+ * Called when an mobs is spawn
+ * @see EntitySpawnEvent
+ * Called when the player killed an mob
+ * @see PlayerKilledEntityEvent
+ *
+ * Stack:
+ * If you do not want an item to be stacked
+ * use blacklist in metadata
  */
 public class SpawnerAPI {
     private static final CelesteSpawners main = CelesteSpawners.getInstance();
