@@ -41,7 +41,7 @@ public class GiveArgument extends CommandArgument {
             return;
         }
 
-        if (!(args.length == 3) || Pattern.compile("[^0-9]").matcher(args[2]).find() || Integer.parseInt(args[2]) < 1) {
+        if (!(args.length == 3) || Pattern.compile("[^0-9]").matcher(args[2]).find() || args[2].length() > 9 || Integer.parseInt(args[2]) < 1) {
             chat.send(sender, "Give.Invalid-Argument");
             bar.send(sender, "Give.Invalid-Argument-Bar");
             title.send(sender, "Give.Invalid-Argument-Title");

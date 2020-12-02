@@ -45,7 +45,7 @@ public class PotionSetArg extends CommandArgument {
             return;
         }
 
-        if (args.length != 3 || Pattern.compile("[^0-9]").matcher(args[1]).find() || Integer.parseInt(args[1]) < 1 || Pattern.compile("[^0-9]").matcher(args[2]).find() || Integer.parseInt(args[2]) < 1) {
+        if (args.length != 3 || Pattern.compile("[^0-9]").matcher(args[1]).find() || args[1].length() > 9 || Integer.parseInt(args[1]) < 1 || Pattern.compile("[^0-9]").matcher(args[2]).find() || args[2].length() > 9 || Integer.parseInt(args[2]) < 1) {
             chat.send(p, "Potion.Invalid-Argument");
             bar.send(p, "Potion.Invalid-Argument-Bar");
             title.send(p, "Potion.Invalid-Argument-Title");

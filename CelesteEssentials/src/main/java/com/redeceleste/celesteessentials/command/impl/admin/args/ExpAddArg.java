@@ -31,7 +31,7 @@ public class ExpAddArg extends CommandArgument {
     @Override
     public void execute(CommandSender sender, String[] args) {
         Player t = Bukkit.getPlayer(args[0]);
-        if (args.length != 2 || compile("[^0-9]").matcher(args[1]).find() || Integer.parseInt(args[1]) < 0) {
+        if (args.length != 2 || Pattern.compile("[^0-9]").matcher(args[1]).find() || args[1].length() > 9 || Integer.parseInt(args[1]) < 0) {
             chat.send(sender, "Exp.Invalid-Argument");
             bar.send(sender, "Exp.Invalid-Argument-Bar");
             title.send(sender, "Exp.Invalid-Argument-Title");

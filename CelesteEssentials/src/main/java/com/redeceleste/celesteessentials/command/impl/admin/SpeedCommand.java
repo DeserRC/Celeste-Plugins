@@ -44,7 +44,7 @@ public class SpeedCommand extends Command {
             return false;
         }
 
-        if (args.length != 2 || Pattern.compile("[^0-9]").matcher(args[1]).find() || Integer.parseInt(args[1]) < 0 || Integer.parseInt(args[1]) > 10) {
+        if (args.length != 2 || Pattern.compile("[^0-9]").matcher(args[1]).find() || args[1].length() > 9 || Integer.parseInt(args[1]) < 0 || Integer.parseInt(args[1]) > 10) {
             chat.send(p, "Speed.Invalid-Argument");
             bar.send(p, "Speed.Invalid-Argument-Bar");
             title.send(p, "Speed.Invalid-Argument-Title");

@@ -42,7 +42,7 @@ public class EffectCommand extends Command {
             return false;
         }
 
-        if (args.length != 4 || Pattern.compile("[^0-9]").matcher(args[2]).find() || Integer.parseInt(args[2]) < 1 || Pattern.compile("[^0-9]").matcher(args[3]).find() || Integer.parseInt(args[3]) < 1) {
+        if (args.length != 4 || Pattern.compile("[^0-9]").matcher(args[2]).find() || args[2].length() > 9 || Integer.parseInt(args[2]) < 1 || Pattern.compile("[^0-9]").matcher(args[3]).find() || args[3].length() > 9 || Integer.parseInt(args[3]) < 1) {
             chat.send(sender, "Effect.Invalid-Argument");
             bar.send(sender, "Effect.Invalid-Argument-Bar");
             title.send(sender, "Effect.Invalid-Argument-Title");

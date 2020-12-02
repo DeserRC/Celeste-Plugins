@@ -39,7 +39,7 @@ public class DrawPoints extends Command {
             return false;
         }
 
-        if (!(args.length == 1) || Pattern.compile("[^0-9]").matcher(args[0]).find() || Integer.parseInt(args[0]) < 1) {
+        if (!(args.length == 1) || Pattern.compile("[^0-9]").matcher(args[0]).find() || args[0].length() > 9 || Integer.parseInt(args[0]) < 1) {
             chat.send(sender, "Message.DrawPointsInvalidArgument");
             return false;
         }

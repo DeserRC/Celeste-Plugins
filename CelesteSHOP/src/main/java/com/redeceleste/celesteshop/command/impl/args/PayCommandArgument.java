@@ -23,7 +23,7 @@ public class PayCommandArgument extends CommandArgument {
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-        if (!(args.length == 2) || Pattern.compile("[^0-9]").matcher(args[1]).find() || Integer.parseInt(args[1]) < 1) {
+        if (!(args.length == 2) || Pattern.compile("[^0-9]").matcher(args[1]).find() || args[1].length() > 9 || Integer.parseInt(args[1]) < 1) {
             chat.send(sender, "Message.PayPointsInvalidArgument");
             return;
         }

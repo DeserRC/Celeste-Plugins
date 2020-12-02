@@ -32,7 +32,7 @@ public class SetCommandArgument extends CommandArgument {
             return;
         }
 
-        if (!(args.length == 2) || Pattern.compile("[^0-9]").matcher(args[1]).find() || Integer.parseInt(args[1]) < 0) {
+        if (!(args.length == 2) || Pattern.compile("[^0-9]").matcher(args[1]).find() || args[1].length() > 9 || Integer.parseInt(args[1]) < 0) {
             chat.send(sender, "Message.SetPointsInvalidArgument");
             return;
         }

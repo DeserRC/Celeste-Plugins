@@ -17,9 +17,9 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import static java.util.Arrays.asList;
-import static java.util.regex.Pattern.compile;
 import static org.bukkit.Material.values;
 
 public class GiveCommand extends Command {
@@ -47,7 +47,7 @@ public class GiveCommand extends Command {
             return false;
         }
 
-        if (args.length < 3 || compile("[^0-9]").matcher(args[2]).find() || Integer.parseInt(args[2]) < 0 || Integer.parseInt(args[2]) > 20000) {
+        if (args.length < 3 || Pattern.compile("[^0-9]").matcher(args[2]).find() || args[2].length() > 9 || Integer.parseInt(args[2]) < 0 || Integer.parseInt(args[2]) > 20000) {
             chat.send(sender, "Give.Invalid-Argument");
             bar.send(sender, "Give.Invalid-Argument-Bar");
             title.send(sender, "Give.Invalid-Argument-Title");
@@ -77,7 +77,7 @@ public class GiveCommand extends Command {
             if (material != null) break;
         }
 
-        if (split.length == 1 || compile("[^0-9]").matcher(split[1]).find()) data = 0;
+        if (split.length == 1 || Pattern.compile("[^0-9]").matcher(split[1]).find()) data = 0;
         else data = Integer.parseInt(split[1]);
 
         if (material == null) {

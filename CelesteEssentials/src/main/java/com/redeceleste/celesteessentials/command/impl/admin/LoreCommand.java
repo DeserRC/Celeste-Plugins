@@ -47,7 +47,7 @@ public class LoreCommand extends Command {
             return false;
         }
 
-        if (args.length < 2 || Pattern.compile("[^0-9]").matcher(args[0]).find() || Integer.parseInt(args[0]) < 0) {
+        if (args.length < 2 || Pattern.compile("[^0-9]").matcher(args[0]).find() || args[0].length() > 9 || Integer.parseInt(args[0]) < 0) {
             chat.send(p, "Lore.Invalid-Argument");
             bar.send(p, "Lore.Invalid-Argument-Bar");
             title.send(p, "Lore.Invalid-Argument-Title");

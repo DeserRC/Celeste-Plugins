@@ -37,7 +37,7 @@ public class BurnCommand extends Command {
             return false;
         }
 
-        if (args.length != 2 || Pattern.compile("[^0-9]").matcher(args[1]).find() || Integer.parseInt(args[1]) < 1) {
+        if (args.length != 2 || Pattern.compile("[^0-9]").matcher(args[1]).find() || args[1].length() > 9 || Integer.parseInt(args[1]) < 1) {
             chat.send(sender, "Burn.Invalid-Argument");
             bar.send(sender, "Burn.Invalid-Argument-Bar");
             title.send(sender, "Burn.Invalid-Argument-Title");

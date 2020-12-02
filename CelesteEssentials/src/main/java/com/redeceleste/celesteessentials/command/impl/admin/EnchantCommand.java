@@ -49,7 +49,7 @@ public class EnchantCommand extends Command {
             return false;
         }
 
-        if (args.length != 2 || Pattern.compile("[^0-9]").matcher(args[1]).find() || Integer.parseInt(args[1]) < 0) {
+        if (args.length != 2 || Pattern.compile("[^0-9]").matcher(args[1]).find() || args[1].length() > 9 || Integer.parseInt(args[1]) < 0) {
             chat.send(p, "Enchant.Invalid-Argument");
             bar.send(p, "Enchant.Invalid-Argument-Bar");
             title.send(p, "Enchant.Invalid-Argument-Title");
