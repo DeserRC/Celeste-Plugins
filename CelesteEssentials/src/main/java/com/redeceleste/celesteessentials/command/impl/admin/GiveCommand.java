@@ -47,7 +47,7 @@ public class GiveCommand extends Command {
             return false;
         }
 
-        if (args.length < 3 || Pattern.compile("[^0-9]").matcher(args[2]).find() || args[2].length() > 9 || Integer.parseInt(args[2]) < 0 || Integer.parseInt(args[2]) > 20000) {
+        if (args.length < 3 || Pattern.compile("[^0-9]").matcher(args[2]).find() || args[2].length() > 9 || Integer.parseInt(args[2]) < 0) {
             chat.send(sender, "Give.Invalid-Argument");
             bar.send(sender, "Give.Invalid-Argument-Bar");
             title.send(sender, "Give.Invalid-Argument-Title");
