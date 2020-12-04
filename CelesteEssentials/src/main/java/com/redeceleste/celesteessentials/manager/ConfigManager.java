@@ -32,7 +32,7 @@ public class ConfigManager {
         this.config = new YamlConfiguration();
         this.message = new YamlConfiguration();
         this.warp = new YamlConfiguration();
-        this.format = new DecimalFormat("#.###", new DecimalFormatSymbols(US));
+        this.format = new DecimalFormat("#,###", new DecimalFormatSymbols(US));
         this.prefix = asList("", "K", "M", "B", "T", "Q", "QUI", "SEX", "SEP", "OCT", "NON", "DEC", "UND");
         load();
     }
