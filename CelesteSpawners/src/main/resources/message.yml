@@ -91,7 +91,7 @@ Give: # Command - /spawner give
   Invalid-Argument-Title: # Title and SubTitle message
     Use: false
     Title: "&6Error"
-    SubTitle: "&7Utilize o comando &6/spawner give <player> <spawner> <amount>"
+    SubTitle: "&7Use &6/spawner give <player> <spawner> <amount>"
 
 Give-Custom: # Command - /spawner givecustom
   # Message which will be sent if the player gives spawner custom to another player
@@ -168,7 +168,7 @@ Give-Custom: # Command - /spawner givecustom
   Invalid-Argument-Title: # Title and SubTitle message
     Use: false
     Title: "&6Error"
-    SubTitle: "&7Utilize o comando &6/spawner givecustom <player> <spawner> <amount>"
+    SubTitle: "&7Use &6/spawner givecustom <player> <spawner> <amount>"
 
 Help: # Command - /spawner help
   # Message which will be sent if the player types an invalid command argument and does not have admin permission
