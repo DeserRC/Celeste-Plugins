@@ -44,7 +44,7 @@ public class MySQL implements DataBase {
         try {
             connection.close();
         } catch (SQLException e) {
-            System.err.printf("An Errorr occurred while close MySQL: %s", e.getMessage());
+            System.err.printf("An error occurred while close MySQL: %s", e.getMessage());
         }
     }
 

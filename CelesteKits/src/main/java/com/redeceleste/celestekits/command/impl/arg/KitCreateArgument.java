@@ -60,20 +60,20 @@ public class KitCreateArgument extends CommandArgument {
 
         CategoryArgument categoryArg = kit.getCategory(category);
         if (categoryArg == null) {
-            chat.send(p, "Errorr.Category-Not-Found",
+            chat.send(p, "Error.Category-Not-Found",
                     chat.build("{name}", args[0]));
-            bar.send(p, "Errorr.Category-Not-Found-Bar",
+            bar.send(p, "Error.Category-Not-Found-Bar",
                     chat.build("{name}", args[0]));
-            title.send(p, "Errorr.Category-Not-Found-Title",
+            title.send(p, "Error.Category-Not-Found-Title",
                     chat.build("{name}", args[0]));
             return;
         }
 
         ItemStack[] items = p.getInventory().getContents();
         if (items.length == 0) {
-            chat.send(p, "Errorr.Not-Have-Items");
-            bar.send(p, "Errorr.Not-Have-Items-Bar");
-            title.send(p, "Errorr.Not-Have-Items-Title");
+            chat.send(p, "Error.Not-Have-Items");
+            bar.send(p, "Error.Not-Have-Items-Bar");
+            title.send(p, "Error.Not-Have-Items-Title");
             return;
         }
 

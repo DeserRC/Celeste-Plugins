@@ -48,22 +48,22 @@ public class KitGiveArgument extends CommandArgument {
 
         Player t = Bukkit.getPlayer(args[0]);
         if (t == null) {
-            chat.send(sender, "Errorr.Player-Not-Found",
+            chat.send(sender, "Error.Player-Not-Found",
                     chat.build("{player}", args[0]));
-            bar.send(sender, "Errorr.Player-Not-Found-Bar",
+            bar.send(sender, "Error.Player-Not-Found-Bar",
                     chat.build("{player}", args[0]));
-            title.send(sender, "Errorr.Player-Not-Found-Title",
+            title.send(sender, "Error.Player-Not-Found-Title",
                     chat.build("{player}", args[0]));
             return;
         }
 
         KitArgument kitArg = kit.getKit(args[1]);
         if (kitArg == null) {
-            chat.send(sender, "Errorr.Kit-Not-Found",
+            chat.send(sender, "Error.Kit-Not-Found",
                     chat.build("{name}", args[1]));
-            bar.send(sender, "Errorr.Kit-Not-Found-Bar",
+            bar.send(sender, "Error.Kit-Not-Found-Bar",
                     chat.build("{name}", args[1]));
-            title.send(sender, "Errorr.Kit-Not-Found-Title",
+            title.send(sender, "Error.Kit-Not-Found-Title",
                     chat.build("{name}", args[1]));
             return;
         }

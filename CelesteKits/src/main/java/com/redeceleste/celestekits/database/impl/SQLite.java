@@ -42,7 +42,7 @@ public class SQLite implements DataBase {
         try {
             connection.close();
         } catch (SQLException e) {
-            System.err.printf("An Errorr occurred while close SQLite: %s", e.getMessage());
+            System.err.printf("An error occurred while close SQLite: %s", e.getMessage());
         }
     }
 

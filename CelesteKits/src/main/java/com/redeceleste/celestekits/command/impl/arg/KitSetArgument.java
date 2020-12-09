@@ -53,11 +53,11 @@ public class KitSetArgument extends CommandArgument {
 
         KitArgument kitArg = kit.getKit(args[0]);
         if (kitArg == null) {
-            chat.send(p, "Errorr.Kit-Not-Found",
+            chat.send(p, "Error.Kit-Not-Found",
                     chat.build("{name}", args[0]));
-            bar.send(p, "Errorr.Kit-Not-Found-Bar",
+            bar.send(p, "Error.Kit-Not-Found-Bar",
                     chat.build("{name}", args[0]));
-            title.send(p, "Errorr.Kit-Not-Found-Title",
+            title.send(p, "Error.Kit-Not-Found-Title",
                     chat.build("{name}", args[0]));
             return;
         }
